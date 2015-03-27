@@ -1,0 +1,755 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>3dGraph: sources/Ploter/Ploter.h ソースファイル</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.5.6 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+<h1>sources/Ploter/Ploter.h</h1><a href="_ploter_8h.html">説明を見る。</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#ifndef  INCLUDED_PLOTER_H</span>
+<a name="l00007"></a>00007 <span class="preprocessor"></span><span class="preprocessor">#define  INCLUDED_PLOTER_H</span>
+<a name="l00008"></a>00008 <span class="preprocessor"></span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include  &lt;iostream&gt;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include  &lt;fstream&gt;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include  &lt;sstream&gt;</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#include  &lt;list&gt;</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#include  &lt;deque&gt;</span>
+<a name="l00014"></a>00014 <span class="preprocessor">#include  &lt;boost/shared_ptr.hpp&gt;</span>
+<a name="l00015"></a>00015 <span class="preprocessor">#include  &lt;boost/mem_fn.hpp&gt;</span>
+<a name="l00016"></a>00016 <span class="preprocessor">#include  &lt;boost/utility.hpp&gt;</span>
+<a name="l00017"></a>00017 <span class="preprocessor">#include  "<a class="code" href="_utility_8h.html" title="。">Utility.h</a>"</span>
+<a name="l00018"></a>00018 
+<a name="l00019"></a><a class="code" href="namespace_ploter.html">00019</a> <span class="keyword">namespace </span><a class="code" href="class_ploter_1_1_ploter.html" title="グラフ要素を統括するクラス。">Ploter</a> {
+<a name="l00020"></a>00020     
+<a name="l00021"></a>00021     <span class="keyword">class </span><a class="code" href="class_ploter_1_1_hidden_line_manager.html" title="陰線処理を管理するクラス。">HiddenLineManager</a>;
+<a name="l00022"></a>00022     <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00026"></a><a class="code" href="class_ploter_1_1_subject.html">00026</a>     <span class="keyword">class </span><a class="code" href="class_ploter_1_1_subject.html" title="観察対象を表すクラス。">Subject</a> {
+<a name="l00027"></a>00027         
+<a name="l00028"></a>00028       <span class="keyword">public</span>:
+<a name="l00029"></a>00029         
+<a name="l00030"></a><a class="code" href="class_ploter_1_1_subject.html#139f016f3de5d110eee73160ad232d27">00030</a>         <span class="keyword">virtual</span>       std::size_t  <a class="code" href="class_ploter_1_1_subject.html#139f016f3de5d110eee73160ad232d27">getIntervalNumber</a> (<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> 0;                        }
+<a name="l00031"></a><a class="code" href="class_ploter_1_1_subject.html#39d8b679062b41146d61b9cc0c47feb2">00031</a>         <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="namespace_ploter.html#04069799b968fe89f21012b4436f04fe">VertexList</a> &amp; <a class="code" href="class_ploter_1_1_subject.html#39d8b679062b41146d61b9cc0c47feb2">getPositions</a>      (<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_ploter_1_1_subject.html#e27772f1c6af2511284c524f699a9819">Subject::dummyVertexList</a>; }
+<a name="l00032"></a><a class="code" href="class_ploter_1_1_subject.html#02dd488b85e0beb7894e8859e3852bfa">00032</a>         <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a>     &amp; <a class="code" href="class_ploter_1_1_subject.html#02dd488b85e0beb7894e8859e3852bfa">getDirection</a>      (<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_ploter_1_1_subject.html#861512d968b89bbf27e8500c0f1de8d6">Subject::dummyVector</a>;     }
+<a name="l00033"></a><a class="code" href="class_ploter_1_1_subject.html#e1c0194d90fecf13f3e1735180089ade">00033</a>         <span class="keyword">virtual</span>       <span class="keywordtype">bool</span>         <a class="code" href="class_ploter_1_1_subject.html#e1c0194d90fecf13f3e1735180089ade">isSettablePosition</a>(<span class="keywordtype">int</span> )<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="keyword">false</span>;                    }
+<a name="l00034"></a>00034         
+<a name="l00035"></a>00035       <span class="keyword">private</span>:
+<a name="l00036"></a>00036         
+<a name="l00037"></a><a class="code" href="class_ploter_1_1_subject.html#e27772f1c6af2511284c524f699a9819">00037</a>         <span class="keyword">static</span> <a class="code" href="namespace_ploter.html#04069799b968fe89f21012b4436f04fe">VertexList</a>  <a class="code" href="class_ploter_1_1_subject.html#e27772f1c6af2511284c524f699a9819">dummyVertexList</a>;
+<a name="l00038"></a><a class="code" href="class_ploter_1_1_subject.html#861512d968b89bbf27e8500c0f1de8d6">00038</a>         <span class="keyword">static</span> <a class="code" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a>      <a class="code" href="class_ploter_1_1_subject.html#861512d968b89bbf27e8500c0f1de8d6">dummyVector</a>;
+<a name="l00039"></a>00039     };
+<a name="l00040"></a>00040     
+<a name="l00041"></a>00041     <a class="code" href="namespace_ploter.html#04069799b968fe89f21012b4436f04fe">VertexList</a>  <a class="code" href="class_ploter_1_1_subject.html#e27772f1c6af2511284c524f699a9819">Subject::dummyVertexList</a>;
+<a name="l00042"></a>00042     <a class="code" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a>      <a class="code" href="class_ploter_1_1_subject.html#861512d968b89bbf27e8500c0f1de8d6">Subject::dummyVector</a>;
+<a name="l00043"></a>00043     
+<a name="l00044"></a>00044     <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00048"></a><a class="code" href="class_ploter_1_1_scannee.html">00048</a>     <span class="keyword">class </span><a class="code" href="class_ploter_1_1_scannee.html" title="捜査対象を表すクラス。">Scannee</a> {
+<a name="l00049"></a>00049         
+<a name="l00050"></a>00050       <span class="keyword">public</span>:
+<a name="l00051"></a>00051         
+<a name="l00052"></a>00052         <span class="keyword">virtual</span> <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_scannee.html#c815107f6c9a00abb62322e80b7c08d8">acceptScanning</a>     ( <a class="code" href="class_ploter_1_1_hidden_line_manager.html" title="陰線処理を管理するクラス。">HiddenLineManager</a> * )       = 0;
+<a name="l00053"></a>00053         <span class="keyword">virtual</span> <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_scannee.html#14cbf4c4b79c1db274cbffe396442598">acceptComplementing</a>( <a class="code" href="class_ploter_1_1_hidden_line_manager.html" title="陰線処理を管理するクラス。">HiddenLineManager</a> * )       = 0;
+<a name="l00054"></a>00054         <span class="keyword">virtual</span> <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_scannee.html#b4c45bf441d391f31a621b29c1433f6e">draw</a>               ( <span class="keywordtype">void</span>                ) <span class="keyword">const</span> = 0;
+<a name="l00055"></a>00055     };
+<a name="l00056"></a>00056     
+<a name="l00057"></a>00057     <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00061"></a><a class="code" href="class_ploter_1_1_scan_line.html">00061</a>     <span class="keyword">class </span><a class="code" href="class_ploter_1_1_scan_line.html" title="。">ScanLine</a> {
+<a name="l00062"></a>00062         
+<a name="l00063"></a>00063       <span class="keyword">public</span>:
+<a name="l00064"></a>00064         
+<a name="l00065"></a><a class="code" href="class_ploter_1_1_scan_line.html#a35d11057a24a7f73f243de82fcdffa1">00065</a>         <a class="code" href="class_ploter_1_1_scan_line.html#a35d11057a24a7f73f243de82fcdffa1">ScanLine</a>( <a class="code" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Element</a> scanLine ) : <a class="code" href="class_ploter_1_1_scan_line.html#652e47f1e9c0907de8b80403482f6569">position</a>(scanLine) {
+<a name="l00066"></a>00066             
+<a name="l00067"></a>00067             <a class="code" href="class_ploter_1_1_scan_line.html#774ca596fb5e3f5ddadec398d11955be">minmax</a>.<a class="code" href="class_ploter_1_1_min_max.html#48f3321e6dd835ed2bac03a6148a88e6" title="最小値・最大値の初期化。">initialize</a>();
+<a name="l00068"></a>00068         }
+<a name="l00069"></a>00069         
+<a name="l00070"></a><a class="code" href="class_ploter_1_1_scan_line.html#176364f6aedad4909794a3bf673251bb">00070</a>         <span class="keyword">friend</span> <span class="keywordtype">bool</span> <a class="code" href="class_ploter_1_1_scan_line.html#176364f6aedad4909794a3bf673251bb">operator &lt;  </a>( <span class="keyword">const</span> <a class="code" href="class_ploter_1_1_scan_line.html" title="。">ScanLine</a> &amp; leftOP,  <span class="keyword">const</span> <a class="code" href="class_ploter_1_1_scan_line.html" title="。">ScanLine</a> &amp; rightOP ) { <span class="keywordflow">return</span>    leftOP.<a class="code" href="class_ploter_1_1_scan_line.html#652e47f1e9c0907de8b80403482f6569">position</a> &lt;  rightOP.<a class="code" href="class_ploter_1_1_scan_line.html#652e47f1e9c0907de8b80403482f6569">position</a>;   }
+<a name="l00071"></a><a class="code" href="class_ploter_1_1_scan_line.html#9f01ceb495daede50a91e7224333c197">00071</a>         <span class="keyword">friend</span> <span class="keywordtype">bool</span> <a class="code" href="class_ploter_1_1_scan_line.html#9f01ceb495daede50a91e7224333c197">operator &lt;= </a>( <span class="keyword">const</span> <a class="code" href="class_ploter_1_1_scan_line.html" title="。">ScanLine</a> &amp; leftOP,  <span class="keyword">const</span> <a class="code" href="class_ploter_1_1_scan_line.html" title="。">ScanLine</a> &amp; rightOP ) { <span class="keywordflow">return</span>    leftOP.<a class="code" href="class_ploter_1_1_scan_line.html#652e47f1e9c0907de8b80403482f6569">position</a> &lt;= rightOP.<a class="code" href="class_ploter_1_1_scan_line.html#652e47f1e9c0907de8b80403482f6569">position</a>;   }
+<a name="l00072"></a><a class="code" href="class_ploter_1_1_scan_line.html#9a21c5a6879069d67341dd871663e225">00072</a>         <span class="keyword">friend</span> <span class="keywordtype">bool</span> <a class="code" href="class_ploter_1_1_scan_line.html#9a21c5a6879069d67341dd871663e225">operator == </a>( <span class="keyword">const</span> <a class="code" href="class_ploter_1_1_scan_line.html" title="。">ScanLine</a> &amp; leftOP,  <span class="keyword">const</span> <a class="code" href="class_ploter_1_1_scan_line.html" title="。">ScanLine</a> &amp; rightOP ) { <span class="keywordflow">return</span>    leftOP.<a class="code" href="class_ploter_1_1_scan_line.html#652e47f1e9c0907de8b80403482f6569">position</a> == rightOP.<a class="code" href="class_ploter_1_1_scan_line.html#652e47f1e9c0907de8b80403482f6569">position</a>;   }
+<a name="l00073"></a><a class="code" href="class_ploter_1_1_scan_line.html#eb19e10904d563d4ffdeeb724aa1375b">00073</a>         <span class="keyword">friend</span> <span class="keywordtype">bool</span> <a class="code" href="class_ploter_1_1_scan_line.html#eb19e10904d563d4ffdeeb724aa1375b">operator &gt;  </a>( <span class="keyword">const</span> <a class="code" href="class_ploter_1_1_scan_line.html" title="。">ScanLine</a> &amp; leftOP,  <span class="keyword">const</span> <a class="code" href="class_ploter_1_1_scan_line.html" title="。">ScanLine</a> &amp; rightOP ) { <span class="keywordflow">return</span> !( leftOP          &lt;  rightOP          ); }
+<a name="l00074"></a><a class="code" href="class_ploter_1_1_scan_line.html#7510cd4324c37475fefc544def533cca">00074</a>         <span class="keyword">friend</span> <span class="keywordtype">bool</span> <a class="code" href="class_ploter_1_1_scan_line.html#7510cd4324c37475fefc544def533cca">operator &gt;= </a>( <span class="keyword">const</span> <a class="code" href="class_ploter_1_1_scan_line.html" title="。">ScanLine</a> &amp; leftOP,  <span class="keyword">const</span> <a class="code" href="class_ploter_1_1_scan_line.html" title="。">ScanLine</a> &amp; rightOP ) { <span class="keywordflow">return</span> !( leftOP          &lt;= rightOP          ); }
+<a name="l00075"></a><a class="code" href="class_ploter_1_1_scan_line.html#62c95eec61d9e6a69258d926a58a532e">00075</a>         <span class="keyword">friend</span> <span class="keywordtype">bool</span> <a class="code" href="class_ploter_1_1_scan_line.html#62c95eec61d9e6a69258d926a58a532e">operator != </a>( <span class="keyword">const</span> <a class="code" href="class_ploter_1_1_scan_line.html" title="。">ScanLine</a> &amp; leftOP,  <span class="keyword">const</span> <a class="code" href="class_ploter_1_1_scan_line.html" title="。">ScanLine</a> &amp; rightOP ) { <span class="keywordflow">return</span> !( leftOP          == rightOP          ); }
+<a name="l00076"></a>00076         
+<a name="l00077"></a><a class="code" href="class_ploter_1_1_scan_line.html#652e47f1e9c0907de8b80403482f6569">00077</a>         <a class="code" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Element</a>  <a class="code" href="class_ploter_1_1_scan_line.html#652e47f1e9c0907de8b80403482f6569">position</a>;
+<a name="l00078"></a><a class="code" href="class_ploter_1_1_scan_line.html#774ca596fb5e3f5ddadec398d11955be">00078</a>         <a class="code" href="class_ploter_1_1_min_max.html" title="最大値と最小値の格納。">MinMax</a>   <a class="code" href="class_ploter_1_1_scan_line.html#774ca596fb5e3f5ddadec398d11955be">minmax</a>;
+<a name="l00079"></a>00079     };
+<a name="l00080"></a>00080     
+<a name="l00081"></a>00081     <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00085"></a><a class="code" href="class_ploter_1_1_hidden_line_manager.html">00085</a>     <span class="keyword">class </span><a class="code" href="class_ploter_1_1_hidden_line_manager.html" title="陰線処理を管理するクラス。">HiddenLineManager</a> {
+<a name="l00086"></a>00086         
+<a name="l00087"></a>00087       <span class="keyword">public</span>:
+<a name="l00088"></a>00088         
+<a name="l00089"></a><a class="code" href="class_ploter_1_1_hidden_line_manager.html#db8d8611192bb8f1d532d445f6d2ada0">00089</a>         <span class="keyword">typedef</span>  std::list&lt;ScanLine&gt;            <a class="code" href="class_ploter_1_1_hidden_line_manager.html#db8d8611192bb8f1d532d445f6d2ada0">ScanLineList</a>;
+<a name="l00090"></a><a class="code" href="class_ploter_1_1_hidden_line_manager.html#b7da0de861e74d7f9653d8efb096aa93">00090</a>         <span class="keyword">typedef</span>  std::list&lt;ScanLine&gt;::iterator  <a class="code" href="class_ploter_1_1_hidden_line_manager.html#b7da0de861e74d7f9653d8efb096aa93">ScanLineListIterator</a>;
+<a name="l00091"></a>00091         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00095"></a><a class="code" href="class_ploter_1_1_hidden_line_manager.html#a4c35fd8a4e9b82ff6b28412e7fbebcb">00095</a>         <a class="code" href="class_ploter_1_1_hidden_line_manager.html#a4c35fd8a4e9b82ff6b28412e7fbebcb" title="。">HiddenLineManager</a>( <a class="code" href="class_ploter_1_1_scannee.html" title="捜査対象を表すクラス。">Scannee</a> * target ) {
+<a name="l00096"></a>00096             
+<a name="l00097"></a>00097             <span class="keywordflow">if</span> ( <a class="code" href="class_ploter_1_1_option.html" title="オプションを管理するクラス。">Option</a>(<span class="stringliteral">"Graph"</span>).<span class="keyword">get</span>(<span class="stringliteral">"isHiddenLine"</span>) ) {
+<a name="l00098"></a>00098                 
+<a name="l00099"></a>00099                 this-&gt;<a class="code" href="class_ploter_1_1_hidden_line_manager.html#9d1a629cbfc89c794783d6a8e068c9df" title="。">resetPosition</a>();
+<a name="l00100"></a>00100                 
+<a name="l00101"></a>00101                 target-&gt;<a class="code" href="class_ploter_1_1_scannee.html#c815107f6c9a00abb62322e80b7c08d8">acceptScanning</a>(<span class="keyword">this</span>);
+<a name="l00102"></a>00102                 
+<a name="l00103"></a>00103                 this-&gt;<a class="code" href="class_ploter_1_1_hidden_line_manager.html#32e2ae9ec72b00a7b942ba3d531cdb49">scanLines</a>.sort  ();
+<a name="l00104"></a>00104                 this-&gt;<a class="code" href="class_ploter_1_1_hidden_line_manager.html#32e2ae9ec72b00a7b942ba3d531cdb49">scanLines</a>.unique();
+<a name="l00105"></a>00105                 
+<a name="l00106"></a>00106                 target-&gt;<a class="code" href="class_ploter_1_1_scannee.html#14cbf4c4b79c1db274cbffe396442598">acceptComplementing</a>(<span class="keyword">this</span>);
+<a name="l00107"></a>00107             }
+<a name="l00108"></a>00108             
+<a name="l00109"></a>00109             target-&gt;<a class="code" href="class_ploter_1_1_scannee.html#b4c45bf441d391f31a621b29c1433f6e">draw</a>();
+<a name="l00110"></a>00110         }
+<a name="l00111"></a>00111         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00115"></a><a class="code" href="class_ploter_1_1_hidden_line_manager.html#9d1a629cbfc89c794783d6a8e068c9df">00115</a>         <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_hidden_line_manager.html#9d1a629cbfc89c794783d6a8e068c9df" title="。">resetPosition</a>(<span class="keywordtype">void</span>) {
+<a name="l00116"></a>00116             
+<a name="l00117"></a>00117             this-&gt;<a class="code" href="class_ploter_1_1_hidden_line_manager.html#dcfb6b278fa502886aed457dd724a4c6">currentScanLine</a> = this-&gt;<a class="code" href="class_ploter_1_1_hidden_line_manager.html#32e2ae9ec72b00a7b942ba3d531cdb49">scanLines</a>.begin();
+<a name="l00118"></a>00118         }
+<a name="l00119"></a>00119         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00123"></a><a class="code" href="class_ploter_1_1_hidden_line_manager.html#13be83ac6776bdb28e82f2c31f32d5f1">00123</a>         <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_hidden_line_manager.html#13be83ac6776bdb28e82f2c31f32d5f1" title="。">addScanLine</a>( <a class="code" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Element</a> scanLine ) {
+<a name="l00124"></a>00124             
+<a name="l00125"></a>00125             this-&gt;<a class="code" href="class_ploter_1_1_hidden_line_manager.html#32e2ae9ec72b00a7b942ba3d531cdb49">scanLines</a>.push_back(scanLine);
+<a name="l00126"></a>00126         }
+<a name="l00127"></a>00127         
+<a name="l00128"></a><a class="code" href="class_ploter_1_1_hidden_line_manager.html#dcfb6b278fa502886aed457dd724a4c6">00128</a>         <a class="code" href="class_ploter_1_1_hidden_line_manager.html#b7da0de861e74d7f9653d8efb096aa93">ScanLineListIterator</a>  <a class="code" href="class_ploter_1_1_hidden_line_manager.html#dcfb6b278fa502886aed457dd724a4c6">currentScanLine</a>;
+<a name="l00129"></a>00129         
+<a name="l00130"></a>00130       <span class="keyword">private</span>:
+<a name="l00131"></a>00131         
+<a name="l00132"></a><a class="code" href="class_ploter_1_1_hidden_line_manager.html#32e2ae9ec72b00a7b942ba3d531cdb49">00132</a>         <a class="code" href="class_ploter_1_1_hidden_line_manager.html#db8d8611192bb8f1d532d445f6d2ada0">ScanLineList</a>  <a class="code" href="class_ploter_1_1_hidden_line_manager.html#32e2ae9ec72b00a7b942ba3d531cdb49">scanLines</a>;
+<a name="l00133"></a>00133     };
+<a name="l00134"></a>00134     
+<a name="l00135"></a>00135     <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00139"></a>00139     <span class="keyword">template</span>&lt;<span class="keyword">class</span> ChildType&gt;
+<a name="l00140"></a><a class="code" href="class_ploter_1_1_composite.html">00140</a>     <span class="keyword">class </span><a class="code" href="class_ploter_1_1_composite.html" title="複合グラフ要素を表すクラス。">Composite</a> {
+<a name="l00141"></a>00141         
+<a name="l00142"></a>00142       <span class="keyword">public</span>:
+<a name="l00143"></a>00143         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00147"></a><a class="code" href="class_ploter_1_1_composite.html#97c204aa7779d01d0630e0aeffb9cc70">00147</a>         <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_composite.html#97c204aa7779d01d0630e0aeffb9cc70" title="childを子要素に設定する。">setChild</a>( ChildType * <a class="code" href="class_ploter_1_1_composite.html#ce001384d2decf89362fdc55f5b42b9d">child</a> ) {
+<a name="l00148"></a>00148             
+<a name="l00149"></a>00149             this-&gt;child = shared_ptr&lt;ChildType&gt;(child);
+<a name="l00150"></a>00150         }
+<a name="l00151"></a>00151         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00155"></a><a class="code" href="class_ploter_1_1_composite.html#23d054e1851c32a40ae99af64fd91967">00155</a>         <span class="keyword">const</span> ChildType * <a class="code" href="class_ploter_1_1_composite.html#23d054e1851c32a40ae99af64fd91967" title="子要素を取得する。">getChild</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{
+<a name="l00156"></a>00156             
+<a name="l00157"></a>00157             <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_ploter_1_1_composite.html#ce001384d2decf89362fdc55f5b42b9d">child</a>.get();
+<a name="l00158"></a>00158         }
+<a name="l00159"></a>00159         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00163"></a><a class="code" href="class_ploter_1_1_composite.html#bd4d53fca4e54dd542e8c834eaf4ead3">00163</a>         <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_composite.html#bd4d53fca4e54dd542e8c834eaf4ead3" title="自身と子要素を行列affineで座標変換した後、描画する。">draw</a>( <span class="keyword">const</span> <a class="code" href="namespace_ploter.html#cdf6ee9e2bdbc5c486d3d33c96a914b7">Matrix</a> &amp; affine )<span class="keyword"> const </span>{
+<a name="l00164"></a>00164             
+<a name="l00165"></a>00165             this-&gt;<a class="code" href="class_ploter_1_1_composite.html#ad974556f7b9d04498aa171faaa4a77f">drawMyself</a>(affine);
+<a name="l00166"></a>00166             
+<a name="l00167"></a>00167             <span class="keywordflow">if</span> ( this-&gt;<a class="code" href="class_ploter_1_1_composite.html#ce001384d2decf89362fdc55f5b42b9d">child</a> != 0 ) { this-&gt;<a class="code" href="class_ploter_1_1_composite.html#ce001384d2decf89362fdc55f5b42b9d">child</a>-&gt;draw(affine); }
+<a name="l00168"></a>00168         }
+<a name="l00169"></a>00169         
+<a name="l00170"></a>00170       <span class="keyword">private</span>:
+<a name="l00171"></a>00171         
+<a name="l00172"></a>00172         <span class="keyword">virtual</span> <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_composite.html#ad974556f7b9d04498aa171faaa4a77f">drawMyself</a>( <span class="keyword">const</span> <a class="code" href="namespace_ploter.html#cdf6ee9e2bdbc5c486d3d33c96a914b7">Matrix</a> &amp; affine ) <span class="keyword">const</span> = 0;
+<a name="l00173"></a>00173         
+<a name="l00174"></a>00174       <span class="keyword">protected</span>:
+<a name="l00175"></a>00175         
+<a name="l00176"></a><a class="code" href="class_ploter_1_1_composite.html#ce001384d2decf89362fdc55f5b42b9d">00176</a>         shared_ptr&lt;ChildType&gt;  <a class="code" href="class_ploter_1_1_composite.html#ce001384d2decf89362fdc55f5b42b9d">child</a>;
+<a name="l00177"></a>00177     };
+<a name="l00178"></a>00178     
+<a name="l00179"></a>00179     <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00183"></a>00183     <span class="keyword">template</span>&lt;<span class="keyword">class</span> ChildType&gt;
+<a name="l00184"></a><a class="code" href="class_ploter_1_1_collection.html">00184</a>     <span class="keyword">class </span><a class="code" href="class_ploter_1_1_collection.html" title="グラフ要素の集合を表すクラス。">Collection</a> : <span class="keyword">public</span> <a class="code" href="class_ploter_1_1_scannee.html" title="捜査対象を表すクラス。">Scannee</a> {
+<a name="l00185"></a>00185         
+<a name="l00186"></a>00186       <span class="keyword">public</span>:
+<a name="l00187"></a>00187         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00191"></a><a class="code" href="class_ploter_1_1_collection.html#0fb2cee00f0700d7bed01cc11891caa9">00191</a>         <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_collection.html#0fb2cee00f0700d7bed01cc11891caa9" title="。">acceptScanning</a>( <a class="code" href="class_ploter_1_1_hidden_line_manager.html" title="陰線処理を管理するクラス。">HiddenLineManager</a> * hiddenLineManager ) {
+<a name="l00192"></a>00192             
+<a name="l00193"></a>00193             this-&gt;<a class="code" href="class_ploter_1_1_collection.html#7cb5b1ccc4d43c24df67abf8e99c3fad" title="。">accept</a>( hiddenLineManager, &amp;<a class="code" href="class_ploter_1_1_scannee.html#c815107f6c9a00abb62322e80b7c08d8">Scannee::acceptScanning</a>  );
+<a name="l00194"></a>00194         }
+<a name="l00195"></a>00195         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00199"></a><a class="code" href="class_ploter_1_1_collection.html#b6496f5b89f625da93d3a6a968f5b6da">00199</a>         <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_collection.html#b6496f5b89f625da93d3a6a968f5b6da" title="。">acceptComplementing</a>( <a class="code" href="class_ploter_1_1_hidden_line_manager.html" title="陰線処理を管理するクラス。">HiddenLineManager</a> * hiddenLineManager ) {
+<a name="l00200"></a>00200             
+<a name="l00201"></a>00201             this-&gt;<a class="code" href="class_ploter_1_1_collection.html#7cb5b1ccc4d43c24df67abf8e99c3fad" title="。">accept</a>( hiddenLineManager, &amp;<a class="code" href="class_ploter_1_1_scannee.html#14cbf4c4b79c1db274cbffe396442598">Scannee::acceptComplementing</a> );
+<a name="l00202"></a>00202         }
+<a name="l00203"></a>00203         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00207"></a><a class="code" href="class_ploter_1_1_collection.html#ea693e6612d5fb6a69003f8503d88ee1">00207</a>         <span class="keyword">virtual</span> <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_collection.html#ea693e6612d5fb6a69003f8503d88ee1" title="。">draw</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{
+<a name="l00208"></a>00208             
+<a name="l00209"></a>00209             std::for_each( this-&gt;<a class="code" href="class_ploter_1_1_collection.html#545b59ec3d5089f5938fdc3fcb23c000">children</a>.begin(), this-&gt;<a class="code" href="class_ploter_1_1_collection.html#545b59ec3d5089f5938fdc3fcb23c000">children</a>.end(), mem_fn( &amp;<a class="code" href="class_ploter_1_1_scannee.html#b4c45bf441d391f31a621b29c1433f6e">Scannee::draw</a> ) );
+<a name="l00210"></a>00210         }
+<a name="l00211"></a>00211         
+<a name="l00212"></a>00212       <span class="keyword">protected</span>:
+<a name="l00213"></a>00213         
+<a name="l00214"></a><a class="code" href="class_ploter_1_1_collection.html#545b59ec3d5089f5938fdc3fcb23c000">00214</a>         std::deque&lt;ChildType&gt;  <a class="code" href="class_ploter_1_1_collection.html#545b59ec3d5089f5938fdc3fcb23c000">children</a>;
+<a name="l00215"></a>00215         
+<a name="l00216"></a>00216       <span class="keyword">private</span>:
+<a name="l00217"></a>00217         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00221"></a><a class="code" href="class_ploter_1_1_collection.html#7cb5b1ccc4d43c24df67abf8e99c3fad">00221</a>         <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_collection.html#7cb5b1ccc4d43c24df67abf8e99c3fad" title="。">accept</a>( <a class="code" href="class_ploter_1_1_hidden_line_manager.html" title="陰線処理を管理するクラス。">HiddenLineManager</a> * hiddenLineManager,  <span class="keywordtype">void</span> (<a class="code" href="class_ploter_1_1_scannee.html" title="捜査対象を表すクラス。">Scannee</a>::*<a class="code" href="class_ploter_1_1_collection.html#7cb5b1ccc4d43c24df67abf8e99c3fad" title="。">accept</a>)(<a class="code" href="class_ploter_1_1_hidden_line_manager.html" title="陰線処理を管理するクラス。">HiddenLineManager</a> *) ) {
+<a name="l00222"></a>00222             
+<a name="l00223"></a>00223             std::for_each( this-&gt;<a class="code" href="class_ploter_1_1_collection.html#545b59ec3d5089f5938fdc3fcb23c000">children</a>.begin(), this-&gt;<a class="code" href="class_ploter_1_1_collection.html#545b59ec3d5089f5938fdc3fcb23c000">children</a>.end(),
+<a name="l00224"></a>00224                 
+<a name="l00225"></a>00225                 bind( accept, _1, hiddenLineManager )
+<a name="l00226"></a>00226             );
+<a name="l00227"></a>00227         }
+<a name="l00228"></a>00228     };
+<a name="l00229"></a>00229     
+<a name="l00230"></a>00230     <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00234"></a><a class="code" href="class_ploter_1_1_line.html">00234</a>     <span class="keyword">class </span><a class="code" href="class_ploter_1_1_line.html" title="線分を表すクラス。">Line</a> : <span class="keyword">public</span> <a class="code" href="class_ploter_1_1_scannee.html" title="捜査対象を表すクラス。">Scannee</a> {
+<a name="l00235"></a>00235         
+<a name="l00236"></a>00236       <span class="keyword">public</span>:
+<a name="l00237"></a>00237         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00241"></a><a class="code" href="class_ploter_1_1_line.html#27cb2556e7ce030b830113124a91a0c5">00241</a>         <a class="code" href="class_ploter_1_1_line.html#27cb2556e7ce030b830113124a91a0c5" title="始点begin_と終点end_を結ぶ線分を生成する。">Line</a>( <span class="keyword">const</span> <a class="code" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp; begin_, <span class="keyword">const</span> <a class="code" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp; end_) :
+<a name="l00242"></a>00242             
+<a name="l00243"></a>00243             <a class="code" href="class_ploter_1_1_line.html#8e7cbc06d968765e3741243f45ca8b33">begin</a>( begin_), <a class="code" href="class_ploter_1_1_line.html#0c7a87441f13f8d5026cd704317c0f6a">end</a>( end_), <a class="code" href="class_ploter_1_1_line.html#f928aef16d3138fbaa1f9b4e493d9e28">source</a>(<a class="code" href="namespace_ploter.html#35b0402ef09657b1efe8ba08340ef2886db182841ad2aa8e572a2918e89332cd">X</a>), <a class="code" href="class_ploter_1_1_line.html#acabedddb8d80743235de3fe5cd5b90e">target</a>(<a class="code" href="namespace_ploter.html#35b0402ef09657b1efe8ba08340ef28867feb73c81763146bfd3084fd4bce48e">Y</a>)
+<a name="l00244"></a>00244         {}
+<a name="l00245"></a>00245         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00249"></a><a class="code" href="class_ploter_1_1_line.html#2c74b877efdcab865e2a2d762dcd7ed2">00249</a>         <span class="keyword">const</span> <a class="code" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp; <a class="code" href="class_ploter_1_1_line.html#2c74b877efdcab865e2a2d762dcd7ed2" title="。">getBegin</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_ploter_1_1_line.html#8e7cbc06d968765e3741243f45ca8b33">begin</a>; }
+<a name="l00250"></a><a class="code" href="class_ploter_1_1_line.html#ffb5332959b6d3706f8d505b4bdb781a">00250</a>         <span class="keyword">const</span> <a class="code" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp; <a class="code" href="class_ploter_1_1_line.html#ffb5332959b6d3706f8d505b4bdb781a">getEnd</a>  (<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_ploter_1_1_line.html#8e7cbc06d968765e3741243f45ca8b33">begin</a>; }
+<a name="l00251"></a>00251         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00255"></a><a class="code" href="class_ploter_1_1_line.html#dbc4b3a8cc819d09d77ff4d5360f9111">00255</a>         <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_line.html#dbc4b3a8cc819d09d77ff4d5360f9111" title="。">draw</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{
+<a name="l00256"></a>00256             
+<a name="l00257"></a>00257             <span class="keywordflow">if</span> ( <a class="code" href="class_ploter_1_1_option.html" title="オプションを管理するクラス。">Option</a>(<span class="stringliteral">"Graph"</span>).<span class="keyword">get</span>(<span class="stringliteral">"isHiddenLine"</span>) ) {
+<a name="l00258"></a>00258                 
+<a name="l00259"></a>00259                 <span class="keywordflow">for</span> ( std::list&lt;Vector&gt;::const_iterator  it = this-&gt;<a class="code" href="class_ploter_1_1_line.html#c4262b7f75e33deba1d3963070d97509">points</a>.begin();  next(it) != this-&gt;<a class="code" href="class_ploter_1_1_line.html#c4262b7f75e33deba1d3963070d97509">points</a>.end();  it++ ) {
+<a name="l00260"></a>00260                     
+<a name="l00261"></a>00261                     <a class="code" href="namespace_ploter.html#1b6271aff6de73d6ee097e78846f25fa" title="頂点vertexを描画する。">drawVertex</a>( *      it  );
+<a name="l00262"></a>00262                     <a class="code" href="namespace_ploter.html#1b6271aff6de73d6ee097e78846f25fa" title="頂点vertexを描画する。">drawVertex</a>( * next(it) );
+<a name="l00263"></a>00263                 }
+<a name="l00264"></a>00264                 
+<a name="l00265"></a>00265             } <span class="keywordflow">else</span> {
+<a name="l00266"></a>00266                 
+<a name="l00267"></a>00267                 <a class="code" href="namespace_ploter.html#1b6271aff6de73d6ee097e78846f25fa" title="頂点vertexを描画する。">drawVertex</a>( this-&gt;<a class="code" href="class_ploter_1_1_line.html#8e7cbc06d968765e3741243f45ca8b33">begin</a> );
+<a name="l00268"></a>00268                 <a class="code" href="namespace_ploter.html#1b6271aff6de73d6ee097e78846f25fa" title="頂点vertexを描画する。">drawVertex</a>( this-&gt;<a class="code" href="class_ploter_1_1_line.html#0c7a87441f13f8d5026cd704317c0f6a">end</a>   );
+<a name="l00269"></a>00269             }
+<a name="l00270"></a>00270         }
+<a name="l00271"></a>00271         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00275"></a><a class="code" href="class_ploter_1_1_line.html#10b981d4a0df6caec0b14d9be0d27746">00275</a>         <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_line.html#10b981d4a0df6caec0b14d9be0d27746" title="。">acceptScanning</a>( <a class="code" href="class_ploter_1_1_hidden_line_manager.html" title="陰線処理を管理するクラス。">HiddenLineManager</a> * hiddenLineManager ) {
+<a name="l00276"></a>00276             
+<a name="l00277"></a>00277             this-&gt;<a class="code" href="class_ploter_1_1_line.html#6f15902684e3016b5282feca13f8db47" title="線分の特性を求める。">findCharacter</a>();
+<a name="l00278"></a>00278             
+<a name="l00279"></a>00279             hiddenLineManager-&gt;<a class="code" href="class_ploter_1_1_hidden_line_manager.html#13be83ac6776bdb28e82f2c31f32d5f1" title="。">addScanLine</a>( this-&gt;<a class="code" href="class_ploter_1_1_line.html#8e7cbc06d968765e3741243f45ca8b33">begin</a>(this-&gt;<a class="code" href="class_ploter_1_1_line.html#f928aef16d3138fbaa1f9b4e493d9e28">source</a>) );
+<a name="l00280"></a>00280             hiddenLineManager-&gt;<a class="code" href="class_ploter_1_1_hidden_line_manager.html#13be83ac6776bdb28e82f2c31f32d5f1" title="。">addScanLine</a>( this-&gt;<a class="code" href="class_ploter_1_1_line.html#0c7a87441f13f8d5026cd704317c0f6a">end</a>  (this-&gt;<a class="code" href="class_ploter_1_1_line.html#f928aef16d3138fbaa1f9b4e493d9e28">source</a>) );
+<a name="l00281"></a>00281         }
+<a name="l00282"></a>00282         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00286"></a><a class="code" href="class_ploter_1_1_line.html#be942696701500f748c6be15eced6761">00286</a>         <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_line.html#be942696701500f748c6be15eced6761" title="。">acceptComplementing</a>( <a class="code" href="class_ploter_1_1_hidden_line_manager.html" title="陰線処理を管理するクラス。">HiddenLineManager</a> * hiddenLineManager ) {
+<a name="l00287"></a>00287             
+<a name="l00288"></a>00288             this-&gt;<a class="code" href="class_ploter_1_1_line.html#c4262b7f75e33deba1d3963070d97509">points</a>.clear();
+<a name="l00289"></a>00289             
+<a name="l00290"></a>00290             <span class="keywordflow">while</span> ( this-&gt;<a class="code" href="class_ploter_1_1_line.html#be2ac8575e0bc2d34507e913c3647c25" title="。">isInRange</a>( hiddenLineManager-&gt;<a class="code" href="class_ploter_1_1_hidden_line_manager.html#dcfb6b278fa502886aed457dd724a4c6">currentScanLine</a>-&gt;position ) ) {
+<a name="l00291"></a>00291                 
+<a name="l00292"></a>00292                 <a class="code" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a>  point(<a class="code" href="namespace_ploter_1_1_v.html#6ecf66b2877ee3d105f77d58cff0aecb">V::W_UNIT</a>);
+<a name="l00293"></a>00293                 
+<a name="l00294"></a>00294                 point(this-&gt;<a class="code" href="class_ploter_1_1_line.html#f928aef16d3138fbaa1f9b4e493d9e28">source</a>) = hiddenLineManager-&gt;<a class="code" href="class_ploter_1_1_hidden_line_manager.html#dcfb6b278fa502886aed457dd724a4c6">currentScanLine</a>-&gt;position;
+<a name="l00295"></a>00295                 point(this-&gt;<a class="code" href="class_ploter_1_1_line.html#acabedddb8d80743235de3fe5cd5b90e">target</a>) = this-&gt;<a class="code" href="class_ploter_1_1_line.html#36fcd2fcef8c97b001a648fd05f906c3" title="。">f</a>( point(this-&gt;<a class="code" href="class_ploter_1_1_line.html#f928aef16d3138fbaa1f9b4e493d9e28">source</a>) );
+<a name="l00296"></a>00296                 point(<a class="code" href="namespace_ploter.html#35b0402ef09657b1efe8ba08340ef28830b6c7677a77d0dd2330a0b9674d2dbf">Z</a>           ) = this-&gt;<a class="code" href="class_ploter_1_1_line.html#8e7cbc06d968765e3741243f45ca8b33">begin</a>(this-&gt;<a class="code" href="class_ploter_1_1_line.html#acabedddb8d80743235de3fe5cd5b90e">target</a>);
+<a name="l00297"></a>00297                 
+<a name="l00298"></a>00298                 <span class="keywordflow">if</span> ( hiddenLineManager-&gt;<a class="code" href="class_ploter_1_1_hidden_line_manager.html#dcfb6b278fa502886aed457dd724a4c6">currentScanLine</a>-&gt;minmax.assess( point(this-&gt;<a class="code" href="class_ploter_1_1_line.html#acabedddb8d80743235de3fe5cd5b90e">target</a>) ) != <a class="code" href="class_ploter_1_1_min_max.html#362c2b63c0ee9f809656f0d7575667cb5f0f2559cf767e0ff768b6ebcddf2311">MinMax::INNER</a> ) {
+<a name="l00299"></a>00299                     
+<a name="l00300"></a>00300                     this-&gt;<a class="code" href="class_ploter_1_1_line.html#c4262b7f75e33deba1d3963070d97509">points</a>.push_back(point);
+<a name="l00301"></a>00301                 }
+<a name="l00302"></a>00302                 
+<a name="l00303"></a>00303                 hiddenLineManager-&gt;<a class="code" href="class_ploter_1_1_hidden_line_manager.html#dcfb6b278fa502886aed457dd724a4c6">currentScanLine</a>++;
+<a name="l00304"></a>00304             }
+<a name="l00305"></a>00305             
+<a name="l00306"></a>00306             hiddenLineManager-&gt;<a class="code" href="class_ploter_1_1_hidden_line_manager.html#dcfb6b278fa502886aed457dd724a4c6">currentScanLine</a>--;
+<a name="l00307"></a>00307         }
+<a name="l00308"></a>00308         
+<a name="l00309"></a>00309       <span class="keyword">private</span>:
+<a name="l00310"></a>00310         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00314"></a><a class="code" href="class_ploter_1_1_line.html#008fb6c9d6789f19a759ec9741495fe0">00314</a>         <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_line.html#008fb6c9d6789f19a759ec9741495fe0" title="。">pushBackPoint</a>( <a class="code" href="class_ploter_1_1_hidden_line_manager.html" title="陰線処理を管理するクラス。">HiddenLineManager</a> * hiddenLineManager,  <span class="keyword">const</span> <a class="code" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp; point ) {
+<a name="l00315"></a>00315             
+<a name="l00316"></a>00316             <span class="keywordflow">if</span> ( (hiddenLineManager-&gt;<a class="code" href="class_ploter_1_1_hidden_line_manager.html#dcfb6b278fa502886aed457dd724a4c6">currentScanLine</a>++)-&gt;minmax.assess( point(this-&gt;<a class="code" href="class_ploter_1_1_line.html#acabedddb8d80743235de3fe5cd5b90e">target</a>) ) ) {
+<a name="l00317"></a>00317                 
+<a name="l00318"></a>00318                 this-&gt;<a class="code" href="class_ploter_1_1_line.html#c4262b7f75e33deba1d3963070d97509">points</a>.push_back(point);
+<a name="l00319"></a>00319             }
+<a name="l00320"></a>00320         }
+<a name="l00321"></a>00321         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00325"></a><a class="code" href="class_ploter_1_1_line.html#be2ac8575e0bc2d34507e913c3647c25">00325</a>         <span class="keywordtype">bool</span>  <a class="code" href="class_ploter_1_1_line.html#be2ac8575e0bc2d34507e913c3647c25" title="。">isInRange</a>( <a class="code" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Element</a> scanLine ) {
+<a name="l00326"></a>00326             
+<a name="l00327"></a>00327             <span class="keywordflow">return</span>  ( this-&gt;<a class="code" href="class_ploter_1_1_line.html#8e7cbc06d968765e3741243f45ca8b33">begin</a>(this-&gt;<a class="code" href="class_ploter_1_1_line.html#f928aef16d3138fbaa1f9b4e493d9e28">source</a>) &lt;= scanLine ) &amp;&amp; ( scanLine &lt;= this-&gt;<a class="code" href="class_ploter_1_1_line.html#0c7a87441f13f8d5026cd704317c0f6a">end</a>(this-&gt;<a class="code" href="class_ploter_1_1_line.html#f928aef16d3138fbaa1f9b4e493d9e28">source</a>) );
+<a name="l00328"></a>00328         }
+<a name="l00329"></a>00329         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00333"></a><a class="code" href="class_ploter_1_1_line.html#6f15902684e3016b5282feca13f8db47">00333</a>         <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_line.html#6f15902684e3016b5282feca13f8db47" title="線分の特性を求める。">findCharacter</a>(<span class="keywordtype">void</span>) {
+<a name="l00334"></a>00334             
+<a name="l00335"></a>00335             <a class="code" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Element</a>  x1 = this-&gt;<a class="code" href="class_ploter_1_1_line.html#8e7cbc06d968765e3741243f45ca8b33">begin</a>(this-&gt;<a class="code" href="class_ploter_1_1_line.html#f928aef16d3138fbaa1f9b4e493d9e28">source</a>),  x2 = this-&gt;<a class="code" href="class_ploter_1_1_line.html#0c7a87441f13f8d5026cd704317c0f6a">end</a>(this-&gt;<a class="code" href="class_ploter_1_1_line.html#f928aef16d3138fbaa1f9b4e493d9e28">source</a>);
+<a name="l00336"></a>00336             <a class="code" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Element</a>  y1 = this-&gt;<a class="code" href="class_ploter_1_1_line.html#8e7cbc06d968765e3741243f45ca8b33">begin</a>(this-&gt;<a class="code" href="class_ploter_1_1_line.html#acabedddb8d80743235de3fe5cd5b90e">target</a>),  y2 = this-&gt;<a class="code" href="class_ploter_1_1_line.html#0c7a87441f13f8d5026cd704317c0f6a">end</a>(this-&gt;<a class="code" href="class_ploter_1_1_line.html#acabedddb8d80743235de3fe5cd5b90e">target</a>);
+<a name="l00337"></a>00337             
+<a name="l00338"></a>00338             this-&gt;<a class="code" href="class_ploter_1_1_line.html#3abb31d4d7947283b71f0e7ceedbcb06">delta</a>     = ( y2 - y1 ) / ( x2 - x1 );
+<a name="l00339"></a>00339             this-&gt;<a class="code" href="class_ploter_1_1_line.html#27395c944dded2803f5de3d338d00591">intercept</a> =   y1 - this-&gt;<a class="code" href="class_ploter_1_1_line.html#3abb31d4d7947283b71f0e7ceedbcb06">delta</a> * x1;
+<a name="l00340"></a>00340         }
+<a name="l00341"></a>00341         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00345"></a><a class="code" href="class_ploter_1_1_line.html#36fcd2fcef8c97b001a648fd05f906c3">00345</a>         <a class="code" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Element</a>  <a class="code" href="class_ploter_1_1_line.html#36fcd2fcef8c97b001a648fd05f906c3" title="。">f</a>( <a class="code" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Element</a> x )<span class="keyword"> const </span>{
+<a name="l00346"></a>00346             
+<a name="l00347"></a>00347             <span class="keywordflow">return</span>  this-&gt;<a class="code" href="class_ploter_1_1_line.html#3abb31d4d7947283b71f0e7ceedbcb06">delta</a>*x + this-&gt;<a class="code" href="class_ploter_1_1_line.html#27395c944dded2803f5de3d338d00591">intercept</a>;
+<a name="l00348"></a>00348         }
+<a name="l00349"></a>00349         
+<a name="l00350"></a><a class="code" href="class_ploter_1_1_line.html#8e7cbc06d968765e3741243f45ca8b33">00350</a>         <span class="keyword">const</span> <a class="code" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp;     <a class="code" href="class_ploter_1_1_line.html#8e7cbc06d968765e3741243f45ca8b33">begin</a>;
+<a name="l00351"></a><a class="code" href="class_ploter_1_1_line.html#0c7a87441f13f8d5026cd704317c0f6a">00351</a>         <span class="keyword">const</span> <a class="code" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp;     <a class="code" href="class_ploter_1_1_line.html#0c7a87441f13f8d5026cd704317c0f6a">end</a>;
+<a name="l00352"></a><a class="code" href="class_ploter_1_1_line.html#3abb31d4d7947283b71f0e7ceedbcb06">00352</a>         <a class="code" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Element</a>            <a class="code" href="class_ploter_1_1_line.html#3abb31d4d7947283b71f0e7ceedbcb06">delta</a>;
+<a name="l00353"></a><a class="code" href="class_ploter_1_1_line.html#27395c944dded2803f5de3d338d00591">00353</a>         <a class="code" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Element</a>            <a class="code" href="class_ploter_1_1_line.html#27395c944dded2803f5de3d338d00591">intercept</a>;
+<a name="l00354"></a><a class="code" href="class_ploter_1_1_line.html#f928aef16d3138fbaa1f9b4e493d9e28">00354</a>         std::size_t        <a class="code" href="class_ploter_1_1_line.html#f928aef16d3138fbaa1f9b4e493d9e28">source</a>;
+<a name="l00355"></a><a class="code" href="class_ploter_1_1_line.html#acabedddb8d80743235de3fe5cd5b90e">00355</a>         std::size_t        <a class="code" href="class_ploter_1_1_line.html#acabedddb8d80743235de3fe5cd5b90e">target</a>;
+<a name="l00356"></a><a class="code" href="class_ploter_1_1_line.html#c4262b7f75e33deba1d3963070d97509">00356</a>         std::list&lt;Vector&gt;  <a class="code" href="class_ploter_1_1_line.html#c4262b7f75e33deba1d3963070d97509">points</a>;
+<a name="l00357"></a>00357     };
+<a name="l00358"></a>00358     
+<a name="l00359"></a>00359     <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00363"></a><a class="code" href="class_ploter_1_1_r_g_b_a.html">00363</a>     <span class="keyword">class </span><a class="code" href="class_ploter_1_1_r_g_b_a.html" title="色を表すクラス。">RGBA</a> {
+<a name="l00364"></a>00364         
+<a name="l00365"></a>00365       <span class="keyword">public</span>:
+<a name="l00366"></a>00366         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00370"></a><a class="code" href="class_ploter_1_1_r_g_b_a.html#9fc56ec2b66b3df7b06e4fb0004f4318">00370</a>         <a class="code" href="class_ploter_1_1_r_g_b_a.html#9fc56ec2b66b3df7b06e4fb0004f4318" title="。">RGBA</a>( <span class="keywordtype">double</span> r_ = 0.0, <span class="keywordtype">double</span> g_ = 0.0, <span class="keywordtype">double</span> b_ = 0.0, <span class="keywordtype">double</span> a_ = 1.0 ) :
+<a name="l00371"></a>00371             
+<a name="l00372"></a>00372             <a class="code" href="class_ploter_1_1_r_g_b_a.html#456f824850743ed9c123468ef33abea5">r</a>( r_), <a class="code" href="class_ploter_1_1_r_g_b_a.html#30e0feab6e91ef961d6fde7a3d255875">g</a>( g_), <a class="code" href="class_ploter_1_1_r_g_b_a.html#d0ee453eb5fb363e48a23c5f456a2140">b</a>( b_), <a class="code" href="class_ploter_1_1_r_g_b_a.html#bcfe6c9c2bf0353b85fb4c731df318d0">a</a>( a_)
+<a name="l00373"></a>00373         {}
+<a name="l00374"></a>00374         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00378"></a><a class="code" href="class_ploter_1_1_r_g_b_a.html#d9bb715437e529611a5bbc9981cf4851">00378</a>         <span class="keywordtype">void</span>  <span class="keyword">set</span>(void) <span class="keyword">const</span> {
+<a name="l00379"></a>00379             
+<a name="l00380"></a>00380             glColor4d( this-&gt;<a class="code" href="class_ploter_1_1_r_g_b_a.html#456f824850743ed9c123468ef33abea5">r</a>, this-&gt;<a class="code" href="class_ploter_1_1_r_g_b_a.html#30e0feab6e91ef961d6fde7a3d255875">g</a>, this-&gt;<a class="code" href="class_ploter_1_1_r_g_b_a.html#d0ee453eb5fb363e48a23c5f456a2140">b</a>, this-&gt;<a class="code" href="class_ploter_1_1_r_g_b_a.html#bcfe6c9c2bf0353b85fb4c731df318d0">a</a> );
+<a name="l00381"></a>00381         }
+<a name="l00382"></a>00382         
+<a name="l00383"></a><a class="code" href="class_ploter_1_1_r_g_b_a.html#456f824850743ed9c123468ef33abea5">00383</a>         <span class="keywordtype">double</span>  <a class="code" href="class_ploter_1_1_r_g_b_a.html#456f824850743ed9c123468ef33abea5">r</a>;
+<a name="l00384"></a><a class="code" href="class_ploter_1_1_r_g_b_a.html#30e0feab6e91ef961d6fde7a3d255875">00384</a>         <span class="keywordtype">double</span>  <a class="code" href="class_ploter_1_1_r_g_b_a.html#30e0feab6e91ef961d6fde7a3d255875">g</a>;
+<a name="l00385"></a><a class="code" href="class_ploter_1_1_r_g_b_a.html#d0ee453eb5fb363e48a23c5f456a2140">00385</a>         <span class="keywordtype">double</span>  <a class="code" href="class_ploter_1_1_r_g_b_a.html#d0ee453eb5fb363e48a23c5f456a2140">b</a>;
+<a name="l00386"></a><a class="code" href="class_ploter_1_1_r_g_b_a.html#bcfe6c9c2bf0353b85fb4c731df318d0">00386</a>         <span class="keywordtype">double</span>  <a class="code" href="class_ploter_1_1_r_g_b_a.html#bcfe6c9c2bf0353b85fb4c731df318d0">a</a>;
+<a name="l00387"></a>00387     };
+<a name="l00388"></a>00388     
+<a name="l00389"></a>00389     <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00393"></a><a class="code" href="class_ploter_1_1_poly_line.html">00393</a>     <span class="keyword">class </span><a class="code" href="class_ploter_1_1_poly_line.html" title="ポリラインを表すクラス。">PolyLine</a> : <span class="keyword">public</span> <a class="code" href="class_ploter_1_1_collection.html" title="グラフ要素の集合を表すクラス。">Collection</a>&lt;Line&gt; {
+<a name="l00394"></a>00394         
+<a name="l00395"></a>00395       <span class="keyword">public</span>:
+<a name="l00396"></a>00396         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00400"></a>00400         <span class="keyword">template</span>&lt;<span class="keyword">class</span> IteratorType&gt;
+<a name="l00401"></a><a class="code" href="class_ploter_1_1_poly_line.html#5d04992934ba04db4f38743e36121e61">00401</a>         <a class="code" href="class_ploter_1_1_poly_line.html#5d04992934ba04db4f38743e36121e61" title="[begin,end)の範囲の頂点の集合からポリラインを生成する。">PolyLine</a>( IteratorType begin,  IteratorType end ) {
+<a name="l00402"></a>00402             
+<a name="l00403"></a>00403             <span class="keywordflow">for</span> ( IteratorType it = begin;  it != end-1;  it++ ) {
+<a name="l00404"></a>00404                 
+<a name="l00405"></a>00405                 this-&gt;<a class="code" href="class_ploter_1_1_collection.html#545b59ec3d5089f5938fdc3fcb23c000">children</a>.push_back( <a class="code" href="class_ploter_1_1_line.html" title="線分を表すクラス。">Line</a>( *it, *(it+1) ) );
+<a name="l00406"></a>00406             }
+<a name="l00407"></a>00407         }
+<a name="l00408"></a>00408         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00412"></a><a class="code" href="class_ploter_1_1_poly_line.html#b9b587b1505e6c2c06285fcdcd6c95b4">00412</a>         <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_poly_line.html#b9b587b1505e6c2c06285fcdcd6c95b4" title="。">acceptComplementing</a>( <a class="code" href="class_ploter_1_1_hidden_line_manager.html" title="陰線処理を管理するクラス。">HiddenLineManager</a> * hiddenLineManager ) {
+<a name="l00413"></a>00413             
+<a name="l00414"></a>00414             hiddenLineManager-&gt;<a class="code" href="class_ploter_1_1_hidden_line_manager.html#9d1a629cbfc89c794783d6a8e068c9df" title="。">resetPosition</a>();
+<a name="l00415"></a>00415             
+<a name="l00416"></a>00416             <span class="keywordflow">for</span> ( <a class="code" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Element</a> firstScanLine = this-&gt;<a class="code" href="class_ploter_1_1_collection.html#545b59ec3d5089f5938fdc3fcb23c000">children</a>.begin()-&gt;getBegin()(<a class="code" href="namespace_ploter.html#35b0402ef09657b1efe8ba08340ef2886db182841ad2aa8e572a2918e89332cd">X</a>);
+<a name="l00417"></a>00417                 
+<a name="l00418"></a>00418                 hiddenLineManager-&gt;<a class="code" href="class_ploter_1_1_hidden_line_manager.html#dcfb6b278fa502886aed457dd724a4c6">currentScanLine</a>-&gt;position &lt; firstScanLine;
+<a name="l00419"></a>00419                 hiddenLineManager-&gt;<a class="code" href="class_ploter_1_1_hidden_line_manager.html#dcfb6b278fa502886aed457dd724a4c6">currentScanLine</a>++
+<a name="l00420"></a>00420             );
+<a name="l00421"></a>00421             
+<a name="l00422"></a>00422             this-&gt;<a class="code" href="class_ploter_1_1_collection.html" title="グラフ要素の集合を表すクラス。">Collection&lt;Line&gt;::acceptComplementing</a>( hiddenLineManager );
+<a name="l00423"></a>00423         }
+<a name="l00424"></a>00424         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00428"></a><a class="code" href="class_ploter_1_1_poly_line.html#f59cc448e89fe5897d451ead8c11a946">00428</a>         <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_poly_line.html#f59cc448e89fe5897d451ead8c11a946" title="。">draw</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{
+<a name="l00429"></a>00429             
+<a name="l00430"></a>00430             <span class="keywordflow">if</span> ( <a class="code" href="class_ploter_1_1_option.html" title="オプションを管理するクラス。">Option</a>(<span class="stringliteral">"Graph"</span>).<span class="keyword">get</span>(<span class="stringliteral">"isHiddenLine"</span>) ) { this-&gt;<a class="code" href="class_ploter_1_1_poly_line.html#a01685df18327593f8a8472975af7800">color</a> = <a class="code" href="class_ploter_1_1_r_g_b_a.html" title="色を表すクラス。">RGBA</a>(0,0,0,0.2); }
+<a name="l00431"></a>00431             <span class="keywordflow">else</span>                                       { this-&gt;<a class="code" href="class_ploter_1_1_poly_line.html#a01685df18327593f8a8472975af7800">color</a> = <a class="code" href="class_ploter_1_1_r_g_b_a.html" title="色を表すクラス。">RGBA</a>(0,0,0,0.7); }
+<a name="l00432"></a>00432             
+<a name="l00433"></a>00433             this-&gt;<a class="code" href="class_ploter_1_1_poly_line.html#a01685df18327593f8a8472975af7800">color</a>.<a class="code" href="class_ploter_1_1_r_g_b_a.html#d9bb715437e529611a5bbc9981cf4851" title="。">set</a>();
+<a name="l00434"></a>00434             
+<a name="l00435"></a>00435             glBegin( GL_LINES ); {
+<a name="l00436"></a>00436                 
+<a name="l00437"></a>00437                 this-&gt;<a class="code" href="class_ploter_1_1_collection.html" title="グラフ要素の集合を表すクラス。">Collection&lt;Line&gt;::draw</a>();
+<a name="l00438"></a>00438                 
+<a name="l00439"></a>00439             } glEnd();
+<a name="l00440"></a>00440         }
+<a name="l00441"></a>00441         
+<a name="l00442"></a><a class="code" href="class_ploter_1_1_poly_line.html#a01685df18327593f8a8472975af7800">00442</a>         <span class="keyword">mutable</span> <a class="code" href="class_ploter_1_1_r_g_b_a.html" title="色を表すクラス。">RGBA</a>  <a class="code" href="class_ploter_1_1_poly_line.html#a01685df18327593f8a8472975af7800">color</a>;
+<a name="l00443"></a>00443     };
+<a name="l00444"></a>00444     
+<a name="l00445"></a>00445     <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00449"></a><a class="code" href="class_ploter_1_1_poly_line_list.html">00449</a>     <span class="keyword">class </span><a class="code" href="class_ploter_1_1_poly_line_list.html" title="ポリラインの集合を表すクラス。">PolyLineList</a> : <span class="keyword">public</span> <a class="code" href="class_ploter_1_1_collection.html" title="グラフ要素の集合を表すクラス。">Collection</a>&lt;PolyLine&gt; {
+<a name="l00450"></a>00450         
+<a name="l00451"></a>00451       <span class="keyword">public</span>:
+<a name="l00452"></a>00452         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00456"></a>00456         <span class="keyword">template</span>&lt;<span class="keyword">class</span> IteratorType&gt;
+<a name="l00457"></a><a class="code" href="class_ploter_1_1_poly_line_list.html#1a95cbf9f2faa192f87b00ee9765867e">00457</a>         <span class="keywordtype">void</span>  <span class="keyword">set</span>( IteratorType begin,  IteratorType end ) {
+<a name="l00458"></a>00458             
+<a name="l00459"></a>00459             this-&gt;<a class="code" href="class_ploter_1_1_collection.html#545b59ec3d5089f5938fdc3fcb23c000">children</a>.clear();
+<a name="l00460"></a>00460             
+<a name="l00461"></a>00461             <span class="keywordflow">for</span> ( IteratorType it = begin;  it != end;  it++ ) {
+<a name="l00462"></a>00462                 
+<a name="l00463"></a>00463                 this-&gt;<a class="code" href="class_ploter_1_1_collection.html#545b59ec3d5089f5938fdc3fcb23c000">children</a>.push_back( <a class="code" href="class_ploter_1_1_poly_line.html" title="ポリラインを表すクラス。">PolyLine</a>( it.begin(), it.end() ) );
+<a name="l00464"></a>00464             }
+<a name="l00465"></a>00465         }
+<a name="l00466"></a>00466     };
+<a name="l00467"></a>00467     
+<a name="l00468"></a>00468     <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00472"></a><a class="code" href="class_ploter_1_1_tics.html">00472</a>     <span class="keyword">class </span><a class="code" href="class_ploter_1_1_tics.html" title="目盛を表すクラス。">Tics</a> : <span class="keyword">public</span> <a class="code" href="class_ploter_1_1_composite.html" title="複合グラフ要素を表すクラス。">Composite</a>&lt;Tics&gt;, <span class="keyword">public</span> <a class="code" href="class_ploter_1_1_subject.html" title="観察対象を表すクラス。">Subject</a> {
+<a name="l00473"></a>00473         
+<a name="l00474"></a>00474       <span class="keyword">public</span>:
+<a name="l00475"></a>00475         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00479"></a><a class="code" href="class_ploter_1_1_tics.html#2ffb344c549bb352ed56a55b65b5c489">00479</a>         <a class="code" href="class_ploter_1_1_tics.html#2ffb344c549bb352ed56a55b65b5c489" title="目盛線がline_、親要素がparent_、オプションがoption_の目盛を生成する。...">Tics</a>( <span class="keyword">const</span> <a class="code" href="class_ploter_1_1_option.html" title="オプションを管理するクラス。">Option</a> &amp; option_, <span class="keyword">const</span> <a class="code" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp; line_, <span class="keyword">const</span> <a class="code" href="class_ploter_1_1_subject.html" title="観察対象を表すクラス。">Subject</a> * parent_) :
+<a name="l00480"></a>00480             
+<a name="l00481"></a>00481             <a class="code" href="class_ploter_1_1_tics.html#d9fb348cf745ae7df0f3f0b3d7f74e1d">option</a>( option_), <a class="code" href="class_ploter_1_1_tics.html#fa115a81ebeaf8b427a2a8fd12afc8a1">line</a>( line_), <a class="code" href="class_ploter_1_1_tics.html#83c1fbefd1358e31285965c0e9b7c9af">parent</a>( parent_)
+<a name="l00482"></a>00482         {}
+<a name="l00483"></a>00483         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00487"></a><a class="code" href="class_ploter_1_1_tics.html#8ec89026cbc7d1ee5f06d937ddb103e4">00487</a>         <span class="keyword">const</span> <a class="code" href="namespace_ploter.html#04069799b968fe89f21012b4436f04fe">VertexList</a> &amp; <a class="code" href="class_ploter_1_1_tics.html#8ec89026cbc7d1ee5f06d937ddb103e4" title="位置リストを取得する。">getPositions</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{
+<a name="l00488"></a>00488             
+<a name="l00489"></a>00489             <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_ploter_1_1_tics.html#c15831e18d4da5a44dcbb59992e2fab5">positions</a>;
+<a name="l00490"></a>00490         }
+<a name="l00491"></a>00491         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00495"></a><a class="code" href="class_ploter_1_1_tics.html#f719f2609bfa9a7e99f54ff1bb4a16f3">00495</a>         <span class="keyword">const</span> <a class="code" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp; <a class="code" href="class_ploter_1_1_tics.html#f719f2609bfa9a7e99f54ff1bb4a16f3" title="目盛の方向を取得する。">getDirection</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{
+<a name="l00496"></a>00496             
+<a name="l00497"></a>00497             <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_ploter_1_1_tics.html#83c1fbefd1358e31285965c0e9b7c9af">parent</a>-&gt;<a class="code" href="class_ploter_1_1_subject.html#02dd488b85e0beb7894e8859e3852bfa">getDirection</a>();
+<a name="l00498"></a>00498         }
+<a name="l00499"></a>00499         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00503"></a><a class="code" href="class_ploter_1_1_tics.html#79dd36b0c2cfdbba4ebfcb1aa853c0ff">00503</a>         std::size_t  <a class="code" href="class_ploter_1_1_tics.html#79dd36b0c2cfdbba4ebfcb1aa853c0ff" title="区間数を取得する。">getIntervalNumber</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{
+<a name="l00504"></a>00504             
+<a name="l00505"></a>00505             <span class="keywordflow">return</span>  this-&gt;<a class="code" href="class_ploter_1_1_tics.html#d9fb348cf745ae7df0f3f0b3d7f74e1d">option</a>.<a class="code" href="class_ploter_1_1_option.html#7de8eb4cc2f4e819a92cc090c84b42e0" title="iniファイルからkeyが指す値を読み込む。">get</a>(<span class="stringliteral">"divisionNumber"</span>) * this-&gt;<a class="code" href="class_ploter_1_1_tics.html#83c1fbefd1358e31285965c0e9b7c9af">parent</a>-&gt;<a class="code" href="class_ploter_1_1_subject.html#139f016f3de5d110eee73160ad232d27">getIntervalNumber</a>();
+<a name="l00506"></a>00506         }
+<a name="l00507"></a>00507         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00511"></a><a class="code" href="class_ploter_1_1_tics.html#d223dde6f8d5766770b2a4dc34d61550">00511</a>         <span class="keywordtype">bool</span>  <a class="code" href="class_ploter_1_1_tics.html#d223dde6f8d5766770b2a4dc34d61550" title="iが設定可能な場所かどうかを取得する。">isSettablePosition</a>(<span class="keywordtype">int</span> i)<span class="keyword"> const </span>{
+<a name="l00512"></a>00512             
+<a name="l00513"></a>00513             <span class="keywordflow">return</span>  i % this-&gt;<a class="code" href="class_ploter_1_1_composite.html#ce001384d2decf89362fdc55f5b42b9d">child</a>-&gt;option.get(<span class="stringliteral">"divisionNumber"</span>);
+<a name="l00514"></a>00514         }
+<a name="l00515"></a>00515         
+<a name="l00516"></a>00516       <span class="keyword">private</span>:
+<a name="l00517"></a>00517         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00521"></a><a class="code" href="class_ploter_1_1_tics.html#3642e61503ea99eb59b7186cd5ff5796">00521</a>         <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_tics.html#3642e61503ea99eb59b7186cd5ff5796" title="目盛線を行列affineで座標変換した後、描画する。">drawMyself</a>( <span class="keyword">const</span> <a class="code" href="namespace_ploter.html#cdf6ee9e2bdbc5c486d3d33c96a914b7">Matrix</a> &amp; affine )<span class="keyword"> const </span>{
+<a name="l00522"></a>00522             
+<a name="l00523"></a>00523             <span class="keywordflow">if</span> ( this-&gt;<a class="code" href="class_ploter_1_1_tics.html#d9fb348cf745ae7df0f3f0b3d7f74e1d">option</a>.<a class="code" href="class_ploter_1_1_option.html#7de8eb4cc2f4e819a92cc090c84b42e0" title="iniファイルからkeyが指す値を読み込む。">get</a>(<span class="stringliteral">"isDraw"</span>) ) {
+<a name="l00524"></a>00524                 
+<a name="l00525"></a>00525                 this-&gt;<a class="code" href="class_ploter_1_1_tics.html#bbaa754b64e0c9fa69133eeeffe2aebd" title="目盛線の位置の設定。">setPosition</a>();
+<a name="l00526"></a>00526                 
+<a name="l00527"></a>00527                 <a class="code" href="namespace_ploter.html#b186e34c51a9a110546b59aed18338e7" title="方向がdirectionで始点の集合がpositionsな平行線の集合を行列affineで座標変換�...">drawParallelLines</a>( affine, this-&gt;<a class="code" href="class_ploter_1_1_tics.html#c15831e18d4da5a44dcbb59992e2fab5">positions</a>, this-&gt;<a class="code" href="class_ploter_1_1_tics.html#fa115a81ebeaf8b427a2a8fd12afc8a1">line</a> );
+<a name="l00528"></a>00528             }
+<a name="l00529"></a>00529         }
+<a name="l00530"></a>00530         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00534"></a><a class="code" href="class_ploter_1_1_tics.html#bbaa754b64e0c9fa69133eeeffe2aebd">00534</a>         <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_tics.html#bbaa754b64e0c9fa69133eeeffe2aebd" title="目盛線の位置の設定。">setPosition</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{
+<a name="l00535"></a>00535             
+<a name="l00536"></a>00536             <a class="code" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a>  distance( this-&gt;<a class="code" href="class_ploter_1_1_tics.html#83c1fbefd1358e31285965c0e9b7c9af">parent</a>-&gt;<a class="code" href="class_ploter_1_1_subject.html#02dd488b85e0beb7894e8859e3852bfa">getDirection</a>() / this-&gt;<a class="code" href="class_ploter_1_1_tics.html#79dd36b0c2cfdbba4ebfcb1aa853c0ff" title="区間数を取得する。">getIntervalNumber</a>() );
+<a name="l00537"></a>00537             
+<a name="l00538"></a>00538             this-&gt;<a class="code" href="class_ploter_1_1_tics.html#c15831e18d4da5a44dcbb59992e2fab5">positions</a>.clear();
+<a name="l00539"></a>00539             
+<a name="l00540"></a>00540             <span class="keywordflow">for</span> ( <a class="code" href="namespace_ploter.html#a7414cfa758b7e7219e399ec564a5363">Index</a> i=0;  i &lt;= this-&gt;<a class="code" href="class_ploter_1_1_tics.html#79dd36b0c2cfdbba4ebfcb1aa853c0ff" title="区間数を取得する。">getIntervalNumber</a>();  i++ ) {
+<a name="l00541"></a>00541                 
+<a name="l00542"></a>00542                 <span class="keywordflow">if</span> ( this-&gt;<a class="code" href="class_ploter_1_1_tics.html#83c1fbefd1358e31285965c0e9b7c9af">parent</a>-&gt;<a class="code" href="class_ploter_1_1_subject.html#e1c0194d90fecf13f3e1735180089ade">isSettablePosition</a>(i) ) {
+<a name="l00543"></a>00543                     
+<a name="l00544"></a>00544                     this-&gt;<a class="code" href="class_ploter_1_1_tics.html#c15831e18d4da5a44dcbb59992e2fab5">positions</a>.push_back( i * distance );
+<a name="l00545"></a>00545                 }
+<a name="l00546"></a>00546             }
+<a name="l00547"></a>00547         }
+<a name="l00548"></a>00548         
+<a name="l00549"></a><a class="code" href="class_ploter_1_1_tics.html#d9fb348cf745ae7df0f3f0b3d7f74e1d">00549</a>         <span class="keyword">const</span>   <a class="code" href="class_ploter_1_1_option.html" title="オプションを管理するクラス。">Option</a>      <a class="code" href="class_ploter_1_1_tics.html#d9fb348cf745ae7df0f3f0b3d7f74e1d">option</a>;
+<a name="l00550"></a><a class="code" href="class_ploter_1_1_tics.html#83c1fbefd1358e31285965c0e9b7c9af">00550</a>         <span class="keyword">const</span>   <a class="code" href="class_ploter_1_1_subject.html" title="観察対象を表すクラス。">Subject</a> *   <a class="code" href="class_ploter_1_1_tics.html#83c1fbefd1358e31285965c0e9b7c9af">parent</a>;
+<a name="l00551"></a><a class="code" href="class_ploter_1_1_tics.html#fa115a81ebeaf8b427a2a8fd12afc8a1">00551</a>         <span class="keyword">const</span>   <a class="code" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a>      <a class="code" href="class_ploter_1_1_tics.html#fa115a81ebeaf8b427a2a8fd12afc8a1">line</a>;
+<a name="l00552"></a><a class="code" href="class_ploter_1_1_tics.html#c15831e18d4da5a44dcbb59992e2fab5">00552</a>         <span class="keyword">mutable</span> <a class="code" href="namespace_ploter.html#04069799b968fe89f21012b4436f04fe">VertexList</a>  <a class="code" href="class_ploter_1_1_tics.html#c15831e18d4da5a44dcbb59992e2fab5">positions</a>;
+<a name="l00553"></a>00553     };
+<a name="l00554"></a>00554     
+<a name="l00555"></a>00555     <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00559"></a><a class="code" href="class_ploter_1_1_axis.html">00559</a>     <span class="keyword">class </span><a class="code" href="class_ploter_1_1_axis.html" title="座標軸を表すクラス。">Axis</a> : <span class="keyword">public</span> <a class="code" href="class_ploter_1_1_composite.html" title="複合グラフ要素を表すクラス。">Composite</a>&lt;Tics&gt;, <span class="keyword">public</span> <a class="code" href="class_ploter_1_1_subject.html" title="観察対象を表すクラス。">Subject</a> {
+<a name="l00560"></a>00560         
+<a name="l00561"></a>00561       <span class="keyword">public</span>:
+<a name="l00562"></a>00562         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00566"></a><a class="code" href="class_ploter_1_1_axis.html#de10be0e3b4139300c70181ea97e129f">00566</a>         <a class="code" href="class_ploter_1_1_axis.html#de10be0e3b4139300c70181ea97e129f" title="方向がdirection_の座標軸を生成する。">Axis</a>( <span class="keyword">const</span> <a class="code" href="class_ploter_1_1_option.html" title="オプションを管理するクラス。">Option</a> &amp; option_, <span class="keyword">const</span> <a class="code" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp; direction_) :
+<a name="l00567"></a>00567             
+<a name="l00568"></a>00568             <a class="code" href="class_ploter_1_1_axis.html#aa9dd79df7baf018bea25a8fe1683da9">option</a>( option_), <a class="code" href="class_ploter_1_1_axis.html#af10c296a4753b823b657f750d950ed6">direction</a>( direction_)
+<a name="l00569"></a>00569         {}
+<a name="l00570"></a>00570         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00574"></a><a class="code" href="class_ploter_1_1_axis.html#c54ee69dd283dcd2ac83604af6687a28">00574</a>         <span class="keyword">const</span> <a class="code" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp; <a class="code" href="class_ploter_1_1_axis.html#c54ee69dd283dcd2ac83604af6687a28" title="座標軸の方向を取得する。">getDirection</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{
+<a name="l00575"></a>00575             
+<a name="l00576"></a>00576             <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_ploter_1_1_axis.html#af10c296a4753b823b657f750d950ed6">direction</a>;
+<a name="l00577"></a>00577         }
+<a name="l00578"></a>00578         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00582"></a><a class="code" href="class_ploter_1_1_axis.html#de681d38f5b4516a348ed67edb6d451e">00582</a>         std::size_t  <a class="code" href="class_ploter_1_1_axis.html#de681d38f5b4516a348ed67edb6d451e" title="区間数を取得する。">getIntervalNumber</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{
+<a name="l00583"></a>00583             
+<a name="l00584"></a>00584             <span class="keywordflow">return</span> 1;
+<a name="l00585"></a>00585         }
+<a name="l00586"></a>00586         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00590"></a><a class="code" href="class_ploter_1_1_axis.html#35d71ac1bf294e763e042688ac2b89be">00590</a>         <span class="keywordtype">bool</span>  <a class="code" href="class_ploter_1_1_axis.html#35d71ac1bf294e763e042688ac2b89be" title="iが設定可能な場所かどうかを取得する。">isSettablePosition</a>(<span class="keywordtype">int</span> i)<span class="keyword"> const </span>{
+<a name="l00591"></a>00591             
+<a name="l00592"></a>00592             <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00593"></a>00593         }
+<a name="l00594"></a>00594         
+<a name="l00595"></a>00595       <span class="keyword">private</span>:
+<a name="l00596"></a>00596         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00600"></a><a class="code" href="class_ploter_1_1_axis.html#d65e8ade9e5c6d6f29473df7bfc8fe30">00600</a>         <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_axis.html#d65e8ade9e5c6d6f29473df7bfc8fe30" title="座標軸を行列affineで座標変換した後、描画する。">drawMyself</a>( <span class="keyword">const</span> <a class="code" href="namespace_ploter.html#cdf6ee9e2bdbc5c486d3d33c96a914b7">Matrix</a> &amp; affine )<span class="keyword"> const </span>{
+<a name="l00601"></a>00601             
+<a name="l00602"></a>00602             <span class="keywordflow">if</span> ( this-&gt;<a class="code" href="class_ploter_1_1_axis.html#aa9dd79df7baf018bea25a8fe1683da9">option</a>.<a class="code" href="class_ploter_1_1_option.html#7de8eb4cc2f4e819a92cc090c84b42e0" title="iniファイルからkeyが指す値を読み込む。">get</a>(<span class="stringliteral">"isDraw"</span>) ) {
+<a name="l00603"></a>00603                 
+<a name="l00604"></a>00604                 glBegin( GL_LINES ); {
+<a name="l00605"></a>00605                     
+<a name="l00606"></a>00606                     <a class="code" href="namespace_ploter.html#cbfc181c2fc7dbdcdfa495e4ee81135d" title="始点をorigin、終点をorigin + toとする線分を行列affineで座標変換した後、描�...">drawLine</a>( affine, <a class="code" href="namespace_ploter_1_1_v.html#faec408b14e015d5a3ef4f3a66149635">V::ZERO</a>, this-&gt;<a class="code" href="class_ploter_1_1_axis.html#af10c296a4753b823b657f750d950ed6">direction</a> );
+<a name="l00607"></a>00607                     
+<a name="l00608"></a>00608                 } glEnd();
+<a name="l00609"></a>00609             }
+<a name="l00610"></a>00610         }
+<a name="l00611"></a>00611         
+<a name="l00612"></a><a class="code" href="class_ploter_1_1_axis.html#aa9dd79df7baf018bea25a8fe1683da9">00612</a>         <span class="keyword">const</span> <a class="code" href="class_ploter_1_1_option.html" title="オプションを管理するクラス。">Option</a>  <a class="code" href="class_ploter_1_1_axis.html#aa9dd79df7baf018bea25a8fe1683da9">option</a>;
+<a name="l00613"></a><a class="code" href="class_ploter_1_1_axis.html#af10c296a4753b823b657f750d950ed6">00613</a>         <span class="keyword">const</span> <a class="code" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a>  <a class="code" href="class_ploter_1_1_axis.html#af10c296a4753b823b657f750d950ed6">direction</a>;
+<a name="l00614"></a>00614     };
+<a name="l00615"></a>00615     
+<a name="l00616"></a>00616     <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00620"></a><a class="code" href="class_ploter_1_1_grid.html">00620</a>     <span class="keyword">class </span><a class="code" href="class_ploter_1_1_grid.html" title="グリッドを表すクラス。">Grid</a> : <span class="keyword">public</span> <a class="code" href="class_ploter_1_1_composite.html" title="複合グラフ要素を表すクラス。">Composite</a>&lt;Grid&gt; {
+<a name="l00621"></a>00621         
+<a name="l00622"></a>00622       <span class="keyword">public</span>:
+<a name="l00623"></a>00623         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00627"></a><a class="code" href="class_ploter_1_1_grid.html#0c19fbb148e19fc19454898f51fdf836">00627</a>         <a class="code" href="class_ploter_1_1_grid.html#0c19fbb148e19fc19454898f51fdf836" title="オプションがoption_で目盛tics1_と目盛tics2_についてのグリッドを生成する。...">Grid</a>( <span class="keyword">const</span> <a class="code" href="class_ploter_1_1_option.html" title="オプションを管理するクラス。">Option</a> &amp; option_, <span class="keyword">const</span> <a class="code" href="class_ploter_1_1_subject.html" title="観察対象を表すクラス。">Subject</a> * tics1_, <span class="keyword">const</span> <a class="code" href="class_ploter_1_1_subject.html" title="観察対象を表すクラス。">Subject</a> * tics2_) :
+<a name="l00628"></a>00628             
+<a name="l00629"></a>00629             <a class="code" href="class_ploter_1_1_grid.html#3bf567ce9c65c1e5f2c7d00e02e5163e">option</a>( option_), <a class="code" href="class_ploter_1_1_grid.html#c0bba731c934e9e31c2b6a663e81f8c2">tics1</a>( tics1_), <a class="code" href="class_ploter_1_1_grid.html#02809a95af1360aab4f18889932f5ebd">tics2</a>( tics2_)
+<a name="l00630"></a>00630         {}
+<a name="l00631"></a>00631         
+<a name="l00632"></a>00632       <span class="keyword">private</span>:
+<a name="l00633"></a>00633         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00637"></a><a class="code" href="class_ploter_1_1_grid.html#308187e1536eb0d7f6155306ea358853">00637</a>         <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_grid.html#308187e1536eb0d7f6155306ea358853" title="格子線を行列affineで座標変換した後、描画する。">drawMyself</a>( <span class="keyword">const</span> <a class="code" href="namespace_ploter.html#cdf6ee9e2bdbc5c486d3d33c96a914b7">Matrix</a> &amp; affine )<span class="keyword"> const </span>{
+<a name="l00638"></a>00638             
+<a name="l00639"></a>00639             <span class="keywordflow">if</span> ( this-&gt;<a class="code" href="class_ploter_1_1_grid.html#3bf567ce9c65c1e5f2c7d00e02e5163e">option</a>.<a class="code" href="class_ploter_1_1_option.html#7de8eb4cc2f4e819a92cc090c84b42e0" title="iniファイルからkeyが指す値を読み込む。">get</a>(<span class="stringliteral">"isDraw"</span>) ) {
+<a name="l00640"></a>00640                 
+<a name="l00641"></a>00641                 glEnable( GL_LINE_STIPPLE );  {
+<a name="l00642"></a>00642                     
+<a name="l00643"></a>00643                     glLineStipple( 1, 0x8888 );
+<a name="l00644"></a>00644                     
+<a name="l00645"></a>00645                     <a class="code" href="namespace_ploter.html#b186e34c51a9a110546b59aed18338e7" title="方向がdirectionで始点の集合がpositionsな平行線の集合を行列affineで座標変換�...">drawParallelLines</a>( affine, this-&gt;<a class="code" href="class_ploter_1_1_grid.html#c0bba731c934e9e31c2b6a663e81f8c2">tics1</a>-&gt;<a class="code" href="class_ploter_1_1_subject.html#39d8b679062b41146d61b9cc0c47feb2">getPositions</a>(), this-&gt;<a class="code" href="class_ploter_1_1_grid.html#02809a95af1360aab4f18889932f5ebd">tics2</a>-&gt;<a class="code" href="class_ploter_1_1_subject.html#02dd488b85e0beb7894e8859e3852bfa">getDirection</a>() );
+<a name="l00646"></a>00646                     <a class="code" href="namespace_ploter.html#b186e34c51a9a110546b59aed18338e7" title="方向がdirectionで始点の集合がpositionsな平行線の集合を行列affineで座標変換�...">drawParallelLines</a>( affine, this-&gt;<a class="code" href="class_ploter_1_1_grid.html#02809a95af1360aab4f18889932f5ebd">tics2</a>-&gt;<a class="code" href="class_ploter_1_1_subject.html#39d8b679062b41146d61b9cc0c47feb2">getPositions</a>(), this-&gt;<a class="code" href="class_ploter_1_1_grid.html#c0bba731c934e9e31c2b6a663e81f8c2">tics1</a>-&gt;<a class="code" href="class_ploter_1_1_subject.html#02dd488b85e0beb7894e8859e3852bfa">getDirection</a>() );
+<a name="l00647"></a>00647                     
+<a name="l00648"></a>00648                 } glDisable( GL_LINE_STIPPLE );
+<a name="l00649"></a>00649             }
+<a name="l00650"></a>00650         }
+<a name="l00651"></a>00651         
+<a name="l00652"></a><a class="code" href="class_ploter_1_1_grid.html#3bf567ce9c65c1e5f2c7d00e02e5163e">00652</a>         <span class="keyword">const</span> <a class="code" href="class_ploter_1_1_option.html" title="オプションを管理するクラス。">Option</a>    <a class="code" href="class_ploter_1_1_grid.html#3bf567ce9c65c1e5f2c7d00e02e5163e">option</a>;
+<a name="l00653"></a><a class="code" href="class_ploter_1_1_grid.html#c0bba731c934e9e31c2b6a663e81f8c2">00653</a>         <span class="keyword">const</span> <a class="code" href="class_ploter_1_1_subject.html" title="観察対象を表すクラス。">Subject</a> * <a class="code" href="class_ploter_1_1_grid.html#c0bba731c934e9e31c2b6a663e81f8c2">tics1</a>;
+<a name="l00654"></a><a class="code" href="class_ploter_1_1_grid.html#02809a95af1360aab4f18889932f5ebd">00654</a>         <span class="keyword">const</span> <a class="code" href="class_ploter_1_1_subject.html" title="観察対象を表すクラス。">Subject</a> * <a class="code" href="class_ploter_1_1_grid.html#02809a95af1360aab4f18889932f5ebd">tics2</a>;
+<a name="l00655"></a>00655     };
+<a name="l00656"></a>00656     
+<a name="l00657"></a>00657     <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00661"></a><a class="code" href="class_ploter_1_1_graph.html">00661</a>     <span class="keyword">class </span><a class="code" href="class_ploter_1_1_graph.html" title="３次元グラフを表すクラス。">Graph</a> {
+<a name="l00662"></a>00662         
+<a name="l00663"></a>00663       <span class="keyword">public</span>:
+<a name="l00664"></a>00664         
+<a name="l00665"></a><a class="code" href="class_ploter_1_1_graph.html#1e52120a53d1e39925e87526ab759e96">00665</a>         <span class="keyword">typedef</span> std::vector&lt;std::string&gt;       <a class="code" href="class_ploter_1_1_graph.html#1e52120a53d1e39925e87526ab759e96">Data</a>;
+<a name="l00666"></a><a class="code" href="class_ploter_1_1_graph.html#c5e711962b68349c9cb23a3c2228353b">00666</a>         <span class="keyword">typedef</span> std::istringstream             <a class="code" href="class_ploter_1_1_graph.html#c5e711962b68349c9cb23a3c2228353b">DataStream</a>;
+<a name="l00667"></a><a class="code" href="class_ploter_1_1_graph.html#bd4239b11d79cda5df81e1cb2798575a">00667</a>         <span class="keyword">typedef</span> std::istream_iterator&lt;Element&gt; <a class="code" href="class_ploter_1_1_graph.html#bd4239b11d79cda5df81e1cb2798575a">DataStreamIterator</a>;
+<a name="l00668"></a>00668         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00672"></a><a class="code" href="class_ploter_1_1_graph.html#d90676c05063bf0a868de85cc47ab730">00672</a>         <a class="code" href="class_ploter_1_1_graph.html#d90676c05063bf0a868de85cc47ab730" title="。">Graph</a>( <span class="keyword">const</span> <a class="code" href="class_ploter_1_1_option.html" title="オプションを管理するクラス。">Option</a> &amp; option_) : <a class="code" href="class_ploter_1_1_graph.html#99a573de4b827481598f9aaf0d1d9ced">option</a>( option_) {}
+<a name="l00673"></a>00673         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00677"></a><a class="code" href="class_ploter_1_1_graph.html#8ddf305bb15bca284286c002e34f1320">00677</a>         <span class="keyword">const</span> <a class="code" href="class_ploter_1_1_min_max_manager.html" title="x,y,zそれぞれの最小値・最大値を管理するクラス。">MinMaxManager</a> &amp; <a class="code" href="class_ploter_1_1_graph.html#8ddf305bb15bca284286c002e34f1320" title="最小値・最大値を取得する。">getMinMaxManager</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{
+<a name="l00678"></a>00678             
+<a name="l00679"></a>00679             <span class="keywordflow">return</span>  this-&gt;<a class="code" href="class_ploter_1_1_graph.html#460e77db78fafa2dd1a327274887dbb9">minmaxManager</a>;
+<a name="l00680"></a>00680         }
+<a name="l00681"></a>00681         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00685"></a><a class="code" href="class_ploter_1_1_graph.html#e01d12afec4f323fd90254e7d2544d8e">00685</a>         <span class="keywordtype">void</span>  <span class="keyword">set</span>( <span class="keyword">const</span> <span class="keywordtype">char</span> * path ) {
+<a name="l00686"></a>00686             
+<a name="l00687"></a>00687             <a class="code" href="class_ploter_1_1_graph.html#1e52120a53d1e39925e87526ab759e96">Data</a>  data;
+<a name="l00688"></a>00688             
+<a name="l00689"></a>00689             <a class="code" href="class_ploter_1_1_graph.html#23a9c6c0ba1cbde7dce277f185e2dfb5" title="データの読み込み。">Graph::scanData</a>(path,data);
+<a name="l00690"></a>00690             
+<a name="l00691"></a>00691             this-&gt;<a class="code" href="class_ploter_1_1_graph.html#0f9b08c9fd8325e583bcf01a2e7f50f9" title="頂点数の設定。">setSize</a>  (data);
+<a name="l00692"></a>00692             this-&gt;<a class="code" href="class_ploter_1_1_graph.html#0f62732f9b9637bee6c4ca466c464133" title="頂点の設定。">setVertex</a>(data);
+<a name="l00693"></a>00693             this-&gt;<a class="code" href="class_ploter_1_1_graph.html#6967cd6b949e27fb715fcbd893a75cc0" title="ポリラインの設定。">setPolyLine</a>();
+<a name="l00694"></a>00694         }
+<a name="l00695"></a>00695         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00699"></a><a class="code" href="class_ploter_1_1_graph.html#b6d01b9703449d612f3f8b554410b598">00699</a>         <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_graph.html#b6d01b9703449d612f3f8b554410b598" title="描画する。">draw</a>( <span class="keyword">const</span> <a class="code" href="class_ploter_1_1_affine_manager.html" title="アフィン行列を管理するクラス。">AffineManager</a> * affineManager,  <span class="keywordtype">int</span> target )<span class="keyword"> const </span>{
+<a name="l00700"></a>00700             
+<a name="l00701"></a>00701             this-&gt;<a class="code" href="class_ploter_1_1_graph.html#236e7d05fbbdd8192971469f4145cf98" title="頂点の操作。">operateVertex</a>();
+<a name="l00702"></a>00702             this-&gt;<a class="code" href="class_ploter_1_1_graph.html#460e77db78fafa2dd1a327274887dbb9">minmaxManager</a>.<a class="code" href="class_ploter_1_1_min_max_manager.html#154a8627dae6c6ad1bd455b3e85e25b5" title="objectのx,y,zそれぞれの最小値・最大値を設定する。">set</a>( <a class="code" href="class_ploter_1_1_graph.html#eda2640ae4c7a0b4c45190a5ae109011">transformed</a> );
+<a name="l00703"></a>00703             
+<a name="l00704"></a>00704             this-&gt;<a class="code" href="class_ploter_1_1_graph.html#b6d01b9703449d612f3f8b554410b598" title="描画する。">draw</a>( affineManager-&gt;<a class="code" href="class_ploter_1_1_affine_manager.html#0820b143e818529cb690d05869f3d6a4" title="各グラフ要素用のアフィン行列を返す。">get</a>(target) );
+<a name="l00705"></a>00705         }
+<a name="l00706"></a>00706         
+<a name="l00707"></a>00707       <span class="keyword">private</span>:
+<a name="l00708"></a>00708         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00712"></a><a class="code" href="class_ploter_1_1_graph.html#23a9c6c0ba1cbde7dce277f185e2dfb5">00712</a>         <span class="keyword">static</span> <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_graph.html#23a9c6c0ba1cbde7dce277f185e2dfb5" title="データの読み込み。">scanData</a>( <span class="keyword">const</span> <span class="keywordtype">char</span> * path,  <a class="code" href="class_ploter_1_1_graph.html#1e52120a53d1e39925e87526ab759e96">Data</a> &amp; data ) {
+<a name="l00713"></a>00713             
+<a name="l00714"></a>00714             std::ifstream  ifs(path);
+<a name="l00715"></a>00715             std::string    buffer;
+<a name="l00716"></a>00716             
+<a name="l00717"></a>00717             <span class="keywordflow">while</span> ( std::getline( ifs, buffer ) ) {
+<a name="l00718"></a>00718                 
+<a name="l00719"></a>00719                 data.push_back( buffer );
+<a name="l00720"></a>00720             }
+<a name="l00721"></a>00721         }
+<a name="l00722"></a>00722         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00726"></a><a class="code" href="class_ploter_1_1_graph.html#0f9b08c9fd8325e583bcf01a2e7f50f9">00726</a>         <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_graph.html#0f9b08c9fd8325e583bcf01a2e7f50f9" title="頂点数の設定。">setSize</a>( <span class="keyword">const</span> <a class="code" href="class_ploter_1_1_graph.html#1e52120a53d1e39925e87526ab759e96">Data</a> &amp; data ) {
+<a name="l00727"></a>00727             
+<a name="l00728"></a>00728             std::size_t  xNumber = 0;
+<a name="l00729"></a>00729             std::size_t  yNumber = data.size();
+<a name="l00730"></a>00730             
+<a name="l00731"></a>00731             <a class="code" href="class_ploter_1_1_graph.html#c5e711962b68349c9cb23a3c2228353b">DataStream</a>          ds(data[0]);
+<a name="l00732"></a>00732             <a class="code" href="class_ploter_1_1_graph.html#bd4239b11d79cda5df81e1cb2798575a">DataStreamIterator</a>  <a class="code" href="3d_graph_8cpp.html#93dbc50640898f3a8df7fef4a5922e3a">current</a>(ds);
+<a name="l00733"></a>00733             <a class="code" href="class_ploter_1_1_graph.html#bd4239b11d79cda5df81e1cb2798575a">DataStreamIterator</a>  end;
+<a name="l00734"></a>00734             
+<a name="l00735"></a>00735             <span class="keywordflow">while</span> ( current++ != end ) { ++xNumber; }
+<a name="l00736"></a>00736             
+<a name="l00737"></a>00737             this-&gt;   <a class="code" href="class_ploter_1_1_graph.html#0e73f13a18938839e7f3e47598781e10">original</a>.resize( yNumber, xNumber );
+<a name="l00738"></a>00738             this-&gt;<a class="code" href="class_ploter_1_1_graph.html#eda2640ae4c7a0b4c45190a5ae109011">transformed</a>.resize( yNumber, xNumber );
+<a name="l00739"></a>00739         }
+<a name="l00740"></a>00740         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00744"></a><a class="code" href="class_ploter_1_1_graph.html#0f62732f9b9637bee6c4ca466c464133">00744</a>         <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_graph.html#0f62732f9b9637bee6c4ca466c464133" title="頂点の設定。">setVertex</a>( <span class="keyword">const</span> <a class="code" href="class_ploter_1_1_graph.html#1e52120a53d1e39925e87526ab759e96">Data</a> &amp; data ) {
+<a name="l00745"></a>00745             
+<a name="l00746"></a>00746             <span class="keywordflow">for</span> ( <a class="code" href="namespace_ploter.html#a7414cfa758b7e7219e399ec564a5363">Index</a> j=0;  j &lt; this-&gt;<a class="code" href="class_ploter_1_1_graph.html#0e73f13a18938839e7f3e47598781e10">original</a>.size1();  j++ ) {
+<a name="l00747"></a>00747                 
+<a name="l00748"></a>00748                 <a class="code" href="class_ploter_1_1_graph.html#c5e711962b68349c9cb23a3c2228353b">DataStream</a>          ds(data[j]);
+<a name="l00749"></a>00749                 <a class="code" href="class_ploter_1_1_graph.html#bd4239b11d79cda5df81e1cb2798575a">DataStreamIterator</a>  k(ds);
+<a name="l00750"></a>00750                 
+<a name="l00751"></a>00751                 <span class="keywordflow">for</span> ( <a class="code" href="namespace_ploter.html#a7414cfa758b7e7219e399ec564a5363">Index</a> i=0;  i &lt; this-&gt;<a class="code" href="class_ploter_1_1_graph.html#0e73f13a18938839e7f3e47598781e10">original</a>.size2();  i++ ) {
+<a name="l00752"></a>00752                     
+<a name="l00753"></a>00753                     this-&gt;<a class="code" href="class_ploter_1_1_graph.html#0e73f13a18938839e7f3e47598781e10">original</a>(j,i) = <a class="code" href="namespace_ploter.html#3286edb2e92e29f8f197ac3c226b6490" title="ベクトルv(x,y,z)の生成。">v</a>( i,j, *(k++) );
+<a name="l00754"></a>00754                 }
+<a name="l00755"></a>00755             }
+<a name="l00756"></a>00756         }
+<a name="l00757"></a>00757         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00761"></a><a class="code" href="class_ploter_1_1_graph.html#6967cd6b949e27fb715fcbd893a75cc0">00761</a>         <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_graph.html#6967cd6b949e27fb715fcbd893a75cc0" title="ポリラインの設定。">setPolyLine</a>(<span class="keywordtype">void</span>) {
+<a name="l00762"></a>00762             
+<a name="l00763"></a>00763             this-&gt;<a class="code" href="class_ploter_1_1_graph.html#5c3f81749dc85b7556a5f317a4643614">xPolyLines</a>.<a class="code" href="class_ploter_1_1_poly_line_list.html#1a95cbf9f2faa192f87b00ee9765867e" title="[begin,end)の範囲の頂点の集合からポリラインのリストを生成する。...">set</a>( this-&gt;<a class="code" href="class_ploter_1_1_graph.html#eda2640ae4c7a0b4c45190a5ae109011">transformed</a>. begin1(), this-&gt;<a class="code" href="class_ploter_1_1_graph.html#eda2640ae4c7a0b4c45190a5ae109011">transformed</a>. end1() );
+<a name="l00764"></a>00764             this-&gt;<a class="code" href="class_ploter_1_1_graph.html#8e31a41dadd5c5f20d42e590cf75cee6">yPolyLines</a>.<a class="code" href="class_ploter_1_1_poly_line_list.html#1a95cbf9f2faa192f87b00ee9765867e" title="[begin,end)の範囲の頂点の集合からポリラインのリストを生成する。...">set</a>( this-&gt;<a class="code" href="class_ploter_1_1_graph.html#eda2640ae4c7a0b4c45190a5ae109011">transformed</a>.rbegin2(), this-&gt;<a class="code" href="class_ploter_1_1_graph.html#eda2640ae4c7a0b4c45190a5ae109011">transformed</a>.rend2() );
+<a name="l00765"></a>00765         }
+<a name="l00766"></a>00766         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00770"></a><a class="code" href="class_ploter_1_1_graph.html#236e7d05fbbdd8192971469f4145cf98">00770</a>         <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_graph.html#236e7d05fbbdd8192971469f4145cf98" title="頂点の操作。">operateVertex</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{
+<a name="l00771"></a>00771             
+<a name="l00772"></a>00772             this-&gt;<a class="code" href="class_ploter_1_1_graph.html#eda2640ae4c7a0b4c45190a5ae109011">transformed</a> = this-&gt;<a class="code" href="class_ploter_1_1_graph.html#0e73f13a18938839e7f3e47598781e10">original</a>;
+<a name="l00773"></a>00773             
+<a name="l00774"></a>00774             <span class="keywordflow">if</span> ( this-&gt;<a class="code" href="class_ploter_1_1_graph.html#99a573de4b827481598f9aaf0d1d9ced">option</a>.<a class="code" href="class_ploter_1_1_option.html#7de8eb4cc2f4e819a92cc090c84b42e0" title="iniファイルからkeyが指す値を読み込む。">get</a>(<span class="stringliteral">"isRegularizeX"</span>) ) { <a class="code" href="namespace_ploter.html#af055f8b1d0e83f4993874d84ecafdb4" title="正規化する。">regularize</a>( this-&gt;<a class="code" href="class_ploter_1_1_graph.html#eda2640ae4c7a0b4c45190a5ae109011">transformed</a>.begin1(), this-&gt;<a class="code" href="class_ploter_1_1_graph.html#eda2640ae4c7a0b4c45190a5ae109011">transformed</a>.end1() ); }
+<a name="l00775"></a>00775             <span class="keywordflow">if</span> ( this-&gt;<a class="code" href="class_ploter_1_1_graph.html#99a573de4b827481598f9aaf0d1d9ced">option</a>.<a class="code" href="class_ploter_1_1_option.html#7de8eb4cc2f4e819a92cc090c84b42e0" title="iniファイルからkeyが指す値を読み込む。">get</a>(<span class="stringliteral">"isRegularizeY"</span>) ) { <a class="code" href="namespace_ploter.html#af055f8b1d0e83f4993874d84ecafdb4" title="正規化する。">regularize</a>( this-&gt;<a class="code" href="class_ploter_1_1_graph.html#eda2640ae4c7a0b4c45190a5ae109011">transformed</a>.begin2(), this-&gt;<a class="code" href="class_ploter_1_1_graph.html#eda2640ae4c7a0b4c45190a5ae109011">transformed</a>.end2() ); }
+<a name="l00776"></a>00776             <span class="keywordflow">if</span> ( this-&gt;<a class="code" href="class_ploter_1_1_graph.html#99a573de4b827481598f9aaf0d1d9ced">option</a>.<a class="code" href="class_ploter_1_1_option.html#7de8eb4cc2f4e819a92cc090c84b42e0" title="iniファイルからkeyが指す値を読み込む。">get</a>(<span class="stringliteral">"isLogScale"</span>   ) ) { <a class="code" href="namespace_ploter.html#0f257fd7b0c5dd663d40ecf3d986d7f8" title="対数縮尺にする。ただし、0は無視する。">toLogScale</a>( this-&gt;<a class="code" href="class_ploter_1_1_graph.html#eda2640ae4c7a0b4c45190a5ae109011">transformed</a>,          <a class="code" href="namespace_ploter_1_1_v.html#f6dfd6fe754723d22262b59c1ff43fba">V::Z</a>                     ); }
+<a name="l00777"></a>00777         }
+<a name="l00778"></a>00778         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00782"></a><a class="code" href="class_ploter_1_1_graph.html#48977ec7165de88da6d4a240aab72be4">00782</a>         <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_graph.html#b6d01b9703449d612f3f8b554410b598" title="描画する。">draw</a>( <span class="keyword">const</span> <a class="code" href="namespace_ploter.html#cdf6ee9e2bdbc5c486d3d33c96a914b7">Matrix</a> &amp; affine )<span class="keyword"> const </span>{
+<a name="l00783"></a>00783             
+<a name="l00784"></a>00784             <a class="code" href="namespace_ploter.html#ddcd52e142e8ce241bf96a16c1b07c7d" title="二重のfor_each。">dualForEach</a>( this-&gt;<a class="code" href="class_ploter_1_1_graph.html#eda2640ae4c7a0b4c45190a5ae109011">transformed</a>.begin1(),
+<a name="l00785"></a>00785                          this-&gt;<a class="code" href="class_ploter_1_1_graph.html#eda2640ae4c7a0b4c45190a5ae109011">transformed</a>.end1  (),  bind( <a class="code" href="namespace_ploter.html#e66b99fb365c9d4bde330af8cf8d497b" title="ベクトルtargetを行列affineで座標変換する。">transform</a>, affine, _1 ) );
+<a name="l00786"></a>00786             
+<a name="l00787"></a>00787             <span class="keywordflow">if</span> ( this-&gt;<a class="code" href="class_ploter_1_1_graph.html#99a573de4b827481598f9aaf0d1d9ced">option</a>.<a class="code" href="class_ploter_1_1_option.html#7de8eb4cc2f4e819a92cc090c84b42e0" title="iniファイルからkeyが指す値を読み込む。">get</a>(<span class="stringliteral">"isDrawXPolyLines"</span>) ) { <a class="code" href="class_ploter_1_1_hidden_line_manager.html" title="陰線処理を管理するクラス。">HiddenLineManager</a>( &amp;this-&gt;<a class="code" href="class_ploter_1_1_graph.html#5c3f81749dc85b7556a5f317a4643614">xPolyLines</a> ); }
+<a name="l00788"></a>00788             <span class="keywordflow">if</span> ( this-&gt;<a class="code" href="class_ploter_1_1_graph.html#99a573de4b827481598f9aaf0d1d9ced">option</a>.<a class="code" href="class_ploter_1_1_option.html#7de8eb4cc2f4e819a92cc090c84b42e0" title="iniファイルからkeyが指す値を読み込む。">get</a>(<span class="stringliteral">"isDrawYPolyLines"</span>) ) { <a class="code" href="class_ploter_1_1_hidden_line_manager.html" title="陰線処理を管理するクラス。">HiddenLineManager</a>( &amp;this-&gt;<a class="code" href="class_ploter_1_1_graph.html#8e31a41dadd5c5f20d42e590cf75cee6">yPolyLines</a> ); }
+<a name="l00789"></a>00789         }
+<a name="l00790"></a>00790         
+<a name="l00791"></a><a class="code" href="class_ploter_1_1_graph.html#99a573de4b827481598f9aaf0d1d9ced">00791</a>         <span class="keyword">const</span>   <a class="code" href="class_ploter_1_1_option.html" title="オプションを管理するクラス。">Option</a>         <a class="code" href="class_ploter_1_1_graph.html#99a573de4b827481598f9aaf0d1d9ced">option</a>;
+<a name="l00792"></a><a class="code" href="class_ploter_1_1_graph.html#0e73f13a18938839e7f3e47598781e10">00792</a>                 <a class="code" href="namespace_ploter.html#f4197af6b8d6544fcbc94e78080c1f3a">VertexMatrix</a>   <a class="code" href="class_ploter_1_1_graph.html#0e73f13a18938839e7f3e47598781e10">original</a>;
+<a name="l00793"></a><a class="code" href="class_ploter_1_1_graph.html#eda2640ae4c7a0b4c45190a5ae109011">00793</a>         <span class="keyword">mutable</span> <a class="code" href="namespace_ploter.html#f4197af6b8d6544fcbc94e78080c1f3a">VertexMatrix</a>   <a class="code" href="class_ploter_1_1_graph.html#eda2640ae4c7a0b4c45190a5ae109011">transformed</a>;
+<a name="l00794"></a><a class="code" href="class_ploter_1_1_graph.html#5c3f81749dc85b7556a5f317a4643614">00794</a>         <span class="keyword">mutable</span> <a class="code" href="class_ploter_1_1_poly_line_list.html" title="ポリラインの集合を表すクラス。">PolyLineList</a>   <a class="code" href="class_ploter_1_1_graph.html#5c3f81749dc85b7556a5f317a4643614">xPolyLines</a>;
+<a name="l00795"></a><a class="code" href="class_ploter_1_1_graph.html#8e31a41dadd5c5f20d42e590cf75cee6">00795</a>         <span class="keyword">mutable</span> <a class="code" href="class_ploter_1_1_poly_line_list.html" title="ポリラインの集合を表すクラス。">PolyLineList</a>   <a class="code" href="class_ploter_1_1_graph.html#8e31a41dadd5c5f20d42e590cf75cee6">yPolyLines</a>;
+<a name="l00796"></a><a class="code" href="class_ploter_1_1_graph.html#460e77db78fafa2dd1a327274887dbb9">00796</a>         <span class="keyword">mutable</span> <a class="code" href="class_ploter_1_1_min_max_manager.html" title="x,y,zそれぞれの最小値・最大値を管理するクラス。">MinMaxManager</a>  <a class="code" href="class_ploter_1_1_graph.html#460e77db78fafa2dd1a327274887dbb9">minmaxManager</a>;
+<a name="l00797"></a>00797     };
+<a name="l00798"></a>00798     
+<a name="l00799"></a>00799     <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00803"></a><a class="code" href="class_ploter_1_1_ploter.html">00803</a>     <span class="keyword">class </span><a class="code" href="class_ploter_1_1_ploter.html" title="グラフ要素を統括するクラス。">Ploter</a> {
+<a name="l00804"></a>00804         
+<a name="l00805"></a>00805       <span class="keyword">public</span>:
+<a name="l00806"></a>00806         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00810"></a><a class="code" href="class_ploter_1_1_ploter.html#2504a21cf53c4eb858e6ad1488983c88">00810</a>         <a class="code" href="class_ploter_1_1_ploter.html#2504a21cf53c4eb858e6ad1488983c88" title="。">Ploter</a>(<span class="keywordtype">void</span>) : <a class="code" href="class_ploter_1_1_ploter.html#3e9bb0d99d0e5ff3f1d8b67156be3c24">affineManager</a>( <a class="code" href="class_ploter_1_1_option.html" title="オプションを管理するクラス。">Option</a>(<span class="stringliteral">"affine"</span>), &amp;this-&gt;<a class="code" href="class_ploter_1_1_ploter.html#4845d606f972ec8997ecb001c228111c">graph</a>.getMinMaxManager() ),
+<a name="l00811"></a>00811                                <a class="code" href="class_ploter_1_1_ploter.html#4845d606f972ec8997ecb001c228111c">graph</a>( <a class="code" href="class_ploter_1_1_option.html" title="オプションを管理するクラス。">Option</a>(<span class="stringliteral">"graph"</span> )                                  ) {
+<a name="l00812"></a>00812             
+<a name="l00813"></a>00813             this-&gt;<a class="code" href="class_ploter_1_1_ploter.html#fc3f284b8e4b8761bfe2dffdb1d1d6e3">xAxis</a> = <a class="code" href="class_ploter_1_1_ploter.html#7593ba5d912e2237fd548785288fe28f" title="軸の向きがaxisDirection、目盛線の向きがticsDirection、識別名がnameの...">makeAxis</a>( <span class="stringliteral">"x"</span>,        <a class="code" href="namespace_ploter_1_1_v.html#787d7fba188e77bc49cfe19fa55617f3">V::X_UNIT</a>, -<a class="code" href="namespace_ploter_1_1_v.html#fb1a94c20b24b573fd5a68dcde79255a">V::Z_UNIT</a> );
+<a name="l00814"></a>00814             this-&gt;<a class="code" href="class_ploter_1_1_ploter.html#6a880da0111549acbff1d8f7b2027080">yAxis</a> = <a class="code" href="class_ploter_1_1_ploter.html#7593ba5d912e2237fd548785288fe28f" title="軸の向きがaxisDirection、目盛線の向きがticsDirection、識別名がnameの...">makeAxis</a>( <span class="stringliteral">"y"</span>,        <a class="code" href="namespace_ploter_1_1_v.html#c7dea1cd16dce4110b4a1cff9d48b037">V::Y_UNIT</a>, -<a class="code" href="namespace_ploter_1_1_v.html#fb1a94c20b24b573fd5a68dcde79255a">V::Z_UNIT</a> );
+<a name="l00815"></a>00815             this-&gt;<a class="code" href="class_ploter_1_1_ploter.html#c0de48afe0cecb8e6eb6b3f404c1cc3b">zAxis</a> = <a class="code" href="class_ploter_1_1_ploter.html#7593ba5d912e2237fd548785288fe28f" title="軸の向きがaxisDirection、目盛線の向きがticsDirection、識別名がnameの...">makeAxis</a>( <span class="stringliteral">"z"</span>,  0.5 * <a class="code" href="namespace_ploter_1_1_v.html#fb1a94c20b24b573fd5a68dcde79255a">V::Z_UNIT</a>, -<a class="code" href="namespace_ploter_1_1_v.html#787d7fba188e77bc49cfe19fa55617f3">V::X_UNIT</a> );
+<a name="l00816"></a>00816             
+<a name="l00817"></a>00817             this-&gt;<a class="code" href="class_ploter_1_1_ploter.html#5329b2353dd3c15ee118f11d0766a509">xyGrid</a> = <a class="code" href="class_ploter_1_1_ploter.html#e6630e87feb4246ef0ff24e35397acbf" title="軸axis1と軸axis2を張る識別名nameのグリッド平面を生成する。">makeGrid</a>( <span class="stringliteral">"xy"</span>, this-&gt;<a class="code" href="class_ploter_1_1_ploter.html#fc3f284b8e4b8761bfe2dffdb1d1d6e3">xAxis</a>, this-&gt;<a class="code" href="class_ploter_1_1_ploter.html#6a880da0111549acbff1d8f7b2027080">yAxis</a> );
+<a name="l00818"></a>00818             this-&gt;<a class="code" href="class_ploter_1_1_ploter.html#5555ee678f2c4d7974ef885b869fe295">xzGrid</a> = <a class="code" href="class_ploter_1_1_ploter.html#e6630e87feb4246ef0ff24e35397acbf" title="軸axis1と軸axis2を張る識別名nameのグリッド平面を生成する。">makeGrid</a>( <span class="stringliteral">"xz"</span>, this-&gt;<a class="code" href="class_ploter_1_1_ploter.html#fc3f284b8e4b8761bfe2dffdb1d1d6e3">xAxis</a>, this-&gt;<a class="code" href="class_ploter_1_1_ploter.html#c0de48afe0cecb8e6eb6b3f404c1cc3b">zAxis</a> );
+<a name="l00819"></a>00819             this-&gt;<a class="code" href="class_ploter_1_1_ploter.html#df26dd72e87b5e235b174796188f30ee">yzGrid</a> = <a class="code" href="class_ploter_1_1_ploter.html#e6630e87feb4246ef0ff24e35397acbf" title="軸axis1と軸axis2を張る識別名nameのグリッド平面を生成する。">makeGrid</a>( <span class="stringliteral">"yz"</span>, this-&gt;<a class="code" href="class_ploter_1_1_ploter.html#6a880da0111549acbff1d8f7b2027080">yAxis</a>, this-&gt;<a class="code" href="class_ploter_1_1_ploter.html#c0de48afe0cecb8e6eb6b3f404c1cc3b">zAxis</a> );
+<a name="l00820"></a>00820         }
+<a name="l00821"></a>00821         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00825"></a><a class="code" href="class_ploter_1_1_ploter.html#2038e2ab69c80d03c9e8e9b6ce2f4fd3">00825</a>         <span class="keywordtype">void</span>  <span class="keyword">set</span>( <span class="keyword">const</span> <span class="keywordtype">char</span> * fileName ) {
+<a name="l00826"></a>00826             
+<a name="l00827"></a>00827             <a class="code" href="class_ploter_1_1_ploter.html#4845d606f972ec8997ecb001c228111c">graph</a>.<a class="code" href="class_ploter_1_1_graph.html#e01d12afec4f323fd90254e7d2544d8e" title="fileNameが指すファイルから、頂点を設定する。">set</a>( fileName );
+<a name="l00828"></a>00828         }
+<a name="l00829"></a>00829         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00833"></a><a class="code" href="class_ploter_1_1_ploter.html#26ca2d772f02c0b28493195af1cbbf72">00833</a>         <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_ploter.html#26ca2d772f02c0b28493195af1cbbf72" title="描画する。">draw</a>(<span class="keywordtype">void</span>)<span class="keyword"> const  </span>{
+<a name="l00834"></a>00834             
+<a name="l00835"></a>00835             glClearColor( 1.0, 1.0, 1.0, 1.0  );
+<a name="l00836"></a>00836             glClear     ( GL_COLOR_BUFFER_BIT );
+<a name="l00837"></a>00837             
+<a name="l00838"></a>00838             glLoadIdentity();
+<a name="l00839"></a>00839             glOrtho( -0.4, 2.0,  -0.4, 2.0,  -10.0, 10.0 );
+<a name="l00840"></a>00840             
+<a name="l00841"></a>00841             glEnable( GL_BLEND ); {
+<a name="l00842"></a>00842                 
+<a name="l00843"></a>00843                 glBlendFunc( GL_SRC_ALPHA,  GL_ONE_MINUS_SRC_ALPHA );
+<a name="l00844"></a>00844                 
+<a name="l00845"></a>00845                 this-&gt;<a class="code" href="class_ploter_1_1_ploter.html#cc17d754269e5761c1381588353575b0" title="座標軸の描画。">drawAxis</a> ();
+<a name="l00846"></a>00846                 this-&gt;<a class="code" href="class_ploter_1_1_ploter.html#f5ac974630e9497faac7eb8e5e45d96b" title="グリッドの描画。">drawGrid</a> ();
+<a name="l00847"></a>00847                 this-&gt;<a class="code" href="class_ploter_1_1_ploter.html#8b2245e5d12715c33d03956dbd14b46e" title="グラフの描画。">drawGraph</a>();
+<a name="l00848"></a>00848                 
+<a name="l00849"></a>00849             } glDisable( GL_BLEND );
+<a name="l00850"></a>00850         }
+<a name="l00851"></a>00851         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00855"></a><a class="code" href="class_ploter_1_1_ploter.html#7e91630f2a9494405bafdec50507b82d">00855</a>         <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_ploter.html#7e91630f2a9494405bafdec50507b82d" title="ウィンドウサイズ変化時のビューポートの再設定。">resize</a>( <span class="keywordtype">int</span> width,  <span class="keywordtype">int</span> height )<span class="keyword"> const </span>{
+<a name="l00856"></a>00856             
+<a name="l00857"></a>00857             <span class="keywordtype">int</span>  max   = std::max(width,height);
+<a name="l00858"></a>00858             <span class="keywordtype">int</span>  min   = std::min(width,height);
+<a name="l00859"></a>00859             <span class="keywordtype">int</span>  space = (max - min) / 2;
+<a name="l00860"></a>00860             
+<a name="l00861"></a>00861             <span class="keywordflow">if</span> ( min == height ) { glViewport( space, 0, min, min ); }
+<a name="l00862"></a>00862             <span class="keywordflow">else</span>                 { glViewport( 0, space, min, min ); }
+<a name="l00863"></a>00863             
+<a name="l00864"></a>00864             this-&gt;<a class="code" href="class_ploter_1_1_ploter.html#26ca2d772f02c0b28493195af1cbbf72" title="描画する。">draw</a>();
+<a name="l00865"></a>00865         }
+<a name="l00866"></a>00866         
+<a name="l00867"></a>00867       <span class="keyword">private</span>:
+<a name="l00868"></a>00868         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00873"></a><a class="code" href="class_ploter_1_1_ploter.html#7593ba5d912e2237fd548785288fe28f">00873</a>         <span class="keyword">static</span> shared_ptr&lt;Axis&gt;  <a class="code" href="class_ploter_1_1_ploter.html#7593ba5d912e2237fd548785288fe28f" title="軸の向きがaxisDirection、目盛線の向きがticsDirection、識別名がnameの...">makeAxis</a>( <span class="keyword">const</span> std::string &amp; name,  <span class="keyword">const</span> <a class="code" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp; axisDirection,
+<a name="l00874"></a>00874                                                                       <span class="keyword">const</span> <a class="code" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp; ticsDirection ) {
+<a name="l00875"></a>00875             
+<a name="l00876"></a>00876             <a class="code" href="class_ploter_1_1_option.html" title="オプションを管理するクラス。">Option</a>   axisOption( name +  <span class="stringliteral">"Axis"</span> );
+<a name="l00877"></a>00877             <a class="code" href="class_ploter_1_1_option.html" title="オプションを管理するクラス。">Option</a>   ticsOption( name +  <span class="stringliteral">"Tics"</span> );
+<a name="l00878"></a>00878             <a class="code" href="class_ploter_1_1_option.html" title="オプションを管理するクラス。">Option</a>  mticsOption( name + <span class="stringliteral">"MTics"</span> );
+<a name="l00879"></a>00879             
+<a name="l00880"></a>00880             <a class="code" href="class_ploter_1_1_axis.html" title="座標軸を表すクラス。">Axis</a> *  axis = <span class="keyword">new</span> <a class="code" href="class_ploter_1_1_axis.html" title="座標軸を表すクラス。">Axis</a>(  axisOption,         axisDirection        );
+<a name="l00881"></a>00881             <a class="code" href="class_ploter_1_1_tics.html" title="目盛を表すクラス。">Tics</a> *  tics = <span class="keyword">new</span> <a class="code" href="class_ploter_1_1_tics.html" title="目盛を表すクラス。">Tics</a>(  ticsOption,  0.04 * ticsDirection,  axis );
+<a name="l00882"></a>00882             <a class="code" href="class_ploter_1_1_tics.html" title="目盛を表すクラス。">Tics</a> * mtics = <span class="keyword">new</span> <a class="code" href="class_ploter_1_1_tics.html" title="目盛を表すクラス。">Tics</a>( mticsOption,  0.02 * ticsDirection,  tics );
+<a name="l00883"></a>00883             
+<a name="l00884"></a>00884             axis-&gt;<a class="code" href="class_ploter_1_1_composite.html#97c204aa7779d01d0630e0aeffb9cc70" title="childを子要素に設定する。">setChild</a>( tics);
+<a name="l00885"></a>00885             tics-&gt;<a class="code" href="class_ploter_1_1_composite.html#97c204aa7779d01d0630e0aeffb9cc70" title="childを子要素に設定する。">setChild</a>(mtics);
+<a name="l00886"></a>00886             
+<a name="l00887"></a>00887             <span class="keywordflow">return</span> shared_ptr&lt;Axis&gt;(axis);
+<a name="l00888"></a>00888         }
+<a name="l00889"></a>00889         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00893"></a><a class="code" href="class_ploter_1_1_ploter.html#e6630e87feb4246ef0ff24e35397acbf">00893</a>         <span class="keyword">static</span> shared_ptr&lt;Grid&gt;  <a class="code" href="class_ploter_1_1_ploter.html#e6630e87feb4246ef0ff24e35397acbf" title="軸axis1と軸axis2を張る識別名nameのグリッド平面を生成する。">makeGrid</a>( <span class="keyword">const</span> std::string &amp; name,  <span class="keyword">const</span> shared_ptr&lt;Axis&gt; axis1,
+<a name="l00894"></a>00894                                                                       <span class="keyword">const</span> shared_ptr&lt;Axis&gt; axis2 ) {
+<a name="l00895"></a>00895             
+<a name="l00896"></a>00896             <a class="code" href="class_ploter_1_1_option.html" title="オプションを管理するクラス。">Option</a>   gridOption( name +  <span class="stringliteral">"Grid"</span> );
+<a name="l00897"></a>00897             <a class="code" href="class_ploter_1_1_option.html" title="オプションを管理するクラス。">Option</a>  mgridOption( name + <span class="stringliteral">"MGrid"</span> );
+<a name="l00898"></a>00898             
+<a name="l00899"></a>00899             <a class="code" href="class_ploter_1_1_grid.html" title="グリッドを表すクラス。">Grid</a> * grid = <span class="keyword">new</span> <a class="code" href="class_ploter_1_1_grid.html" title="グリッドを表すクラス。">Grid</a>(  gridOption,  axis1-&gt;getChild(),
+<a name="l00900"></a>00900                                                    axis2-&gt;getChild() );
+<a name="l00901"></a>00901             <a class="code" href="class_ploter_1_1_grid.html" title="グリッドを表すクラス。">Grid</a> * mgrid = <span class="keyword">new</span> <a class="code" href="class_ploter_1_1_grid.html" title="グリッドを表すクラス。">Grid</a>( mgridOption,  axis1-&gt;getChild()-&gt;getChild(),
+<a name="l00902"></a>00902                                                    axis2-&gt;getChild()-&gt;getChild() );
+<a name="l00903"></a>00903             
+<a name="l00904"></a>00904             grid-&gt;<a class="code" href="class_ploter_1_1_composite.html#97c204aa7779d01d0630e0aeffb9cc70" title="childを子要素に設定する。">setChild</a>(mgrid);
+<a name="l00905"></a>00905             
+<a name="l00906"></a>00906             <span class="keywordflow">return</span> shared_ptr&lt;Grid&gt;(grid);
+<a name="l00907"></a>00907         }
+<a name="l00908"></a>00908         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00912"></a><a class="code" href="class_ploter_1_1_ploter.html#cc17d754269e5761c1381588353575b0">00912</a>         <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_ploter.html#cc17d754269e5761c1381588353575b0" title="座標軸の描画。">drawAxis</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{
+<a name="l00913"></a>00913             
+<a name="l00914"></a>00914             glColor4d( 0.0,  0.0,  0.0,  1.0 );
+<a name="l00915"></a>00915             
+<a name="l00916"></a>00916             <a class="code" href="class_ploter_1_1_ploter.html#fc3f284b8e4b8761bfe2dffdb1d1d6e3">xAxis</a>-&gt;draw( <a class="code" href="class_ploter_1_1_ploter.html#3e9bb0d99d0e5ff3f1d8b67156be3c24">affineManager</a>.<a class="code" href="class_ploter_1_1_affine_manager.html#0820b143e818529cb690d05869f3d6a4" title="各グラフ要素用のアフィン行列を返す。">get</a>( <a class="code" href="class_ploter_1_1_affine_manager.html#636854d05ef9527d8decccc48d0fdbd9a9c7e92596d708cb10099c6839c762a8">AffineManager::FOR_X_AXIS</a> ) );
+<a name="l00917"></a>00917             <a class="code" href="class_ploter_1_1_ploter.html#6a880da0111549acbff1d8f7b2027080">yAxis</a>-&gt;draw( <a class="code" href="class_ploter_1_1_ploter.html#3e9bb0d99d0e5ff3f1d8b67156be3c24">affineManager</a>.<a class="code" href="class_ploter_1_1_affine_manager.html#0820b143e818529cb690d05869f3d6a4" title="各グラフ要素用のアフィン行列を返す。">get</a>( <a class="code" href="class_ploter_1_1_affine_manager.html#636854d05ef9527d8decccc48d0fdbd9f9aabc15b54bb3497416393ccee620f6">AffineManager::FOR_Y_AXIS</a> ) );
+<a name="l00918"></a>00918             <a class="code" href="class_ploter_1_1_ploter.html#c0de48afe0cecb8e6eb6b3f404c1cc3b">zAxis</a>-&gt;draw( <a class="code" href="class_ploter_1_1_ploter.html#3e9bb0d99d0e5ff3f1d8b67156be3c24">affineManager</a>.<a class="code" href="class_ploter_1_1_affine_manager.html#0820b143e818529cb690d05869f3d6a4" title="各グラフ要素用のアフィン行列を返す。">get</a>( <a class="code" href="class_ploter_1_1_affine_manager.html#636854d05ef9527d8decccc48d0fdbd9700bc31ac3d761035b72b90bf20619b0">AffineManager::FOR_Z_AXIS</a> ) );
+<a name="l00919"></a>00919         }
+<a name="l00920"></a>00920         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00924"></a><a class="code" href="class_ploter_1_1_ploter.html#f5ac974630e9497faac7eb8e5e45d96b">00924</a>         <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_ploter.html#f5ac974630e9497faac7eb8e5e45d96b" title="グリッドの描画。">drawGrid</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{
+<a name="l00925"></a>00925             
+<a name="l00926"></a>00926             glColor4d( 0.0,  0.0,  0.0,  0.7 );
+<a name="l00927"></a>00927             
+<a name="l00928"></a>00928             this-&gt;<a class="code" href="class_ploter_1_1_ploter.html#5329b2353dd3c15ee118f11d0766a509">xyGrid</a>-&gt;draw( this-&gt;<a class="code" href="class_ploter_1_1_ploter.html#3e9bb0d99d0e5ff3f1d8b67156be3c24">affineManager</a>.<a class="code" href="class_ploter_1_1_affine_manager.html#0820b143e818529cb690d05869f3d6a4" title="各グラフ要素用のアフィン行列を返す。">get</a>( <a class="code" href="class_ploter_1_1_affine_manager.html#636854d05ef9527d8decccc48d0fdbd9ebaba9f08af4b0adc652289ce6df6f8b">AffineManager::FOR_XY_GRID</a> ) );
+<a name="l00929"></a>00929             this-&gt;<a class="code" href="class_ploter_1_1_ploter.html#5555ee678f2c4d7974ef885b869fe295">xzGrid</a>-&gt;draw( this-&gt;<a class="code" href="class_ploter_1_1_ploter.html#3e9bb0d99d0e5ff3f1d8b67156be3c24">affineManager</a>.<a class="code" href="class_ploter_1_1_affine_manager.html#0820b143e818529cb690d05869f3d6a4" title="各グラフ要素用のアフィン行列を返す。">get</a>( <a class="code" href="class_ploter_1_1_affine_manager.html#636854d05ef9527d8decccc48d0fdbd9e6c1a1a73badc2ea5dd845bdd1a62064">AffineManager::FOR_XZ_GRID</a> ) );
+<a name="l00930"></a>00930             this-&gt;<a class="code" href="class_ploter_1_1_ploter.html#df26dd72e87b5e235b174796188f30ee">yzGrid</a>-&gt;draw( this-&gt;<a class="code" href="class_ploter_1_1_ploter.html#3e9bb0d99d0e5ff3f1d8b67156be3c24">affineManager</a>.<a class="code" href="class_ploter_1_1_affine_manager.html#0820b143e818529cb690d05869f3d6a4" title="各グラフ要素用のアフィン行列を返す。">get</a>( <a class="code" href="class_ploter_1_1_affine_manager.html#636854d05ef9527d8decccc48d0fdbd96eaa42e6cd2437401c828246f2afec64">AffineManager::FOR_YZ_GRID</a> ) );
+<a name="l00931"></a>00931         }
+<a name="l00932"></a>00932         <span class="comment">//---------------------------------------------------------------------------</span>
+<a name="l00936"></a><a class="code" href="class_ploter_1_1_ploter.html#8b2245e5d12715c33d03956dbd14b46e">00936</a>         <span class="keywordtype">void</span>  <a class="code" href="class_ploter_1_1_ploter.html#8b2245e5d12715c33d03956dbd14b46e" title="グラフの描画。">drawGraph</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{
+<a name="l00937"></a>00937             
+<a name="l00938"></a>00938             glEnable( GL_LINE_SMOOTH );  {
+<a name="l00939"></a>00939                 
+<a name="l00940"></a>00940                 glHint( GL_LINE_SMOOTH_HINT, GL_NICEST );
+<a name="l00941"></a>00941                 
+<a name="l00942"></a>00942                 <a class="code" href="class_ploter_1_1_ploter.html#4845d606f972ec8997ecb001c228111c">graph</a>.<a class="code" href="class_ploter_1_1_graph.html#b6d01b9703449d612f3f8b554410b598" title="描画する。">draw</a>( &amp;this-&gt;<a class="code" href="class_ploter_1_1_ploter.html#3e9bb0d99d0e5ff3f1d8b67156be3c24">affineManager</a>, <a class="code" href="class_ploter_1_1_affine_manager.html#636854d05ef9527d8decccc48d0fdbd95c02a102025c9d7106f16d817d9acdbb">AffineManager::FOR_GRAPH</a> );
+<a name="l00943"></a>00943                 
+<a name="l00944"></a>00944             }  glDisable( GL_LINE_SMOOTH );
+<a name="l00945"></a>00945         }
+<a name="l00946"></a>00946         
+<a name="l00947"></a><a class="code" href="class_ploter_1_1_ploter.html#fc3f284b8e4b8761bfe2dffdb1d1d6e3">00947</a>         shared_ptr&lt;Axis&gt;  <a class="code" href="class_ploter_1_1_ploter.html#fc3f284b8e4b8761bfe2dffdb1d1d6e3">xAxis</a>;
+<a name="l00948"></a><a class="code" href="class_ploter_1_1_ploter.html#6a880da0111549acbff1d8f7b2027080">00948</a>         shared_ptr&lt;Axis&gt;  <a class="code" href="class_ploter_1_1_ploter.html#6a880da0111549acbff1d8f7b2027080">yAxis</a>;
+<a name="l00949"></a><a class="code" href="class_ploter_1_1_ploter.html#c0de48afe0cecb8e6eb6b3f404c1cc3b">00949</a>         shared_ptr&lt;Axis&gt;  <a class="code" href="class_ploter_1_1_ploter.html#c0de48afe0cecb8e6eb6b3f404c1cc3b">zAxis</a>;
+<a name="l00950"></a><a class="code" href="class_ploter_1_1_ploter.html#5329b2353dd3c15ee118f11d0766a509">00950</a>         shared_ptr&lt;Grid&gt;  <a class="code" href="class_ploter_1_1_ploter.html#5329b2353dd3c15ee118f11d0766a509">xyGrid</a>;
+<a name="l00951"></a><a class="code" href="class_ploter_1_1_ploter.html#5555ee678f2c4d7974ef885b869fe295">00951</a>         shared_ptr&lt;Grid&gt;  <a class="code" href="class_ploter_1_1_ploter.html#5555ee678f2c4d7974ef885b869fe295">xzGrid</a>;
+<a name="l00952"></a><a class="code" href="class_ploter_1_1_ploter.html#df26dd72e87b5e235b174796188f30ee">00952</a>         shared_ptr&lt;Grid&gt;  <a class="code" href="class_ploter_1_1_ploter.html#df26dd72e87b5e235b174796188f30ee">yzGrid</a>;
+<a name="l00953"></a><a class="code" href="class_ploter_1_1_ploter.html#4845d606f972ec8997ecb001c228111c">00953</a>         <a class="code" href="class_ploter_1_1_graph.html" title="３次元グラフを表すクラス。">Graph</a>             <a class="code" href="class_ploter_1_1_ploter.html#4845d606f972ec8997ecb001c228111c">graph</a>;
+<a name="l00954"></a><a class="code" href="class_ploter_1_1_ploter.html#3e9bb0d99d0e5ff3f1d8b67156be3c24">00954</a>         <a class="code" href="class_ploter_1_1_affine_manager.html" title="アフィン行列を管理するクラス。">AffineManager</a>     <a class="code" href="class_ploter_1_1_ploter.html#3e9bb0d99d0e5ff3f1d8b67156be3c24">affineManager</a>;
+<a name="l00955"></a>00955     };
+<a name="l00956"></a>00956 }
+<a name="l00957"></a>00957 <span class="preprocessor">#endif</span>
+</pre></div></div>
+<hr size="1"><address style="text-align: right;"><small>3dGraphに対してTue Jan 6 00:57:19 2009に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.6 </small></address>
+</body>
+</html>

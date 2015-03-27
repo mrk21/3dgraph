@@ -1,0 +1,7 @@
+<area shape="rect" href="$namespace_ploter_1_1_m.html#74c7755e20b7d62a1a6e55b782acdd36" title="Ploter::M::IDENTITY" alt="" coords="536,5,675,32">
+<area shape="rect" href="$namespace_ploter.html#f512b9e4bd9deb6394fcd49991ea8ed0" title="軸axis を deg°回転する行列を返す。" alt="" coords="328,56,424,83">
+<area shape="rect" href="$class_ploter_1_1_affine_manager.html#0b9eee86956a6259a1378b6cb511d1ef" title="水平軸の違いによるアフィン行列の選択。" alt="" coords="264,107,488,133">
+<area shape="rect" href="$namespace_ploter_1_1_v.html#787d7fba188e77bc49cfe19fa55617f3" title="Ploter::V::X_UNIT" alt="" coords="315,157,437,184">
+<area shape="rect" href="$namespace_ploter_1_1_v.html#fb1a94c20b24b573fd5a68dcde79255a" title="Ploter::V::Z_UNIT" alt="" coords="315,208,437,235">
+<area shape="rect" href="$namespace_ploter.html#5817d6e4339bbf3460b0704ca6e976df" title="度からラジアンへの変換。" alt="" coords="557,56,653,83">
+<area shape="rect" href="$class_ploter_1_1_option.html#7de8eb4cc2f4e819a92cc090c84b42e0" title="iniファイルからkeyが指す値を読み込む。" alt="" coords="541,107,669,133">

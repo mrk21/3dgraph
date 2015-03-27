@@ -1,0 +1,21 @@
+//-----------------------------------------
+//             BCCForm Ver 2.41
+//    An Easy Resource Editor for BCC
+//  Copyright (c) February 2002 by ysama
+//-----------------------------------------
+#include	"ResForm.h"
+
+
+//-------------------------
+// メニュー（IDM_MENU）
+//-------------------------
+IDM_MENU MENU DISCARDABLE
+{
+	POPUP "ファイル(&F)"
+	{
+		MENUITEM "データを開く(&O)", IDM_OPEN
+		MENUITEM SEPARATOR
+		MENUITEM "終了(&X)", IDM_EXIT
+	}
+
+}

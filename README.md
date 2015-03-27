@@ -1,2 +1,3 @@
-# junk_3dgraph
+# 3dGraph
+
 3D graph plotter

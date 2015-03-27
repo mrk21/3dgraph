@@ -1,0 +1,6 @@
+<area shape="rect" href="$class_ploter_1_1_collection.html" title="{Ploter::Collection\&lt; Ploter::Line \&gt;\n|# children\l|+ acceptScanning()\l+ acceptComplementing()\l+ draw()\l&#45; accept()\l}" alt="" coords="5,552,216,680">
+<area shape="rect" href="$class_ploter_1_1_collection.html" title="{Ploter::Collection\&lt; Ploter::PolyLine \&gt;\n|# children\l|+ acceptScanning()\l+ acceptComplementing()\l+ draw()\l&#45; accept()\l}" alt="" coords="741,552,976,680">
+<area shape="rect" href="$class_ploter_1_1_collection.html" title="グラフ要素の集合を表すクラス。" alt="" coords="516,264,716,392">
+<area shape="rect" href="$class_ploter_1_1_line.html" title="線分を表すクラス。" alt="" coords="833,168,1004,488">
+<area shape="rect" href="$class_ploter_1_1_poly_line.html" title="ポリラインを表すクラス。" alt="" coords="515,560,717,672">
+<area shape="rect" href="$class_ploter_1_1_poly_line_list.html" title="ポリラインの集合を表すクラス。" alt="" coords="240,576,491,656">

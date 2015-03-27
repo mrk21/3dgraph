@@ -1,0 +1,5 @@
+<area shape="rect" href="$namespace_ploter_1_1_m.html#74c7755e20b7d62a1a6e55b782acdd36" title="Ploter::M::IDENTITY" alt="" coords="504,5,643,32">
+<area shape="rect" href="$class_ploter_1_1_affine_manager.html#0b9eee86956a6259a1378b6cb511d1ef" title="水平軸の違いによるアフィン行列の選択。" alt="" coords="232,81,456,108">
+<area shape="rect" href="$namespace_ploter.html#6d6a17eb019c30845df901c389d6e866" title="toだけ平行移動する行列を返す。" alt="" coords="288,31,400,57">
+<area shape="rect" href="$namespace_ploter_1_1_v.html#787d7fba188e77bc49cfe19fa55617f3" title="Ploter::V::X_UNIT" alt="" coords="283,132,405,159">
+<area shape="rect" href="$class_ploter_1_1_option.html#7de8eb4cc2f4e819a92cc090c84b42e0" title="iniファイルからkeyが指す値を読み込む。" alt="" coords="509,81,637,108">

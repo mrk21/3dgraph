@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>3dGraph: sources/Ploter/Utility.h</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.5.6 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>sources/Ploter/Utility.h</h1>。 <a href="#_details">[詳細]</a>
+<p>
+<code>#include &lt;string&gt;</code><br>
+<code>#include &lt;vector&gt;</code><br>
+<code>#include &lt;algorithm&gt;</code><br>
+<code>#include &lt;cmath&gt;</code><br>
+<code>#include &lt;boost/function.hpp&gt;</code><br>
+<code>#include &lt;boost/lambda/lambda.hpp&gt;</code><br>
+<code>#include &lt;boost/lambda/bind.hpp&gt;</code><br>
+<code>#include &lt;boost/lambda/if.hpp&gt;</code><br>
+<code>#include &lt;boost/numeric/ublas/matrix.hpp&gt;</code><br>
+<code>#include &lt;boost/numeric/ublas/vector.hpp&gt;</code><br>
+<code>#include &lt;boost/numeric/ublas/matrix_proxy.hpp&gt;</code><br>
+<code>#include &lt;boost/numeric/ublas/vector_proxy.hpp&gt;</code><br>
+<code>#include &lt;boost/numeric/ublas/triangular.hpp&gt;</code><br>
+<code>#include &lt;boost/numeric/ublas/lu.hpp&gt;</code><br>
+<code>#include &lt;boost/numeric/ublas/io.hpp&gt;</code><br>
+<code>#include &lt;windows.h&gt;</code><br>
+<code>#include &lt;gl/gl.h&gt;</code><br>
+
+<p>
+<div class="dynheader">
+Utility.hのインクルード依存関係図</div>
+<div class="dynsection">
+<p><center><img src="_utility_8h__incl.png" border="0" usemap="#sources/Ploter/Utility.h_map" alt=""></center>
+</div>
+
+<p>
+<div class="dynheader">
+このグラフは、どのファイルから直接、間接的にインクルードされているかを示しています。</div>
+<div class="dynsection">
+<p><center><img src="_utility_8h__dep__incl.png" border="0" usemap="#sources/Ploter/Utility.hdep_map" alt=""></center>
+<map name="sources/Ploter/Utility.hdep_map">
+<area shape="rect" href="_ploter_8h.html" title="データを３次元グラフで表示する。" alt="" coords="5,80,160,107"><area shape="rect" href="3d_graph_8cpp.html" title="sources/3dGraph.cpp" alt="" coords="11,155,155,181"></map>
+</div>
+
+<p>
+<a href="_utility_8h-source.html">ソースコードを見る。</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>ネームスペース</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">namespace &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html">Ploter</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">namespace &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter_1_1_v.html">Ploter::V</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">namespace &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter_1_1_m.html">Ploter::M</a></td></tr>
+
+<tr><td colspan="2"><br><h2>構成</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_option.html">Ploter::Option</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オプションを管理するクラス。  <a href="class_ploter_1_1_option.html#_details">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_min_max.html">Ploter::MinMax</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">最大値と最小値の格納。  <a href="class_ploter_1_1_min_max.html#_details">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_min_max_manager.html">Ploter::MinMaxManager</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">x,y,zそれぞれの最小値・最大値を管理するクラス。  <a href="class_ploter_1_1_min_max_manager.html#_details">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_affine_manager.html">Ploter::AffineManager</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">アフィン行列を管理するクラス。  <a href="class_ploter_1_1_affine_manager.html#_details">[詳細]</a><br></td></tr>
+<tr><td colspan="2"><br><h2>型定義</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Ploter::Element</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef ublas::vector&lt; Element &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Ploter::Vector</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef ublas::matrix&lt; Element &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#cdf6ee9e2bdbc5c486d3d33c96a914b7">Ploter::Matrix</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#a7414cfa758b7e7219e399ec564a5363">Ploter::Index</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef std::vector&lt; Vector &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#04069799b968fe89f21012b4436f04fe">Ploter::VertexList</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef ublas::matrix&lt; Vector &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#f4197af6b8d6544fcbc94e78080c1f3a">Ploter::VertexMatrix</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef function&lt; Element <br>
+&amp;(Vector &amp;)&gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#3e7caf90b69598e3b8322ba3c585ee9a">Ploter::ReferenceFunction</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef function&lt; const <br>
+Element &amp;(const Vector &amp;)&gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#6d7484abd77bd67a04915fcfe0436f6d">Ploter::ConstReferenceFunction</a></td></tr>
+
+<tr><td colspan="2"><br><h2>列挙型</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="namespace_ploter.html#35b0402ef09657b1efe8ba08340ef2886db182841ad2aa8e572a2918e89332cd">Ploter::X</a>, 
+<a class="el" href="namespace_ploter.html#35b0402ef09657b1efe8ba08340ef28867feb73c81763146bfd3084fd4bce48e">Ploter::Y</a>, 
+<a class="el" href="namespace_ploter.html#35b0402ef09657b1efe8ba08340ef28830b6c7677a77d0dd2330a0b9674d2dbf">Ploter::Z</a>, 
+<a class="el" href="namespace_ploter.html#35b0402ef09657b1efe8ba08340ef288f8ded9ba77fc8447b07cda572049b720">Ploter::W</a>
+ }</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ベクトルの要素の指標を表す値。  <a href="namespace_ploter.html#35b0402ef09657b1efe8ba08340ef288">[詳細]</a><br></td></tr>
+<tr><td colspan="2"><br><h2>関数</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">const Vector&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter_1_1_v.html#faec408b14e015d5a3ef4f3a66149635">Ploter::V::ZERO</a> (zero_vector&lt; Element &gt;(4))</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">const Vector&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter_1_1_v.html#787d7fba188e77bc49cfe19fa55617f3">Ploter::V::X_UNIT</a> (unit_vector&lt; Element &gt;(4, X))</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">const Vector&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter_1_1_v.html#c7dea1cd16dce4110b4a1cff9d48b037">Ploter::V::Y_UNIT</a> (unit_vector&lt; Element &gt;(4, Y))</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">const Vector&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter_1_1_v.html#fb1a94c20b24b573fd5a68dcde79255a">Ploter::V::Z_UNIT</a> (unit_vector&lt; Element &gt;(4, Z))</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">const Vector&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter_1_1_v.html#6ecf66b2877ee3d105f77d58cff0aecb">Ploter::V::W_UNIT</a> (unit_vector&lt; Element &gt;(4, W))</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">const ReferenceFunction&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter_1_1_v.html#ef7204a108ff0b8d8044dc4addaa419f">Ploter::V::X</a> (ret&lt; Element &amp; &gt;(_1[0]))</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">const ReferenceFunction&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter_1_1_v.html#9a36dc63e509457f4113a913a725aeec">Ploter::V::Y</a> (ret&lt; Element &amp; &gt;(_1[1]))</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">const ReferenceFunction&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter_1_1_v.html#f6dfd6fe754723d22262b59c1ff43fba">Ploter::V::Z</a> (ret&lt; Element &amp; &gt;(_1[2]))</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">const ConstReferenceFunction&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter_1_1_v.html#643158aa8326f7a30e31be2a17cd2211">Ploter::V::CONST_X</a> (ret&lt; const Element &amp; &gt;(_1[0]))</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">const ConstReferenceFunction&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter_1_1_v.html#1298e2035259284eb20243f270f8d8da">Ploter::V::CONST_Y</a> (ret&lt; const Element &amp; &gt;(_1[1]))</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">const ConstReferenceFunction&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter_1_1_v.html#396ce96178bb46cef34971b1d1860de1">Ploter::V::CONST_Z</a> (ret&lt; const Element &amp; &gt;(_1[2]))</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">const Matrix&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter_1_1_m.html#4083eb25765ba38b5823fcb63799d3bb">Ploter::M::ZERO</a> (zero_matrix&lt; Element &gt;(4, 4))</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">const Matrix&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter_1_1_m.html#74c7755e20b7d62a1a6e55b782acdd36">Ploter::M::IDENTITY</a> (identity_matrix&lt; Element &gt;(4, 4))</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#5817d6e4339bbf3460b0704ca6e976df">Ploter::toRad</a> (double deg)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">度からラジアンへの変換。  <a href="#5817d6e4339bbf3460b0704ca6e976df"></a><br></td></tr>
+<tr><td class="memTemplParams" nowrap colspan="2">template&lt;class IteratorType, class UnaryFunctionType&gt; </td></tr>
+<tr><td class="memTemplItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#ddcd52e142e8ce241bf96a16c1b07c7d">Ploter::dualForEach</a> (IteratorType begin, IteratorType end, UnaryFunctionType unaryFunction)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">二重のfor_each。  <a href="#ddcd52e142e8ce241bf96a16c1b07c7d"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#0f257fd7b0c5dd663d40ecf3d986d7f8">Ploter::toLogScale</a> (VertexMatrix &amp;object, ReferenceFunction element)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">対数縮尺にする。ただし、0は無視する。  <a href="#0f257fd7b0c5dd663d40ecf3d986d7f8"></a><br></td></tr>
+<tr><td class="memTemplParams" nowrap colspan="2">template&lt;class IteratorType&gt; </td></tr>
+<tr><td class="memTemplItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#af055f8b1d0e83f4993874d84ecafdb4">Ploter::regularize</a> (IteratorType begin, IteratorType end)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">正規化する。  <a href="#af055f8b1d0e83f4993874d84ecafdb4"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#1b6271aff6de73d6ee097e78846f25fa">Ploter::drawVertex</a> (const Vector &amp;vertex)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">頂点vertexを描画する。  <a href="#1b6271aff6de73d6ee097e78846f25fa"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#cbfc181c2fc7dbdcdfa495e4ee81135d">Ploter::drawLine</a> (const Matrix &amp;affine, const Vector &amp;origin, const Vector &amp;to)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">始点をorigin、終点をorigin + toとする線分を行列affineで座標変換した後、描画する。  <a href="#cbfc181c2fc7dbdcdfa495e4ee81135d"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#b186e34c51a9a110546b59aed18338e7">Ploter::drawParallelLines</a> (const Matrix &amp;affine, const VertexList &amp;positions, const Vector &amp;direction)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">方向がdirectionで始点の集合がpositionsな平行線の集合を行列affineで座標変換した後、描画する。  <a href="#b186e34c51a9a110546b59aed18338e7"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">Vector&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#3286edb2e92e29f8f197ac3c226b6490">Ploter::v</a> (Element x, Element y, Element z)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ベクトルv(x,y,z)の生成。  <a href="#3286edb2e92e29f8f197ac3c226b6490"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#e66b99fb365c9d4bde330af8cf8d497b">Ploter::transform</a> (const Matrix &amp;affine, Vector &amp;target)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ベクトルtargetを行列affineで座標変換する。  <a href="#e66b99fb365c9d4bde330af8cf8d497b"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">Matrix&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#1c6996dd1bc6037aeb7c2c58561f0598">Ploter::scale</a> (Element a, Element b, Element c)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">x軸,y軸,z軸をそれぞれ、a倍,b倍,c倍する行列を返す。  <a href="#1c6996dd1bc6037aeb7c2c58561f0598"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">Matrix&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#6d6a17eb019c30845df901c389d6e866">Ploter::translate</a> (const Vector &amp;to)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">toだけ平行移動する行列を返す。  <a href="#6d6a17eb019c30845df901c389d6e866"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">Matrix&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#f512b9e4bd9deb6394fcd49991ea8ed0">Ploter::rotate</a> (Element deg, const Vector &amp;axis)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">軸axis を deg°回転する行列を返す。  <a href="#f512b9e4bd9deb6394fcd49991ea8ed0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">Matrix&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#ed5ec1088e7e1b0acb9a9f33f142be51">Ploter::shear</a> (Element deg, const Vector &amp;axis, const Vector &amp;direction)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">軸axis を direction の方向に deg°せん断変形する行列を返す。  <a href="#ed5ec1088e7e1b0acb9a9f33f142be51"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">Vector &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#2e39c9d0f1c72cccd0682b03948765b4">Ploter::solve</a> (Matrix &amp;A, Vector &amp;b)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">連立方程式 Ax=b を解く。  <a href="#2e39c9d0f1c72cccd0682b03948765b4"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>変数</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">const Element&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#31e827c89754ed9adaf2b7d81802ef18">Ploter::ELEMENT_EXTREAM_VALUE</a> = 1.79769313486232e308</td></tr>
+
+</table>
+<hr><a name="_details"></a><h2>説明</h2>
+。 
+<p>
+<dl class="author" compact><dt><b>作者:</b></dt><dd>村田 裕一 </dd></dl>
+
+<p> <a class="el" href="_utility_8h-source.html">Utility.h</a> で定義されています。</p>
+</div>
+<hr size="1"><address style="text-align: right;"><small>3dGraphに対してTue Jan 6 00:57:21 2009に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.6 </small></address>
+</body>
+</html>

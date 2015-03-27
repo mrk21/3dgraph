@@ -1,0 +1,236 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>3dGraph: sources/3dGraph.cpp</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.5.6 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>sources/3dGraph.cpp</h1><code>#include &quot;<a class="el" href="_ploter_8h-source.html">Ploter/Ploter.h</a>&quot;</code><br>
+<code>#include &quot;Resource/ResForm.h&quot;</code><br>
+
+<p>
+<div class="dynheader">
+3dGraph.cppのインクルード依存関係図</div>
+<div class="dynsection">
+<p><center><img src="3d_graph_8cpp__incl.png" border="0" usemap="#sources/3dGraph.cpp_map" alt=""></center>
+<map name="sources/3dGraph.cpp_map">
+<area shape="rect" href="_ploter_8h.html" title="データを３次元グラフで表示する。" alt="" coords="531,80,635,107"><area shape="rect" href="_utility_8h.html" title="。" alt="" coords="1091,155,1155,181"></map>
+</div>
+
+<p>
+<a href="3d_graph_8cpp-source.html">ソースコードを見る。</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>構成</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_file_dialog_info.html">FileDialogInfo</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ファイルダイアログの情報を格納する。  <a href="struct_file_dialog_info.html#_details">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_exception.html">Exception</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">エラーメッセージを定義。  <a href="class_exception.html#_details">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html">Window</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ウィンドウを定義。  <a href="class_window.html#_details">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_open_g_l.html">OpenGL</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">OpenGL用のレンダリングコンテキストを定義。  <a href="class_open_g_l.html#_details">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_dialog_base.html">FileDialogBase</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ファイルダイアログを定義。  <a href="class_file_dialog_base.html#_details">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_open_file_dialog.html">OpenFileDialog</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オープンファイルダイアログを定義。  <a href="class_open_file_dialog.html#_details">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main.html">Main</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">メイン処理を定義。  <a href="class_main.html#_details">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window_procedure.html">MainWindowProcedure</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">メインウィンドウのプロシージャを定義。  <a href="class_main_window_procedure.html#_details">[詳細]</a><br></td></tr>
+<tr><td colspan="2"><br><h2>関数</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">LRESULT CALLBACK&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="3d_graph_8cpp.html#e38da05264aaae6d7e93b2dac3235476">mainWindowProcedure</a> (HWND window, UINT message, WPARAM wParameter, LPARAM lParameter)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">メインウィンドウのウィンドウプロシージャ。  <a href="#e38da05264aaae6d7e93b2dac3235476"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int WINAPI&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="3d_graph_8cpp.html#3c7e57980d0c4dafdd603dedbf10ef47">WinMain</a> (HINSTANCE <a class="el" href="3d_graph_8cpp.html#93dbc50640898f3a8df7fef4a5922e3a">current</a>, HINSTANCE, LPSTR, int <a class="el" href="3d_graph_8cpp.html#5ab2cc0a06ac9721a92c8780c7a5d77c">commandShow</a>)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">メイン関数。  <a href="#3c7e57980d0c4dafdd603dedbf10ef47"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>変数</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">HINSTANCE&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="3d_graph_8cpp.html#93dbc50640898f3a8df7fef4a5922e3a">current</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="3d_graph_8cpp.html#5ab2cc0a06ac9721a92c8780c7a5d77c">commandShow</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">const <a class="el" href="struct_file_dialog_info.html">FileDialogInfo</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="3d_graph_8cpp.html#6a4a242d4c21f1ce0dac4ceed022aaa1">openPlotFile</a></td></tr>
+
+</table>
+<hr><h2>関数</h2>
+<a class="anchor" name="e38da05264aaae6d7e93b2dac3235476"></a><!-- doxytag: member="3dGraph.cpp::mainWindowProcedure" ref="e38da05264aaae6d7e93b2dac3235476" args="(HWND window, UINT message, WPARAM wParameter, LPARAM lParameter)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LRESULT CALLBACK mainWindowProcedure           </td>
+          <td>(</td>
+          <td class="paramtype">HWND&nbsp;</td>
+          <td class="paramname"> <em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UINT&nbsp;</td>
+          <td class="paramname"> <em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">WPARAM&nbsp;</td>
+          <td class="paramname"> <em>wParameter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPARAM&nbsp;</td>
+          <td class="paramname"> <em>lParameter</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+メインウィンドウのウィンドウプロシージャ。 
+<p>
+
+<p> <a class="el" href="3d_graph_8cpp-source.html">3dGraph.cpp</a> の <a class="el" href="3d_graph_8cpp-source.html#l00491">491</a> 行で定義されています。</p>
+
+</div>
+</div><p>
+<a class="anchor" name="3c7e57980d0c4dafdd603dedbf10ef47"></a><!-- doxytag: member="3dGraph.cpp::WinMain" ref="3c7e57980d0c4dafdd603dedbf10ef47" args="(HINSTANCE current, HINSTANCE, LPSTR, int commandShow)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int WINAPI WinMain           </td>
+          <td>(</td>
+          <td class="paramtype">HINSTANCE&nbsp;</td>
+          <td class="paramname"> <em>current</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">HINSTANCE&nbsp;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPSTR&nbsp;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>commandShow</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+メイン関数。 
+<p>
+
+<p> <a class="el" href="3d_graph_8cpp-source.html">3dGraph.cpp</a> の <a class="el" href="3d_graph_8cpp-source.html#l00476">476</a> 行で定義されています。</p>
+
+<p>参照先 <a class="el" href="3d_graph_8cpp-source.html#l00034">commandShow</a>, と <a class="el" href="3d_graph_8cpp-source.html#l00033">current</a>.</p>
+
+</div>
+</div><p>
+<hr><h2>変数</h2>
+<a class="anchor" name="5ab2cc0a06ac9721a92c8780c7a5d77c"></a><!-- doxytag: member="3dGraph.cpp::commandShow" ref="5ab2cc0a06ac9721a92c8780c7a5d77c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="3d_graph_8cpp.html#5ab2cc0a06ac9721a92c8780c7a5d77c">commandShow</a><code> [static]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p> <a class="el" href="3d_graph_8cpp-source.html">3dGraph.cpp</a> の <a class="el" href="3d_graph_8cpp-source.html#l00034">34</a> 行で定義されています。</p>
+
+<p>参照元 <a class="el" href="3d_graph_8cpp-source.html#l00144">Window::create()</a>, と <a class="el" href="3d_graph_8cpp-source.html#l00476">WinMain()</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="93dbc50640898f3a8df7fef4a5922e3a"></a><!-- doxytag: member="3dGraph.cpp::current" ref="93dbc50640898f3a8df7fef4a5922e3a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HINSTANCE <a class="el" href="3d_graph_8cpp.html#93dbc50640898f3a8df7fef4a5922e3a">current</a><code> [static]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p> <a class="el" href="3d_graph_8cpp-source.html">3dGraph.cpp</a> の <a class="el" href="3d_graph_8cpp-source.html#l00033">33</a> 行で定義されています。</p>
+
+<p>参照元 <a class="el" href="3d_graph_8cpp-source.html#l00144">Window::create()</a>, <a class="el" href="_ploter_8h-source.html#l00726">Ploter::Graph::setSize()</a>, <a class="el" href="3d_graph_8cpp-source.html#l00083">Window::Window()</a>, と <a class="el" href="3d_graph_8cpp-source.html#l00476">WinMain()</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="6a4a242d4c21f1ce0dac4ceed022aaa1"></a><!-- doxytag: member="3dGraph.cpp::openPlotFile" ref="6a4a242d4c21f1ce0dac4ceed022aaa1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_file_dialog_info.html">FileDialogInfo</a> <a class="el" href="3d_graph_8cpp.html#6a4a242d4c21f1ce0dac4ceed022aaa1">openPlotFile</a><code> [static]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+<b>初期値:</b><div class="fragment"><pre class="fragment">  {
+        
+        <span class="stringliteral">"データファイル(*.txt)¥0*.txt¥0*.*¥0*.*¥0¥0"</span>,
+        <span class="stringliteral">"txt"</span>,
+        <span class="stringliteral">"ファイルを開く"</span>
+    }
+</pre></div>
+<p> <a class="el" href="3d_graph_8cpp-source.html">3dGraph.cpp</a> の <a class="el" href="3d_graph_8cpp-source.html#l00037">37</a> 行で定義されています。</p>
+
+<p>参照元 <a class="el" href="3d_graph_8cpp-source.html#l00444">MainWindowProcedure::open()</a>.</p>
+
+</div>
+</div><p>
+</div>
+<hr size="1"><address style="text-align: right;"><small>3dGraphに対してTue Jan 6 00:57:20 2009に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.6 </small></address>
+</body>
+</html>

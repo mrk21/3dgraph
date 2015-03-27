@@ -1,0 +1,620 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>3dGraph: クラス Ploter::Ploter</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.5.6 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespace_ploter.html">Ploter</a>::<a class="el" href="class_ploter_1_1_ploter.html">Ploter</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス Ploter::Ploter</h1><!-- doxytag: class="Ploter::Ploter" -->グラフ要素を統括するクラス。  
+<a href="#_details">[詳細]</a>
+<p>
+<code>#include &lt;<a class="el" href="_ploter_8h-source.html">Ploter.h</a>&gt;</code>
+<p>
+
+<p>
+<a href="class_ploter_1_1_ploter-members.html">すべてのメンバ一覧</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_ploter.html#2504a21cf53c4eb858e6ad1488983c88">Ploter</a> (void)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">。  <a href="#2504a21cf53c4eb858e6ad1488983c88"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_ploter.html#2038e2ab69c80d03c9e8e9b6ce2f4fd3">set</a> (const char *fileName)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">設定する。  <a href="#2038e2ab69c80d03c9e8e9b6ce2f4fd3"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_ploter.html#26ca2d772f02c0b28493195af1cbbf72">draw</a> (void) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">描画する。  <a href="#26ca2d772f02c0b28493195af1cbbf72"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_ploter.html#7e91630f2a9494405bafdec50507b82d">resize</a> (int width, int height) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ウィンドウサイズ変化時のビューポートの再設定。  <a href="#7e91630f2a9494405bafdec50507b82d"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Private メソッド</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_ploter.html#cc17d754269e5761c1381588353575b0">drawAxis</a> (void) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">座標軸の描画。  <a href="#cc17d754269e5761c1381588353575b0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_ploter.html#f5ac974630e9497faac7eb8e5e45d96b">drawGrid</a> (void) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">グリッドの描画。  <a href="#f5ac974630e9497faac7eb8e5e45d96b"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_ploter.html#8b2245e5d12715c33d03956dbd14b46e">drawGraph</a> (void) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">グラフの描画。  <a href="#8b2245e5d12715c33d03956dbd14b46e"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Static Private メソッド</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static shared_ptr&lt; <a class="el" href="class_ploter_1_1_axis.html">Axis</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_ploter.html#7593ba5d912e2237fd548785288fe28f">makeAxis</a> (const std::string &amp;name, const <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp;axisDirection, const <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp;ticsDirection)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">軸の向きがaxisDirection、目盛線の向きがticsDirection、識別名がnameの 座標軸を生成する。  <a href="#7593ba5d912e2237fd548785288fe28f"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static shared_ptr&lt; <a class="el" href="class_ploter_1_1_grid.html">Grid</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_ploter.html#e6630e87feb4246ef0ff24e35397acbf">makeGrid</a> (const std::string &amp;name, const shared_ptr&lt; <a class="el" href="class_ploter_1_1_axis.html">Axis</a> &gt; axis1, const shared_ptr&lt; <a class="el" href="class_ploter_1_1_axis.html">Axis</a> &gt; axis2)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">軸axis1と軸axis2を張る識別名nameのグリッド平面を生成する。  <a href="#e6630e87feb4246ef0ff24e35397acbf"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Private 変数</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">shared_ptr&lt; <a class="el" href="class_ploter_1_1_axis.html">Axis</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_ploter.html#fc3f284b8e4b8761bfe2dffdb1d1d6e3">xAxis</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">shared_ptr&lt; <a class="el" href="class_ploter_1_1_axis.html">Axis</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_ploter.html#6a880da0111549acbff1d8f7b2027080">yAxis</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">shared_ptr&lt; <a class="el" href="class_ploter_1_1_axis.html">Axis</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_ploter.html#c0de48afe0cecb8e6eb6b3f404c1cc3b">zAxis</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">shared_ptr&lt; <a class="el" href="class_ploter_1_1_grid.html">Grid</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_ploter.html#5329b2353dd3c15ee118f11d0766a509">xyGrid</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">shared_ptr&lt; <a class="el" href="class_ploter_1_1_grid.html">Grid</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_ploter.html#5555ee678f2c4d7974ef885b869fe295">xzGrid</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">shared_ptr&lt; <a class="el" href="class_ploter_1_1_grid.html">Grid</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_ploter.html#df26dd72e87b5e235b174796188f30ee">yzGrid</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="class_ploter_1_1_graph.html">Graph</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_ploter.html#4845d606f972ec8997ecb001c228111c">graph</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="class_ploter_1_1_affine_manager.html">AffineManager</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_ploter.html#3e9bb0d99d0e5ff3f1d8b67156be3c24">affineManager</a></td></tr>
+
+</table>
+<hr><a name="_details"></a><h2>説明</h2>
+グラフ要素を統括するクラス。 
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00803">803</a> 行で定義されています。</p>
+<hr><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" name="2504a21cf53c4eb858e6ad1488983c88"></a><!-- doxytag: member="Ploter::Ploter::Ploter" ref="2504a21cf53c4eb858e6ad1488983c88" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Ploter::Ploter::Ploter           </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+。 
+<p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00810">810</a> 行で定義されています。</p>
+
+<p>参照先 <a class="el" href="_ploter_8h-source.html#l00873">makeAxis()</a>, <a class="el" href="_ploter_8h-source.html#l00893">makeGrid()</a>, <a class="el" href="namespace_ploter_1_1_v.html#787d7fba188e77bc49cfe19fa55617f3">Ploter::V::X_UNIT()</a>, <a class="el" href="_ploter_8h-source.html#l00947">xAxis</a>, <a class="el" href="_ploter_8h-source.html#l00950">xyGrid</a>, <a class="el" href="_ploter_8h-source.html#l00951">xzGrid</a>, <a class="el" href="namespace_ploter_1_1_v.html#c7dea1cd16dce4110b4a1cff9d48b037">Ploter::V::Y_UNIT()</a>, <a class="el" href="_ploter_8h-source.html#l00948">yAxis</a>, <a class="el" href="_ploter_8h-source.html#l00952">yzGrid</a>, <a class="el" href="namespace_ploter_1_1_v.html#fb1a94c20b24b573fd5a68dcde79255a">Ploter::V::Z_UNIT()</a>, と <a class="el" href="_ploter_8h-source.html#l00949">zAxis</a>.</p>
+
+<p>
+<div class="dynheader">
+関数の呼び出しグラフ:</div>
+<div class="dynsection">
+<p><center><img src="class_ploter_1_1_ploter_2504a21cf53c4eb858e6ad1488983c88_cgraph.png" border="0" usemap="#class_ploter_1_1_ploter_2504a21cf53c4eb858e6ad1488983c88_cgraph_map" alt=""></center>
+<map name="class_ploter_1_1_ploter_2504a21cf53c4eb858e6ad1488983c88_cgraph_map">
+<area shape="rect" href="class_ploter_1_1_ploter.html#7593ba5d912e2237fd548785288fe28f" title="軸の向きがaxisDirection、目盛線の向きがticsDirection、識別名がnameの..." alt="" coords="196,5,359,32"><area shape="rect" href="class_ploter_1_1_ploter.html#e6630e87feb4246ef0ff24e35397acbf" title="軸axis1と軸axis2を張る識別名nameのグリッド平面を生成する。" alt="" coords="197,56,357,83"><area shape="rect" href="namespace_ploter_1_1_v.html#787d7fba188e77bc49cfe19fa55617f3" title="Ploter::V::X_UNIT" alt="" coords="216,107,339,133"><area shape="rect" href="namespace_ploter_1_1_v.html#c7dea1cd16dce4110b4a1cff9d48b037" title="Ploter::V::Y_UNIT" alt="" coords="216,157,339,184"><area shape="rect" href="namespace_ploter_1_1_v.html#fb1a94c20b24b573fd5a68dcde79255a" title="Ploter::V::Z_UNIT" alt="" coords="216,208,339,235"><area shape="rect" href="class_ploter_1_1_composite.html#97c204aa7779d01d0630e0aeffb9cc70" title="childを子要素に設定する。" alt="" coords="409,31,588,57"></map>
+</div>
+
+</div>
+</div><p>
+<hr><h2>関数</h2>
+<a class="anchor" name="2038e2ab69c80d03c9e8e9b6ce2f4fd3"></a><!-- doxytag: member="Ploter::Ploter::set" ref="2038e2ab69c80d03c9e8e9b6ce2f4fd3" args="(const char *fileName)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ploter::Ploter::set           </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>fileName</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+設定する。 
+<p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00825">825</a> 行で定義されています。</p>
+
+<p>参照先 <a class="el" href="_ploter_8h-source.html#l00953">graph</a>, と <a class="el" href="_ploter_8h-source.html#l00685">Ploter::Graph::set()</a>.</p>
+
+<p>参照元 <a class="el" href="3d_graph_8cpp-source.html#l00444">MainWindowProcedure::open()</a>.</p>
+
+<p>
+<div class="dynheader">
+関数の呼び出しグラフ:</div>
+<div class="dynsection">
+<p><center><img src="class_ploter_1_1_ploter_2038e2ab69c80d03c9e8e9b6ce2f4fd3_cgraph.png" border="0" usemap="#class_ploter_1_1_ploter_2038e2ab69c80d03c9e8e9b6ce2f4fd3_cgraph_map" alt=""></center>
+<map name="class_ploter_1_1_ploter_2038e2ab69c80d03c9e8e9b6ce2f4fd3_cgraph_map">
+<area shape="rect" href="class_ploter_1_1_graph.html#e01d12afec4f323fd90254e7d2544d8e" title="fileNameが指すファイルから、頂点を設定する。" alt="" coords="180,81,303,108"><area shape="rect" href="class_ploter_1_1_graph.html#23a9c6c0ba1cbde7dce277f185e2dfb5" title="データの読み込み。" alt="" coords="360,5,520,32"><area shape="rect" href="class_ploter_1_1_graph.html#6967cd6b949e27fb715fcbd893a75cc0" title="ポリラインの設定。" alt="" coords="353,56,527,83"><area shape="rect" href="class_ploter_1_1_graph.html#0f9b08c9fd8325e583bcf01a2e7f50f9" title="頂点数の設定。" alt="" coords="365,107,515,133"><area shape="rect" href="class_ploter_1_1_graph.html#0f62732f9b9637bee6c4ca466c464133" title="頂点の設定。" alt="" coords="359,157,521,184"><area shape="rect" href="class_ploter_1_1_poly_line_list.html#1a95cbf9f2faa192f87b00ee9765867e" title="[begin,end)の範囲の頂点の集合からポリラインのリストを生成する。..." alt="" coords="576,56,736,83"><area shape="rect" href="namespace_ploter.html#3286edb2e92e29f8f197ac3c226b6490" title="ベクトルv(x,y,z)の生成。" alt="" coords="623,157,689,184"><area shape="rect" href="namespace_ploter_1_1_v.html#faec408b14e015d5a3ef4f3a66149635" title="Ploter::V::ZERO" alt="" coords="785,157,900,184"></map>
+</div>
+
+</div>
+</div><p>
+<a class="anchor" name="26ca2d772f02c0b28493195af1cbbf72"></a><!-- doxytag: member="Ploter::Ploter::draw" ref="26ca2d772f02c0b28493195af1cbbf72" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ploter::Ploter::draw           </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+描画する。 
+<p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00833">833</a> 行で定義されています。</p>
+
+<p>参照先 <a class="el" href="_ploter_8h-source.html#l00912">drawAxis()</a>, <a class="el" href="_ploter_8h-source.html#l00936">drawGraph()</a>, と <a class="el" href="_ploter_8h-source.html#l00924">drawGrid()</a>.</p>
+
+<p>参照元 <a class="el" href="_ploter_8h-source.html#l00855">resize()</a>.</p>
+
+<p>
+<div class="dynheader">
+関数の呼び出しグラフ:</div>
+<div class="dynsection">
+<p><center><img src="class_ploter_1_1_ploter_26ca2d772f02c0b28493195af1cbbf72_cgraph.png" border="0" usemap="#class_ploter_1_1_ploter_26ca2d772f02c0b28493195af1cbbf72_cgraph_map" alt=""></center>
+<map name="class_ploter_1_1_ploter_26ca2d772f02c0b28493195af1cbbf72_cgraph_map">
+<area shape="rect" href="class_ploter_1_1_ploter.html#cc17d754269e5761c1381588353575b0" title="座標軸の描画。" alt="" coords="404,715,561,741"><area shape="rect" href="class_ploter_1_1_ploter.html#8b2245e5d12715c33d03956dbd14b46e" title="グラフの描画。" alt="" coords="187,841,355,868"><area shape="rect" href="class_ploter_1_1_ploter.html#f5ac974630e9497faac7eb8e5e45d96b" title="グリッドの描画。" alt="" coords="193,664,348,691"><area shape="rect" href="class_ploter_1_1_affine_manager.html#0820b143e818529cb690d05869f3d6a4" title="各グラフ要素用のアフィン行列を返す。" alt="" coords="620,664,791,691"><area shape="rect" href="class_ploter_1_1_affine_manager.html#feb9e5b6059fab0ddb3f10ac78aed8fd" title="共通のアフィン行列。" alt="" coords="1105,664,1308,691"><area shape="rect" href="class_ploter_1_1_affine_manager.html#66cdadbcbf5a94db2b0902cfe764e795" title="グラフ用のアフィン行列。" alt="" coords="849,233,1052,260"><area shape="rect" href="class_ploter_1_1_affine_manager.html#755fd8e7525b1c5043c7de5b226aa637" title="x軸用のアフィン行列。" alt="" coords="851,360,1051,387"><area shape="rect" href="class_ploter_1_1_affine_manager.html#eb318d1624ad94c12f5f45cbbaa03d42" title="xyグリッド用のアフィン行列。" alt="" coords="848,563,1053,589"><area shape="rect" href="class_ploter_1_1_affine_manager.html#b05cd15a387992e5d2aa49198d5212f5" title="y軸用のアフィン行列。" alt="" coords="849,689,1052,716"><area shape="rect" href="class_ploter_1_1_affine_manager.html#4b2aa4aec7b461bf5dbc6631143e50f8" title="z軸用のアフィン行列。" alt="" coords="851,816,1051,843"><area shape="rect" href="class_ploter_1_1_affine_manager.html#408bc47498da6f5bafa5e6e88cde4194" title="軸を水平にする。" alt="" coords="1377,765,1585,792"><area shape="rect" href="class_ploter_1_1_affine_manager.html#a5238bb29cf17d368d0b49ba4d3d31ba" title="投影行列を返す。" alt="" coords="1659,917,1867,944"><area shape="rect" href="class_ploter_1_1_affine_manager.html#c647693b4b2ecfeffab7b5101ac83b61" title="x軸の移動。" alt="" coords="1393,664,1569,691"><area shape="rect" href="namespace_ploter_1_1_m.html#74c7755e20b7d62a1a6e55b782acdd36" title="Ploter::M::IDENTITY" alt="" coords="1923,664,2061,691"><area shape="rect" href="namespace_ploter.html#f512b9e4bd9deb6394fcd49991ea8ed0" title="軸axis を deg°回転する行列を返す。" alt="" coords="1715,1019,1811,1045"><area shape="rect" href="class_ploter_1_1_affine_manager.html#0b9eee86956a6259a1378b6cb511d1ef" title="水平軸の違いによるアフィン行列の選択。" alt="" coords="1651,715,1875,741"><area shape="rect" href="namespace_ploter_1_1_v.html#787d7fba188e77bc49cfe19fa55617f3" title="Ploter::V::X_UNIT" alt="" coords="1701,816,1824,843"><area shape="rect" href="namespace_ploter_1_1_v.html#fb1a94c20b24b573fd5a68dcde79255a" title="Ploter::V::Z_UNIT" alt="" coords="1701,867,1824,893"><area shape="rect" href="namespace_ploter.html#5817d6e4339bbf3460b0704ca6e976df" title="度からラジアンへの変換。" alt="" coords="1944,968,2040,995"><area shape="rect" href="class_ploter_1_1_option.html#7de8eb4cc2f4e819a92cc090c84b42e0" title="iniファイルからkeyが指す値を読み込む。" alt="" coords="1928,1095,2056,1121"><area shape="rect" href="namespace_ploter.html#6d6a17eb019c30845df901c389d6e866" title="toだけ平行移動する行列を返す。" alt="" coords="1707,512,1819,539"><area shape="rect" href="class_ploter_1_1_affine_manager.html#f598580c63776558a607d0c9d2af1809" title="スケールを正規化。" alt="" coords="1103,157,1311,184"><area shape="rect" href="class_ploter_1_1_affine_manager.html#843029b8c9f1bda911c96ee6279089c0" title="原点に移動。" alt="" coords="1108,81,1305,108"><area shape="rect" href="class_ploter_1_1_affine_manager.html#f8c15b968a04be50a28353152d972a70" title="スケールを取得。" alt="" coords="1361,107,1601,133"><area shape="rect" href="namespace_ploter.html#1c6996dd1bc6037aeb7c2c58561f0598" title="x軸,y軸,z軸をそれぞれ、a倍,b倍,c倍する行列を返す。" alt="" coords="1435,208,1528,235"><area shape="rect" href="class_ploter_1_1_min_max.html#386bf8b6f8ac797974226952cf935fb8" title="最小値・最大値の範囲の取得。" alt="" coords="1677,107,1848,133"><area shape="rect" href="class_ploter_1_1_min_max.html#6fb091ebf5c0b1c7f5c223aa17e78217" title="アクセッサ。" alt="" coords="1404,5,1559,32"><area shape="rect" href="namespace_ploter.html#3286edb2e92e29f8f197ac3c226b6490" title="ベクトルv(x,y,z)の生成。" alt="" coords="1448,56,1515,83"><area shape="rect" href="namespace_ploter_1_1_v.html#faec408b14e015d5a3ef4f3a66149635" title="Ploter::V::ZERO" alt="" coords="1705,56,1820,83"><area shape="rect" href="namespace_ploter_1_1_v.html#c7dea1cd16dce4110b4a1cff9d48b037" title="Ploter::V::Y_UNIT" alt="" coords="1145,411,1268,437"><area shape="rect" href="class_ploter_1_1_graph.html#b6d01b9703449d612f3f8b554410b598" title="描画する。" alt="" coords="416,879,549,905"><area shape="rect" href="class_ploter_1_1_graph.html#236e7d05fbbdd8192971469f4145cf98" title="頂点の操作。" alt="" coords="612,1221,799,1248"><area shape="rect" href="class_ploter_1_1_min_max_manager.html#154a8627dae6c6ad1bd455b3e85e25b5" title="objectのx,y,zそれぞれの最小値・最大値を設定する。" alt="" coords="613,968,797,995"><area shape="rect" href="namespace_ploter.html#af055f8b1d0e83f4993874d84ecafdb4" title="正規化する。" alt="" coords="891,1272,1011,1299"><area shape="rect" href="namespace_ploter_1_1_v.html#f6dfd6fe754723d22262b59c1ff43fba" title="Ploter::V::Z" alt="" coords="1163,1272,1251,1299"><area shape="rect" href="namespace_ploter.html#0f257fd7b0c5dd663d40ecf3d986d7f8" title="対数縮尺にする。ただし、0は無視する。" alt="" coords="887,1221,1015,1248"><area shape="rect" href="namespace_ploter.html#ddcd52e142e8ce241bf96a16c1b07c7d" title="二重のfor_each。" alt="" coords="1139,1196,1275,1223"><area shape="rect" href="class_ploter_1_1_min_max.html#516945f168c4c050cc593473e7db759c" title="valueが最小値・最大値かどうかを査定し、更新する。" alt="" coords="871,968,1031,995"><area shape="rect" href="namespace_ploter_1_1_v.html#643158aa8326f7a30e31be2a17cd2211" title="Ploter::V::CONST_X" alt="" coords="881,1019,1020,1045"><area shape="rect" href="namespace_ploter_1_1_v.html#1298e2035259284eb20243f270f8d8da" title="Ploter::V::CONST_Y" alt="" coords="881,1069,1020,1096"><area shape="rect" href="namespace_ploter_1_1_v.html#396ce96178bb46cef34971b1d1860de1" title="Ploter::V::CONST_Z" alt="" coords="881,867,1020,893"><area shape="rect" href="class_ploter_1_1_min_max.html#48f3321e6dd835ed2bac03a6148a88e6" title="最小値・最大値の初期化。" alt="" coords="869,917,1032,944"></map>
+</div>
+
+</div>
+</div><p>
+<a class="anchor" name="7e91630f2a9494405bafdec50507b82d"></a><!-- doxytag: member="Ploter::Ploter::resize" ref="7e91630f2a9494405bafdec50507b82d" args="(int width, int height) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ploter::Ploter::resize           </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>height</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+ウィンドウサイズ変化時のビューポートの再設定。 
+<p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00855">855</a> 行で定義されています。</p>
+
+<p>参照先 <a class="el" href="_ploter_8h-source.html#l00833">draw()</a>.</p>
+
+<p>参照元 <a class="el" href="3d_graph_8cpp-source.html#l00428">MainWindowProcedure::size()</a>.</p>
+
+<p>
+<div class="dynheader">
+関数の呼び出しグラフ:</div>
+<div class="dynsection">
+<p><center><img src="class_ploter_1_1_ploter_7e91630f2a9494405bafdec50507b82d_cgraph.png" border="0" usemap="#class_ploter_1_1_ploter_7e91630f2a9494405bafdec50507b82d_cgraph_map" alt=""></center>
+<map name="class_ploter_1_1_ploter_7e91630f2a9494405bafdec50507b82d_cgraph_map">
+<area shape="rect" href="class_ploter_1_1_ploter.html#26ca2d772f02c0b28493195af1cbbf72" title="描画する。" alt="" coords="196,715,327,741"><area shape="rect" href="class_ploter_1_1_ploter.html#cc17d754269e5761c1381588353575b0" title="座標軸の描画。" alt="" coords="593,715,751,741"><area shape="rect" href="class_ploter_1_1_ploter.html#8b2245e5d12715c33d03956dbd14b46e" title="グラフの描画。" alt="" coords="376,841,544,868"><area shape="rect" href="class_ploter_1_1_ploter.html#f5ac974630e9497faac7eb8e5e45d96b" title="グリッドの描画。" alt="" coords="383,664,537,691"><area shape="rect" href="class_ploter_1_1_affine_manager.html#0820b143e818529cb690d05869f3d6a4" title="各グラフ要素用のアフィン行列を返す。" alt="" coords="809,664,980,691"><area shape="rect" href="class_ploter_1_1_affine_manager.html#feb9e5b6059fab0ddb3f10ac78aed8fd" title="共通のアフィン行列。" alt="" coords="1295,664,1497,691"><area shape="rect" href="class_ploter_1_1_affine_manager.html#66cdadbcbf5a94db2b0902cfe764e795" title="グラフ用のアフィン行列。" alt="" coords="1039,233,1241,260"><area shape="rect" href="class_ploter_1_1_affine_manager.html#755fd8e7525b1c5043c7de5b226aa637" title="x軸用のアフィン行列。" alt="" coords="1040,360,1240,387"><area shape="rect" href="class_ploter_1_1_affine_manager.html#eb318d1624ad94c12f5f45cbbaa03d42" title="xyグリッド用のアフィン行列。" alt="" coords="1037,563,1243,589"><area shape="rect" href="class_ploter_1_1_affine_manager.html#b05cd15a387992e5d2aa49198d5212f5" title="y軸用のアフィン行列。" alt="" coords="1039,689,1241,716"><area shape="rect" href="class_ploter_1_1_affine_manager.html#4b2aa4aec7b461bf5dbc6631143e50f8" title="z軸用のアフィン行列。" alt="" coords="1040,816,1240,843"><area shape="rect" href="class_ploter_1_1_affine_manager.html#408bc47498da6f5bafa5e6e88cde4194" title="軸を水平にする。" alt="" coords="1567,765,1775,792"><area shape="rect" href="class_ploter_1_1_affine_manager.html#a5238bb29cf17d368d0b49ba4d3d31ba" title="投影行列を返す。" alt="" coords="1848,917,2056,944"><area shape="rect" href="class_ploter_1_1_affine_manager.html#c647693b4b2ecfeffab7b5101ac83b61" title="x軸の移動。" alt="" coords="1583,664,1759,691"><area shape="rect" href="namespace_ploter_1_1_m.html#74c7755e20b7d62a1a6e55b782acdd36" title="Ploter::M::IDENTITY" alt="" coords="2112,664,2251,691"><area shape="rect" href="namespace_ploter.html#f512b9e4bd9deb6394fcd49991ea8ed0" title="軸axis を deg°回転する行列を返す。" alt="" coords="1904,1019,2000,1045"><area shape="rect" href="class_ploter_1_1_affine_manager.html#0b9eee86956a6259a1378b6cb511d1ef" title="水平軸の違いによるアフィン行列の選択。" alt="" coords="1840,715,2064,741"><area shape="rect" href="namespace_ploter_1_1_v.html#787d7fba188e77bc49cfe19fa55617f3" title="Ploter::V::X_UNIT" alt="" coords="1891,816,2013,843"><area shape="rect" href="namespace_ploter_1_1_v.html#fb1a94c20b24b573fd5a68dcde79255a" title="Ploter::V::Z_UNIT" alt="" coords="1891,867,2013,893"><area shape="rect" href="namespace_ploter.html#5817d6e4339bbf3460b0704ca6e976df" title="度からラジアンへの変換。" alt="" coords="2133,968,2229,995"><area shape="rect" href="class_ploter_1_1_option.html#7de8eb4cc2f4e819a92cc090c84b42e0" title="iniファイルからkeyが指す値を読み込む。" alt="" coords="2117,1095,2245,1121"><area shape="rect" href="namespace_ploter.html#6d6a17eb019c30845df901c389d6e866" title="toだけ平行移動する行列を返す。" alt="" coords="1896,512,2008,539"><area shape="rect" href="class_ploter_1_1_affine_manager.html#f598580c63776558a607d0c9d2af1809" title="スケールを正規化。" alt="" coords="1292,157,1500,184"><area shape="rect" href="class_ploter_1_1_affine_manager.html#843029b8c9f1bda911c96ee6279089c0" title="原点に移動。" alt="" coords="1297,81,1495,108"><area shape="rect" href="class_ploter_1_1_affine_manager.html#f8c15b968a04be50a28353152d972a70" title="スケールを取得。" alt="" coords="1551,107,1791,133"><area shape="rect" href="namespace_ploter.html#1c6996dd1bc6037aeb7c2c58561f0598" title="x軸,y軸,z軸をそれぞれ、a倍,b倍,c倍する行列を返す。" alt="" coords="1624,208,1717,235"><area shape="rect" href="class_ploter_1_1_min_max.html#386bf8b6f8ac797974226952cf935fb8" title="最小値・最大値の範囲の取得。" alt="" coords="1867,107,2037,133"><area shape="rect" href="class_ploter_1_1_min_max.html#6fb091ebf5c0b1c7f5c223aa17e78217" title="アクセッサ。" alt="" coords="1593,5,1748,32"><area shape="rect" href="namespace_ploter.html#3286edb2e92e29f8f197ac3c226b6490" title="ベクトルv(x,y,z)の生成。" alt="" coords="1637,56,1704,83"><area shape="rect" href="namespace_ploter_1_1_v.html#faec408b14e015d5a3ef4f3a66149635" title="Ploter::V::ZERO" alt="" coords="1895,56,2009,83"><area shape="rect" href="namespace_ploter_1_1_v.html#c7dea1cd16dce4110b4a1cff9d48b037" title="Ploter::V::Y_UNIT" alt="" coords="1335,411,1457,437"><area shape="rect" href="class_ploter_1_1_graph.html#b6d01b9703449d612f3f8b554410b598" title="描画する。" alt="" coords="605,879,739,905"><area shape="rect" href="class_ploter_1_1_graph.html#236e7d05fbbdd8192971469f4145cf98" title="頂点の操作。" alt="" coords="801,1221,988,1248"><area shape="rect" href="class_ploter_1_1_min_max_manager.html#154a8627dae6c6ad1bd455b3e85e25b5" title="objectのx,y,zそれぞれの最小値・最大値を設定する。" alt="" coords="803,968,987,995"><area shape="rect" href="namespace_ploter.html#af055f8b1d0e83f4993874d84ecafdb4" title="正規化する。" alt="" coords="1080,1272,1200,1299"><area shape="rect" href="namespace_ploter_1_1_v.html#f6dfd6fe754723d22262b59c1ff43fba" title="Ploter::V::Z" alt="" coords="1352,1272,1440,1299"><area shape="rect" href="namespace_ploter.html#0f257fd7b0c5dd663d40ecf3d986d7f8" title="対数縮尺にする。ただし、0は無視する。" alt="" coords="1076,1221,1204,1248"><area shape="rect" href="namespace_ploter.html#ddcd52e142e8ce241bf96a16c1b07c7d" title="二重のfor_each。" alt="" coords="1328,1196,1464,1223"><area shape="rect" href="class_ploter_1_1_min_max.html#516945f168c4c050cc593473e7db759c" title="valueが最小値・最大値かどうかを査定し、更新する。" alt="" coords="1060,968,1220,995"><area shape="rect" href="namespace_ploter_1_1_v.html#643158aa8326f7a30e31be2a17cd2211" title="Ploter::V::CONST_X" alt="" coords="1071,1019,1209,1045"><area shape="rect" href="namespace_ploter_1_1_v.html#1298e2035259284eb20243f270f8d8da" title="Ploter::V::CONST_Y" alt="" coords="1071,1069,1209,1096"><area shape="rect" href="namespace_ploter_1_1_v.html#396ce96178bb46cef34971b1d1860de1" title="Ploter::V::CONST_Z" alt="" coords="1071,867,1209,893"><area shape="rect" href="class_ploter_1_1_min_max.html#48f3321e6dd835ed2bac03a6148a88e6" title="最小値・最大値の初期化。" alt="" coords="1059,917,1221,944"></map>
+</div>
+
+</div>
+</div><p>
+<a class="anchor" name="7593ba5d912e2237fd548785288fe28f"></a><!-- doxytag: member="Ploter::Ploter::makeAxis" ref="7593ba5d912e2237fd548785288fe28f" args="(const std::string &amp;name, const Vector &amp;axisDirection, const Vector &amp;ticsDirection)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static shared_ptr&lt;<a class="el" href="class_ploter_1_1_axis.html">Axis</a>&gt; Ploter::Ploter::makeAxis           </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>axisDirection</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>ticsDirection</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, static, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+軸の向きがaxisDirection、目盛線の向きがticsDirection、識別名がnameの 座標軸を生成する。 
+<p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00873">873</a> 行で定義されています。</p>
+
+<p>参照先 <a class="el" href="_ploter_8h-source.html#l00147">Ploter::Composite&lt; ChildType &gt;::setChild()</a>.</p>
+
+<p>参照元 <a class="el" href="_ploter_8h-source.html#l00810">Ploter()</a>.</p>
+
+<p>
+<div class="dynheader">
+関数の呼び出しグラフ:</div>
+<div class="dynsection">
+<p><center><img src="class_ploter_1_1_ploter_7593ba5d912e2237fd548785288fe28f_cgraph.png" border="0" usemap="#class_ploter_1_1_ploter_7593ba5d912e2237fd548785288fe28f_cgraph_map" alt=""></center>
+<map name="class_ploter_1_1_ploter_7593ba5d912e2237fd548785288fe28f_cgraph_map">
+<area shape="rect" href="class_ploter_1_1_composite.html#97c204aa7779d01d0630e0aeffb9cc70" title="childを子要素に設定する。" alt="" coords="220,5,399,32"></map>
+</div>
+
+</div>
+</div><p>
+<a class="anchor" name="e6630e87feb4246ef0ff24e35397acbf"></a><!-- doxytag: member="Ploter::Ploter::makeGrid" ref="e6630e87feb4246ef0ff24e35397acbf" args="(const std::string &amp;name, const shared_ptr&lt; Axis &gt; axis1, const shared_ptr&lt; Axis &gt; axis2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static shared_ptr&lt;<a class="el" href="class_ploter_1_1_grid.html">Grid</a>&gt; Ploter::Ploter::makeGrid           </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const shared_ptr&lt; <a class="el" href="class_ploter_1_1_axis.html">Axis</a> &gt;&nbsp;</td>
+          <td class="paramname"> <em>axis1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const shared_ptr&lt; <a class="el" href="class_ploter_1_1_axis.html">Axis</a> &gt;&nbsp;</td>
+          <td class="paramname"> <em>axis2</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, static, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+軸axis1と軸axis2を張る識別名nameのグリッド平面を生成する。 
+<p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00893">893</a> 行で定義されています。</p>
+
+<p>参照先 <a class="el" href="_ploter_8h-source.html#l00147">Ploter::Composite&lt; ChildType &gt;::setChild()</a>.</p>
+
+<p>参照元 <a class="el" href="_ploter_8h-source.html#l00810">Ploter()</a>.</p>
+
+<p>
+<div class="dynheader">
+関数の呼び出しグラフ:</div>
+<div class="dynsection">
+<p><center><img src="class_ploter_1_1_ploter_e6630e87feb4246ef0ff24e35397acbf_cgraph.png" border="0" usemap="#class_ploter_1_1_ploter_e6630e87feb4246ef0ff24e35397acbf_cgraph_map" alt=""></center>
+<map name="class_ploter_1_1_ploter_e6630e87feb4246ef0ff24e35397acbf_cgraph_map">
+<area shape="rect" href="class_ploter_1_1_composite.html#97c204aa7779d01d0630e0aeffb9cc70" title="childを子要素に設定する。" alt="" coords="217,5,396,32"></map>
+</div>
+
+</div>
+</div><p>
+<a class="anchor" name="cc17d754269e5761c1381588353575b0"></a><!-- doxytag: member="Ploter::Ploter::drawAxis" ref="cc17d754269e5761c1381588353575b0" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ploter::Ploter::drawAxis           </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+座標軸の描画。 
+<p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00912">912</a> 行で定義されています。</p>
+
+<p>参照先 <a class="el" href="_ploter_8h-source.html#l00954">affineManager</a>, <a class="el" href="_utility_8h-source.html#l00456">Ploter::AffineManager::FOR_X_AXIS</a>, <a class="el" href="_utility_8h-source.html#l00457">Ploter::AffineManager::FOR_Y_AXIS</a>, <a class="el" href="_utility_8h-source.html#l00458">Ploter::AffineManager::FOR_Z_AXIS</a>, <a class="el" href="_utility_8h-source.html#l00475">Ploter::AffineManager::get()</a>, <a class="el" href="_ploter_8h-source.html#l00947">xAxis</a>, <a class="el" href="_ploter_8h-source.html#l00948">yAxis</a>, と <a class="el" href="_ploter_8h-source.html#l00949">zAxis</a>.</p>
+
+<p>参照元 <a class="el" href="_ploter_8h-source.html#l00833">draw()</a>.</p>
+
+<p>
+<div class="dynheader">
+関数の呼び出しグラフ:</div>
+<div class="dynsection">
+<p><center><img src="class_ploter_1_1_ploter_cc17d754269e5761c1381588353575b0_cgraph.png" border="0" usemap="#class_ploter_1_1_ploter_cc17d754269e5761c1381588353575b0_cgraph_map" alt=""></center>
+<map name="class_ploter_1_1_ploter_cc17d754269e5761c1381588353575b0_cgraph_map">
+<area shape="rect" href="class_ploter_1_1_affine_manager.html#0820b143e818529cb690d05869f3d6a4" title="各グラフ要素用のアフィン行列を返す。" alt="" coords="215,548,385,575"><area shape="rect" href="class_ploter_1_1_affine_manager.html#feb9e5b6059fab0ddb3f10ac78aed8fd" title="共通のアフィン行列。" alt="" coords="692,661,895,688"><area shape="rect" href="class_ploter_1_1_affine_manager.html#66cdadbcbf5a94db2b0902cfe764e795" title="グラフ用のアフィン行列。" alt="" coords="436,445,639,472"><area shape="rect" href="class_ploter_1_1_affine_manager.html#755fd8e7525b1c5043c7de5b226aa637" title="x軸用のアフィン行列。" alt="" coords="437,357,637,384"><area shape="rect" href="class_ploter_1_1_affine_manager.html#eb318d1624ad94c12f5f45cbbaa03d42" title="xyグリッド用のアフィン行列。" alt="" coords="435,516,640,543"><area shape="rect" href="class_ploter_1_1_affine_manager.html#b05cd15a387992e5d2aa49198d5212f5" title="y軸用のアフィン行列。" alt="" coords="436,655,639,681"><area shape="rect" href="class_ploter_1_1_affine_manager.html#4b2aa4aec7b461bf5dbc6631143e50f8" title="z軸用のアフィン行列。" alt="" coords="437,876,637,903"><area shape="rect" href="class_ploter_1_1_affine_manager.html#408bc47498da6f5bafa5e6e88cde4194" title="軸を水平にする。" alt="" coords="964,813,1172,840"><area shape="rect" href="class_ploter_1_1_affine_manager.html#a5238bb29cf17d368d0b49ba4d3d31ba" title="投影行列を返す。" alt="" coords="1245,977,1453,1004"><area shape="rect" href="class_ploter_1_1_affine_manager.html#c647693b4b2ecfeffab7b5101ac83b61" title="x軸の移動。" alt="" coords="980,712,1156,739"><area shape="rect" href="namespace_ploter_1_1_m.html#74c7755e20b7d62a1a6e55b782acdd36" title="Ploter::M::IDENTITY" alt="" coords="1509,675,1648,701"><area shape="rect" href="namespace_ploter.html#f512b9e4bd9deb6394fcd49991ea8ed0" title="軸axis を deg°回転する行列を返す。" alt="" coords="1301,1028,1397,1055"><area shape="rect" href="class_ploter_1_1_affine_manager.html#0b9eee86956a6259a1378b6cb511d1ef" title="水平軸の違いによるアフィン行列の選択。" alt="" coords="1237,725,1461,752"><area shape="rect" href="namespace_ploter_1_1_v.html#787d7fba188e77bc49cfe19fa55617f3" title="Ploter::V::X_UNIT" alt="" coords="1288,864,1411,891"><area shape="rect" href="namespace_ploter_1_1_v.html#fb1a94c20b24b573fd5a68dcde79255a" title="Ploter::V::Z_UNIT" alt="" coords="1288,1104,1411,1131"><area shape="rect" href="namespace_ploter.html#5817d6e4339bbf3460b0704ca6e976df" title="度からラジアンへの変換。" alt="" coords="1531,1003,1627,1029"><area shape="rect" href="class_ploter_1_1_option.html#7de8eb4cc2f4e819a92cc090c84b42e0" title="iniファイルからkeyが指す値を読み込む。" alt="" coords="1515,725,1643,752"><area shape="rect" href="namespace_ploter.html#6d6a17eb019c30845df901c389d6e866" title="toだけ平行移動する行列を返す。" alt="" coords="1293,560,1405,587"><area shape="rect" href="class_ploter_1_1_affine_manager.html#f598580c63776558a607d0c9d2af1809" title="スケールを正規化。" alt="" coords="689,155,897,181"><area shape="rect" href="class_ploter_1_1_affine_manager.html#843029b8c9f1bda911c96ee6279089c0" title="原点に移動。" alt="" coords="695,307,892,333"><area shape="rect" href="class_ploter_1_1_affine_manager.html#f8c15b968a04be50a28353152d972a70" title="スケールを取得。" alt="" coords="948,155,1188,181"><area shape="rect" href="namespace_ploter.html#1c6996dd1bc6037aeb7c2c58561f0598" title="x軸,y軸,z軸をそれぞれ、a倍,b倍,c倍する行列を返す。" alt="" coords="1021,104,1115,131"><area shape="rect" href="class_ploter_1_1_min_max.html#386bf8b6f8ac797974226952cf935fb8" title="最小値・最大値の範囲の取得。" alt="" coords="1264,155,1435,181"><area shape="rect" href="class_ploter_1_1_min_max.html#6fb091ebf5c0b1c7f5c223aa17e78217" title="アクセッサ。" alt="" coords="991,357,1145,384"><area shape="rect" href="namespace_ploter.html#3286edb2e92e29f8f197ac3c226b6490" title="ベクトルv(x,y,z)の生成。" alt="" coords="1035,205,1101,232"><area shape="rect" href="namespace_ploter_1_1_v.html#faec408b14e015d5a3ef4f3a66149635" title="Ploter::V::ZERO" alt="" coords="1292,205,1407,232"><area shape="rect" href="namespace_ploter_1_1_v.html#c7dea1cd16dce4110b4a1cff9d48b037" title="Ploter::V::Y_UNIT" alt="" coords="732,408,855,435"></map>
+</div>
+
+</div>
+</div><p>
+<a class="anchor" name="f5ac974630e9497faac7eb8e5e45d96b"></a><!-- doxytag: member="Ploter::Ploter::drawGrid" ref="f5ac974630e9497faac7eb8e5e45d96b" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ploter::Ploter::drawGrid           </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+グリッドの描画。 
+<p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00924">924</a> 行で定義されています。</p>
+
+<p>参照先 <a class="el" href="_ploter_8h-source.html#l00954">affineManager</a>, <a class="el" href="_utility_8h-source.html#l00459">Ploter::AffineManager::FOR_XY_GRID</a>, <a class="el" href="_utility_8h-source.html#l00460">Ploter::AffineManager::FOR_XZ_GRID</a>, <a class="el" href="_utility_8h-source.html#l00461">Ploter::AffineManager::FOR_YZ_GRID</a>, <a class="el" href="_utility_8h-source.html#l00475">Ploter::AffineManager::get()</a>, <a class="el" href="_ploter_8h-source.html#l00950">xyGrid</a>, <a class="el" href="_ploter_8h-source.html#l00951">xzGrid</a>, と <a class="el" href="_ploter_8h-source.html#l00952">yzGrid</a>.</p>
+
+<p>参照元 <a class="el" href="_ploter_8h-source.html#l00833">draw()</a>.</p>
+
+<p>
+<div class="dynheader">
+関数の呼び出しグラフ:</div>
+<div class="dynsection">
+<p><center><img src="class_ploter_1_1_ploter_f5ac974630e9497faac7eb8e5e45d96b_cgraph.png" border="0" usemap="#class_ploter_1_1_ploter_f5ac974630e9497faac7eb8e5e45d96b_cgraph_map" alt=""></center>
+<map name="class_ploter_1_1_ploter_f5ac974630e9497faac7eb8e5e45d96b_cgraph_map">
+<area shape="rect" href="class_ploter_1_1_affine_manager.html#0820b143e818529cb690d05869f3d6a4" title="各グラフ要素用のアフィン行列を返す。" alt="" coords="212,548,383,575"><area shape="rect" href="class_ploter_1_1_affine_manager.html#feb9e5b6059fab0ddb3f10ac78aed8fd" title="共通のアフィン行列。" alt="" coords="689,661,892,688"><area shape="rect" href="class_ploter_1_1_affine_manager.html#66cdadbcbf5a94db2b0902cfe764e795" title="グラフ用のアフィン行列。" alt="" coords="433,445,636,472"><area shape="rect" href="class_ploter_1_1_affine_manager.html#755fd8e7525b1c5043c7de5b226aa637" title="x軸用のアフィン行列。" alt="" coords="435,357,635,384"><area shape="rect" href="class_ploter_1_1_affine_manager.html#eb318d1624ad94c12f5f45cbbaa03d42" title="xyグリッド用のアフィン行列。" alt="" coords="432,516,637,543"><area shape="rect" href="class_ploter_1_1_affine_manager.html#b05cd15a387992e5d2aa49198d5212f5" title="y軸用のアフィン行列。" alt="" coords="433,655,636,681"><area shape="rect" href="class_ploter_1_1_affine_manager.html#4b2aa4aec7b461bf5dbc6631143e50f8" title="z軸用のアフィン行列。" alt="" coords="435,876,635,903"><area shape="rect" href="class_ploter_1_1_affine_manager.html#408bc47498da6f5bafa5e6e88cde4194" title="軸を水平にする。" alt="" coords="961,813,1169,840"><area shape="rect" href="class_ploter_1_1_affine_manager.html#a5238bb29cf17d368d0b49ba4d3d31ba" title="投影行列を返す。" alt="" coords="1243,977,1451,1004"><area shape="rect" href="class_ploter_1_1_affine_manager.html#c647693b4b2ecfeffab7b5101ac83b61" title="x軸の移動。" alt="" coords="977,712,1153,739"><area shape="rect" href="namespace_ploter_1_1_m.html#74c7755e20b7d62a1a6e55b782acdd36" title="Ploter::M::IDENTITY" alt="" coords="1507,675,1645,701"><area shape="rect" href="namespace_ploter.html#f512b9e4bd9deb6394fcd49991ea8ed0" title="軸axis を deg°回転する行列を返す。" alt="" coords="1299,1028,1395,1055"><area shape="rect" href="class_ploter_1_1_affine_manager.html#0b9eee86956a6259a1378b6cb511d1ef" title="水平軸の違いによるアフィン行列の選択。" alt="" coords="1235,725,1459,752"><area shape="rect" href="namespace_ploter_1_1_v.html#787d7fba188e77bc49cfe19fa55617f3" title="Ploter::V::X_UNIT" alt="" coords="1285,864,1408,891"><area shape="rect" href="namespace_ploter_1_1_v.html#fb1a94c20b24b573fd5a68dcde79255a" title="Ploter::V::Z_UNIT" alt="" coords="1285,1104,1408,1131"><area shape="rect" href="namespace_ploter.html#5817d6e4339bbf3460b0704ca6e976df" title="度からラジアンへの変換。" alt="" coords="1528,1003,1624,1029"><area shape="rect" href="class_ploter_1_1_option.html#7de8eb4cc2f4e819a92cc090c84b42e0" title="iniファイルからkeyが指す値を読み込む。" alt="" coords="1512,725,1640,752"><area shape="rect" href="namespace_ploter.html#6d6a17eb019c30845df901c389d6e866" title="toだけ平行移動する行列を返す。" alt="" coords="1291,560,1403,587"><area shape="rect" href="class_ploter_1_1_affine_manager.html#f598580c63776558a607d0c9d2af1809" title="スケールを正規化。" alt="" coords="687,155,895,181"><area shape="rect" href="class_ploter_1_1_affine_manager.html#843029b8c9f1bda911c96ee6279089c0" title="原点に移動。" alt="" coords="692,307,889,333"><area shape="rect" href="class_ploter_1_1_affine_manager.html#f8c15b968a04be50a28353152d972a70" title="スケールを取得。" alt="" coords="945,155,1185,181"><area shape="rect" href="namespace_ploter.html#1c6996dd1bc6037aeb7c2c58561f0598" title="x軸,y軸,z軸をそれぞれ、a倍,b倍,c倍する行列を返す。" alt="" coords="1019,104,1112,131"><area shape="rect" href="class_ploter_1_1_min_max.html#386bf8b6f8ac797974226952cf935fb8" title="最小値・最大値の範囲の取得。" alt="" coords="1261,155,1432,181"><area shape="rect" href="class_ploter_1_1_min_max.html#6fb091ebf5c0b1c7f5c223aa17e78217" title="アクセッサ。" alt="" coords="988,357,1143,384"><area shape="rect" href="namespace_ploter.html#3286edb2e92e29f8f197ac3c226b6490" title="ベクトルv(x,y,z)の生成。" alt="" coords="1032,205,1099,232"><area shape="rect" href="namespace_ploter_1_1_v.html#faec408b14e015d5a3ef4f3a66149635" title="Ploter::V::ZERO" alt="" coords="1289,205,1404,232"><area shape="rect" href="namespace_ploter_1_1_v.html#c7dea1cd16dce4110b4a1cff9d48b037" title="Ploter::V::Y_UNIT" alt="" coords="729,408,852,435"></map>
+</div>
+
+</div>
+</div><p>
+<a class="anchor" name="8b2245e5d12715c33d03956dbd14b46e"></a><!-- doxytag: member="Ploter::Ploter::drawGraph" ref="8b2245e5d12715c33d03956dbd14b46e" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ploter::Ploter::drawGraph           </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+グラフの描画。 
+<p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00936">936</a> 行で定義されています。</p>
+
+<p>参照先 <a class="el" href="_ploter_8h-source.html#l00954">affineManager</a>, <a class="el" href="_ploter_8h-source.html#l00699">Ploter::Graph::draw()</a>, <a class="el" href="_utility_8h-source.html#l00462">Ploter::AffineManager::FOR_GRAPH</a>, と <a class="el" href="_ploter_8h-source.html#l00953">graph</a>.</p>
+
+<p>参照元 <a class="el" href="_ploter_8h-source.html#l00833">draw()</a>.</p>
+
+<p>
+<div class="dynheader">
+関数の呼び出しグラフ:</div>
+<div class="dynsection">
+<p><center><img src="class_ploter_1_1_ploter_8b2245e5d12715c33d03956dbd14b46e_cgraph.png" border="0" usemap="#class_ploter_1_1_ploter_8b2245e5d12715c33d03956dbd14b46e_cgraph_map" alt=""></center>
+<map name="class_ploter_1_1_ploter_8b2245e5d12715c33d03956dbd14b46e_cgraph_map">
+<area shape="rect" href="class_ploter_1_1_graph.html#b6d01b9703449d612f3f8b554410b598" title="描画する。" alt="" coords="221,1196,355,1223"><area shape="rect" href="class_ploter_1_1_affine_manager.html#0820b143e818529cb690d05869f3d6a4" title="各グラフ要素用のアフィン行列を返す。" alt="" coords="412,613,583,640"><area shape="rect" href="class_ploter_1_1_graph.html#236e7d05fbbdd8192971469f4145cf98" title="頂点の操作。" alt="" coords="404,1196,591,1223"><area shape="rect" href="class_ploter_1_1_min_max_manager.html#154a8627dae6c6ad1bd455b3e85e25b5" title="objectのx,y,zそれぞれの最小値・最大値を設定する。" alt="" coords="405,1424,589,1451"><area shape="rect" href="class_ploter_1_1_affine_manager.html#feb9e5b6059fab0ddb3f10ac78aed8fd" title="共通のアフィン行列。" alt="" coords="897,664,1100,691"><area shape="rect" href="class_ploter_1_1_affine_manager.html#66cdadbcbf5a94db2b0902cfe764e795" title="グラフ用のアフィン行列。" alt="" coords="641,233,844,260"><area shape="rect" href="class_ploter_1_1_affine_manager.html#755fd8e7525b1c5043c7de5b226aa637" title="x軸用のアフィン行列。" alt="" coords="643,360,843,387"><area shape="rect" href="class_ploter_1_1_affine_manager.html#eb318d1624ad94c12f5f45cbbaa03d42" title="xyグリッド用のアフィン行列。" alt="" coords="640,537,845,564"><area shape="rect" href="class_ploter_1_1_affine_manager.html#b05cd15a387992e5d2aa49198d5212f5" title="y軸用のアフィン行列。" alt="" coords="641,664,844,691"><area shape="rect" href="class_ploter_1_1_affine_manager.html#4b2aa4aec7b461bf5dbc6631143e50f8" title="z軸用のアフィン行列。" alt="" coords="643,841,843,868"><area shape="rect" href="class_ploter_1_1_affine_manager.html#408bc47498da6f5bafa5e6e88cde4194" title="軸を水平にする。" alt="" coords="1169,765,1377,792"><area shape="rect" href="class_ploter_1_1_affine_manager.html#a5238bb29cf17d368d0b49ba4d3d31ba" title="投影行列を返す。" alt="" coords="1451,917,1659,944"><area shape="rect" href="class_ploter_1_1_affine_manager.html#c647693b4b2ecfeffab7b5101ac83b61" title="x軸の移動。" alt="" coords="1185,664,1361,691"><area shape="rect" href="namespace_ploter_1_1_m.html#74c7755e20b7d62a1a6e55b782acdd36" title="Ploter::M::IDENTITY" alt="" coords="1715,664,1853,691"><area shape="rect" href="namespace_ploter.html#f512b9e4bd9deb6394fcd49991ea8ed0" title="軸axis を deg°回転する行列を返す。" alt="" coords="1507,1019,1603,1045"><area shape="rect" href="class_ploter_1_1_affine_manager.html#0b9eee86956a6259a1378b6cb511d1ef" title="水平軸の違いによるアフィン行列の選択。" alt="" coords="1443,715,1667,741"><area shape="rect" href="namespace_ploter_1_1_v.html#787d7fba188e77bc49cfe19fa55617f3" title="Ploter::V::X_UNIT" alt="" coords="1493,816,1616,843"><area shape="rect" href="namespace_ploter_1_1_v.html#fb1a94c20b24b573fd5a68dcde79255a" title="Ploter::V::Z_UNIT" alt="" coords="1493,867,1616,893"><area shape="rect" href="namespace_ploter.html#5817d6e4339bbf3460b0704ca6e976df" title="度からラジアンへの変換。" alt="" coords="1736,968,1832,995"><area shape="rect" href="class_ploter_1_1_option.html#7de8eb4cc2f4e819a92cc090c84b42e0" title="iniファイルからkeyが指す値を読み込む。" alt="" coords="1720,1044,1848,1071"><area shape="rect" href="namespace_ploter.html#6d6a17eb019c30845df901c389d6e866" title="toだけ平行移動する行列を返す。" alt="" coords="1499,512,1611,539"><area shape="rect" href="class_ploter_1_1_affine_manager.html#f598580c63776558a607d0c9d2af1809" title="スケールを正規化。" alt="" coords="895,157,1103,184"><area shape="rect" href="class_ploter_1_1_affine_manager.html#843029b8c9f1bda911c96ee6279089c0" title="原点に移動。" alt="" coords="900,81,1097,108"><area shape="rect" href="class_ploter_1_1_affine_manager.html#f8c15b968a04be50a28353152d972a70" title="スケールを取得。" alt="" coords="1153,107,1393,133"><area shape="rect" href="namespace_ploter.html#1c6996dd1bc6037aeb7c2c58561f0598" title="x軸,y軸,z軸をそれぞれ、a倍,b倍,c倍する行列を返す。" alt="" coords="1227,208,1320,235"><area shape="rect" href="class_ploter_1_1_min_max.html#386bf8b6f8ac797974226952cf935fb8" title="最小値・最大値の範囲の取得。" alt="" coords="1469,107,1640,133"><area shape="rect" href="class_ploter_1_1_min_max.html#6fb091ebf5c0b1c7f5c223aa17e78217" title="アクセッサ。" alt="" coords="1196,5,1351,32"><area shape="rect" href="namespace_ploter.html#3286edb2e92e29f8f197ac3c226b6490" title="ベクトルv(x,y,z)の生成。" alt="" coords="1240,56,1307,83"><area shape="rect" href="namespace_ploter_1_1_v.html#faec408b14e015d5a3ef4f3a66149635" title="Ploter::V::ZERO" alt="" coords="1497,56,1612,83"><area shape="rect" href="namespace_ploter_1_1_v.html#c7dea1cd16dce4110b4a1cff9d48b037" title="Ploter::V::Y_UNIT" alt="" coords="937,411,1060,437"><area shape="rect" href="namespace_ploter.html#af055f8b1d0e83f4993874d84ecafdb4" title="正規化する。" alt="" coords="683,1171,803,1197"><area shape="rect" href="namespace_ploter_1_1_v.html#f6dfd6fe754723d22262b59c1ff43fba" title="Ploter::V::Z" alt="" coords="955,1221,1043,1248"><area shape="rect" href="namespace_ploter.html#0f257fd7b0c5dd663d40ecf3d986d7f8" title="対数縮尺にする。ただし、0は無視する。" alt="" coords="679,1272,807,1299"><area shape="rect" href="namespace_ploter.html#ddcd52e142e8ce241bf96a16c1b07c7d" title="二重のfor_each。" alt="" coords="931,1297,1067,1324"><area shape="rect" href="class_ploter_1_1_min_max.html#516945f168c4c050cc593473e7db759c" title="valueが最小値・最大値かどうかを査定し、更新する。" alt="" coords="663,1373,823,1400"><area shape="rect" href="namespace_ploter_1_1_v.html#643158aa8326f7a30e31be2a17cd2211" title="Ploter::V::CONST_X" alt="" coords="673,1424,812,1451"><area shape="rect" href="namespace_ploter_1_1_v.html#1298e2035259284eb20243f270f8d8da" title="Ploter::V::CONST_Y" alt="" coords="673,1475,812,1501"><area shape="rect" href="namespace_ploter_1_1_v.html#396ce96178bb46cef34971b1d1860de1" title="Ploter::V::CONST_Z" alt="" coords="673,1525,812,1552"><area shape="rect" href="class_ploter_1_1_min_max.html#48f3321e6dd835ed2bac03a6148a88e6" title="最小値・最大値の初期化。" alt="" coords="661,1576,824,1603"></map>
+</div>
+
+</div>
+</div><p>
+<hr><h2>変数</h2>
+<a class="anchor" name="fc3f284b8e4b8761bfe2dffdb1d1d6e3"></a><!-- doxytag: member="Ploter::Ploter::xAxis" ref="fc3f284b8e4b8761bfe2dffdb1d1d6e3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">shared_ptr&lt;<a class="el" href="class_ploter_1_1_axis.html">Axis</a>&gt; <a class="el" href="class_ploter_1_1_ploter.html#fc3f284b8e4b8761bfe2dffdb1d1d6e3">Ploter::Ploter::xAxis</a><code> [private]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00947">947</a> 行で定義されています。</p>
+
+<p>参照元 <a class="el" href="_ploter_8h-source.html#l00912">drawAxis()</a>, と <a class="el" href="_ploter_8h-source.html#l00810">Ploter()</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="6a880da0111549acbff1d8f7b2027080"></a><!-- doxytag: member="Ploter::Ploter::yAxis" ref="6a880da0111549acbff1d8f7b2027080" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">shared_ptr&lt;<a class="el" href="class_ploter_1_1_axis.html">Axis</a>&gt; <a class="el" href="class_ploter_1_1_ploter.html#6a880da0111549acbff1d8f7b2027080">Ploter::Ploter::yAxis</a><code> [private]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00948">948</a> 行で定義されています。</p>
+
+<p>参照元 <a class="el" href="_ploter_8h-source.html#l00912">drawAxis()</a>, と <a class="el" href="_ploter_8h-source.html#l00810">Ploter()</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="c0de48afe0cecb8e6eb6b3f404c1cc3b"></a><!-- doxytag: member="Ploter::Ploter::zAxis" ref="c0de48afe0cecb8e6eb6b3f404c1cc3b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">shared_ptr&lt;<a class="el" href="class_ploter_1_1_axis.html">Axis</a>&gt; <a class="el" href="class_ploter_1_1_ploter.html#c0de48afe0cecb8e6eb6b3f404c1cc3b">Ploter::Ploter::zAxis</a><code> [private]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00949">949</a> 行で定義されています。</p>
+
+<p>参照元 <a class="el" href="_ploter_8h-source.html#l00912">drawAxis()</a>, と <a class="el" href="_ploter_8h-source.html#l00810">Ploter()</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="5329b2353dd3c15ee118f11d0766a509"></a><!-- doxytag: member="Ploter::Ploter::xyGrid" ref="5329b2353dd3c15ee118f11d0766a509" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">shared_ptr&lt;<a class="el" href="class_ploter_1_1_grid.html">Grid</a>&gt; <a class="el" href="class_ploter_1_1_ploter.html#5329b2353dd3c15ee118f11d0766a509">Ploter::Ploter::xyGrid</a><code> [private]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00950">950</a> 行で定義されています。</p>
+
+<p>参照元 <a class="el" href="_ploter_8h-source.html#l00924">drawGrid()</a>, と <a class="el" href="_ploter_8h-source.html#l00810">Ploter()</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="5555ee678f2c4d7974ef885b869fe295"></a><!-- doxytag: member="Ploter::Ploter::xzGrid" ref="5555ee678f2c4d7974ef885b869fe295" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">shared_ptr&lt;<a class="el" href="class_ploter_1_1_grid.html">Grid</a>&gt; <a class="el" href="class_ploter_1_1_ploter.html#5555ee678f2c4d7974ef885b869fe295">Ploter::Ploter::xzGrid</a><code> [private]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00951">951</a> 行で定義されています。</p>
+
+<p>参照元 <a class="el" href="_ploter_8h-source.html#l00924">drawGrid()</a>, と <a class="el" href="_ploter_8h-source.html#l00810">Ploter()</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="df26dd72e87b5e235b174796188f30ee"></a><!-- doxytag: member="Ploter::Ploter::yzGrid" ref="df26dd72e87b5e235b174796188f30ee" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">shared_ptr&lt;<a class="el" href="class_ploter_1_1_grid.html">Grid</a>&gt; <a class="el" href="class_ploter_1_1_ploter.html#df26dd72e87b5e235b174796188f30ee">Ploter::Ploter::yzGrid</a><code> [private]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00952">952</a> 行で定義されています。</p>
+
+<p>参照元 <a class="el" href="_ploter_8h-source.html#l00924">drawGrid()</a>, と <a class="el" href="_ploter_8h-source.html#l00810">Ploter()</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="4845d606f972ec8997ecb001c228111c"></a><!-- doxytag: member="Ploter::Ploter::graph" ref="4845d606f972ec8997ecb001c228111c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ploter_1_1_graph.html">Graph</a> <a class="el" href="class_ploter_1_1_ploter.html#4845d606f972ec8997ecb001c228111c">Ploter::Ploter::graph</a><code> [private]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00953">953</a> 行で定義されています。</p>
+
+<p>参照元 <a class="el" href="_ploter_8h-source.html#l00936">drawGraph()</a>, と <a class="el" href="_ploter_8h-source.html#l00825">set()</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="3e9bb0d99d0e5ff3f1d8b67156be3c24"></a><!-- doxytag: member="Ploter::Ploter::affineManager" ref="3e9bb0d99d0e5ff3f1d8b67156be3c24" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ploter_1_1_affine_manager.html">AffineManager</a> <a class="el" href="class_ploter_1_1_ploter.html#3e9bb0d99d0e5ff3f1d8b67156be3c24">Ploter::Ploter::affineManager</a><code> [private]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00954">954</a> 行で定義されています。</p>
+
+<p>参照元 <a class="el" href="_ploter_8h-source.html#l00912">drawAxis()</a>, <a class="el" href="_ploter_8h-source.html#l00936">drawGraph()</a>, と <a class="el" href="_ploter_8h-source.html#l00924">drawGrid()</a>.</p>
+
+</div>
+</div><p>
+<hr>このクラスの説明は次のファイルから生成されました:<ul>
+<li>sources/Ploter/<a class="el" href="_ploter_8h-source.html">Ploter.h</a></ul>
+</div>
+<hr size="1"><address style="text-align: right;"><small>3dGraphに対してTue Jan 6 00:57:39 2009に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.6 </small></address>
+</body>
+</html>

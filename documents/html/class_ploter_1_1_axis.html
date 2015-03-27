@@ -1,0 +1,268 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>3dGraph: クラス Ploter::Axis</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.5.6 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespace_ploter.html">Ploter</a>::<a class="el" href="class_ploter_1_1_axis.html">Axis</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス Ploter::Axis</h1><!-- doxytag: class="Ploter::Axis" --><!-- doxytag: inherits="Ploter::Composite,Ploter::Subject" -->座標軸を表すクラス。  
+<a href="#_details">[詳細]</a>
+<p>
+<code>#include &lt;<a class="el" href="_ploter_8h-source.html">Ploter.h</a>&gt;</code>
+<p>
+<div class="dynheader">
+Ploter::Axisに対する継承グラフ</div>
+<div class="dynsection">
+<p><center><img src="class_ploter_1_1_axis__inherit__graph.png" border="0" usemap="#_ploter_1_1_axis__inherit__map" alt="Inheritance graph"></center>
+<map name="_ploter_1_1_axis__inherit__map">
+<area shape="rect" href="class_ploter_1_1_composite.html" title="複合グラフ要素を表すクラス。" alt="" coords="5,13,221,141"><area shape="rect" href="class_ploter_1_1_subject.html" title="観察対象を表すクラス。" alt="" coords="245,5,392,149"></map>
+<center><font size="2">[<a href="graph_legend.html">凡例</a>]</font></center></div>
+
+<p>
+<a href="class_ploter_1_1_axis-members.html">すべてのメンバ一覧</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_axis.html#de10be0e3b4139300c70181ea97e129f">Axis</a> (const <a class="el" href="class_ploter_1_1_option.html">Option</a> &amp;option_, const <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp;direction_)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">方向がdirection_の座標軸を生成する。  <a href="#de10be0e3b4139300c70181ea97e129f"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">const <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_axis.html#c54ee69dd283dcd2ac83604af6687a28">getDirection</a> (void) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">座標軸の方向を取得する。  <a href="#c54ee69dd283dcd2ac83604af6687a28"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">std::size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_axis.html#de681d38f5b4516a348ed67edb6d451e">getIntervalNumber</a> (void) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">区間数を取得する。  <a href="#de681d38f5b4516a348ed67edb6d451e"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_axis.html#35d71ac1bf294e763e042688ac2b89be">isSettablePosition</a> (int i) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">iが設定可能な場所かどうかを取得する。  <a href="#35d71ac1bf294e763e042688ac2b89be"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Private メソッド</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_axis.html#d65e8ade9e5c6d6f29473df7bfc8fe30">drawMyself</a> (const <a class="el" href="namespace_ploter.html#cdf6ee9e2bdbc5c486d3d33c96a914b7">Matrix</a> &amp;affine) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">座標軸を行列affineで座標変換した後、描画する。  <a href="#d65e8ade9e5c6d6f29473df7bfc8fe30"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Private 変数</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">const <a class="el" href="class_ploter_1_1_option.html">Option</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_axis.html#aa9dd79df7baf018bea25a8fe1683da9">option</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">const <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_axis.html#af10c296a4753b823b657f750d950ed6">direction</a></td></tr>
+
+</table>
+<hr><a name="_details"></a><h2>説明</h2>
+座標軸を表すクラス。 
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00559">559</a> 行で定義されています。</p>
+<hr><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" name="de10be0e3b4139300c70181ea97e129f"></a><!-- doxytag: member="Ploter::Axis::Axis" ref="de10be0e3b4139300c70181ea97e129f" args="(const Option &amp;option_, const Vector &amp;direction_)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Ploter::Axis::Axis           </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_ploter_1_1_option.html">Option</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>option_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>direction_</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+方向がdirection_の座標軸を生成する。 
+<p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00566">566</a> 行で定義されています。</p>
+
+</div>
+</div><p>
+<hr><h2>関数</h2>
+<a class="anchor" name="c54ee69dd283dcd2ac83604af6687a28"></a><!-- doxytag: member="Ploter::Axis::getDirection" ref="c54ee69dd283dcd2ac83604af6687a28" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a>&amp; Ploter::Axis::getDirection           </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+座標軸の方向を取得する。 
+<p>
+
+<p><a class="el" href="class_ploter_1_1_subject.html#02dd488b85e0beb7894e8859e3852bfa">Ploter::Subject</a>を再定義しています。</p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00574">574</a> 行で定義されています。</p>
+
+<p>参照先 <a class="el" href="_ploter_8h-source.html#l00613">direction</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="de681d38f5b4516a348ed67edb6d451e"></a><!-- doxytag: member="Ploter::Axis::getIntervalNumber" ref="de681d38f5b4516a348ed67edb6d451e" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t Ploter::Axis::getIntervalNumber           </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+区間数を取得する。 
+<p>
+
+<p><a class="el" href="class_ploter_1_1_subject.html#139f016f3de5d110eee73160ad232d27">Ploter::Subject</a>を再定義しています。</p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00582">582</a> 行で定義されています。</p>
+
+</div>
+</div><p>
+<a class="anchor" name="35d71ac1bf294e763e042688ac2b89be"></a><!-- doxytag: member="Ploter::Axis::isSettablePosition" ref="35d71ac1bf294e763e042688ac2b89be" args="(int i) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Ploter::Axis::isSettablePosition           </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>i</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+iが設定可能な場所かどうかを取得する。 
+<p>
+
+<p><a class="el" href="class_ploter_1_1_subject.html#e1c0194d90fecf13f3e1735180089ade">Ploter::Subject</a>を再定義しています。</p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00590">590</a> 行で定義されています。</p>
+
+</div>
+</div><p>
+<a class="anchor" name="d65e8ade9e5c6d6f29473df7bfc8fe30"></a><!-- doxytag: member="Ploter::Axis::drawMyself" ref="d65e8ade9e5c6d6f29473df7bfc8fe30" args="(const Matrix &amp;affine) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ploter::Axis::drawMyself           </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespace_ploter.html#cdf6ee9e2bdbc5c486d3d33c96a914b7">Matrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>affine</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline, private, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+座標軸を行列affineで座標変換した後、描画する。 
+<p>
+
+<p><a class="el" href="class_ploter_1_1_composite.html#ad974556f7b9d04498aa171faaa4a77f">Ploter::Composite&lt; ChildType &gt;</a>を実装しています。</p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00600">600</a> 行で定義されています。</p>
+
+<p>参照先 <a class="el" href="_ploter_8h-source.html#l00613">direction</a>, <a class="el" href="_utility_8h-source.html#l00158">Ploter::drawLine()</a>, <a class="el" href="_utility_8h-source.html#l00320">Ploter::Option::get()</a>, <a class="el" href="_ploter_8h-source.html#l00612">option</a>, と <a class="el" href="namespace_ploter_1_1_v.html#faec408b14e015d5a3ef4f3a66149635">Ploter::V::ZERO()</a>.</p>
+
+<p>
+<div class="dynheader">
+関数の呼び出しグラフ:</div>
+<div class="dynsection">
+<p><center><img src="class_ploter_1_1_axis_d65e8ade9e5c6d6f29473df7bfc8fe30_cgraph.png" border="0" usemap="#class_ploter_1_1_axis_d65e8ade9e5c6d6f29473df7bfc8fe30_cgraph_map" alt=""></center>
+<map name="class_ploter_1_1_axis_d65e8ade9e5c6d6f29473df7bfc8fe30_cgraph_map">
+<area shape="rect" href="namespace_ploter.html#cbfc181c2fc7dbdcdfa495e4ee81135d" title="始点をorigin、終点をorigin + toとする線分を行列affineで座標変換した後、描�..." alt="" coords="223,56,337,83"><area shape="rect" href="namespace_ploter_1_1_v.html#faec408b14e015d5a3ef4f3a66149635" title="Ploter::V::ZERO" alt="" coords="399,107,513,133"><area shape="rect" href="class_ploter_1_1_option.html#7de8eb4cc2f4e819a92cc090c84b42e0" title="iniファイルからkeyが指す値を読み込む。" alt="" coords="216,157,344,184"><area shape="rect" href="namespace_ploter.html#1b6271aff6de73d6ee097e78846f25fa" title="頂点vertexを描画する。" alt="" coords="392,5,520,32"><area shape="rect" href="namespace_ploter_1_1_v.html#6ecf66b2877ee3d105f77d58cff0aecb" title="Ploter::V::W_UNIT" alt="" coords="392,56,520,83"></map>
+</div>
+
+</div>
+</div><p>
+<hr><h2>変数</h2>
+<a class="anchor" name="aa9dd79df7baf018bea25a8fe1683da9"></a><!-- doxytag: member="Ploter::Axis::option" ref="aa9dd79df7baf018bea25a8fe1683da9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_ploter_1_1_option.html">Option</a> <a class="el" href="class_ploter_1_1_axis.html#aa9dd79df7baf018bea25a8fe1683da9">Ploter::Axis::option</a><code> [private]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00612">612</a> 行で定義されています。</p>
+
+<p>参照元 <a class="el" href="_ploter_8h-source.html#l00600">drawMyself()</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="af10c296a4753b823b657f750d950ed6"></a><!-- doxytag: member="Ploter::Axis::direction" ref="af10c296a4753b823b657f750d950ed6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> <a class="el" href="class_ploter_1_1_axis.html#af10c296a4753b823b657f750d950ed6">Ploter::Axis::direction</a><code> [private]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00613">613</a> 行で定義されています。</p>
+
+<p>参照元 <a class="el" href="_ploter_8h-source.html#l00600">drawMyself()</a>, と <a class="el" href="_ploter_8h-source.html#l00574">getDirection()</a>.</p>
+
+</div>
+</div><p>
+<hr>このクラスの説明は次のファイルから生成されました:<ul>
+<li>sources/Ploter/<a class="el" href="_ploter_8h-source.html">Ploter.h</a></ul>
+</div>
+<hr size="1"><address style="text-align: right;"><small>3dGraphに対してTue Jan 6 00:57:32 2009に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.6 </small></address>
+</body>
+</html>

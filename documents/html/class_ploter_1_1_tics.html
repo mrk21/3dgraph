@@ -1,0 +1,411 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>3dGraph: クラス Ploter::Tics</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.5.6 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespace_ploter.html">Ploter</a>::<a class="el" href="class_ploter_1_1_tics.html">Tics</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス Ploter::Tics</h1><!-- doxytag: class="Ploter::Tics" --><!-- doxytag: inherits="Ploter::Composite,Ploter::Subject" -->目盛を表すクラス。  
+<a href="#_details">[詳細]</a>
+<p>
+<code>#include &lt;<a class="el" href="_ploter_8h-source.html">Ploter.h</a>&gt;</code>
+<p>
+<div class="dynheader">
+Ploter::Ticsに対する継承グラフ</div>
+<div class="dynsection">
+<p><center><img src="class_ploter_1_1_tics__inherit__graph.png" border="0" usemap="#_ploter_1_1_tics__inherit__map" alt="Inheritance graph"></center>
+<map name="_ploter_1_1_tics__inherit__map">
+<area shape="rect" href="class_ploter_1_1_composite.html" title="複合グラフ要素を表すクラス。" alt="" coords="5,13,221,141"><area shape="rect" href="class_ploter_1_1_subject.html" title="観察対象を表すクラス。" alt="" coords="245,5,392,149"></map>
+<center><font size="2">[<a href="graph_legend.html">凡例</a>]</font></center></div>
+
+<p>
+<a href="class_ploter_1_1_tics-members.html">すべてのメンバ一覧</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_tics.html#2ffb344c549bb352ed56a55b65b5c489">Tics</a> (const <a class="el" href="class_ploter_1_1_option.html">Option</a> &amp;option_, const <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp;line_, const <a class="el" href="class_ploter_1_1_subject.html">Subject</a> *parent_)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">目盛線がline_、親要素がparent_、オプションがoption_の目盛を生成する。  <a href="#2ffb344c549bb352ed56a55b65b5c489"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">const <a class="el" href="namespace_ploter.html#04069799b968fe89f21012b4436f04fe">VertexList</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_tics.html#8ec89026cbc7d1ee5f06d937ddb103e4">getPositions</a> (void) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">位置リストを取得する。  <a href="#8ec89026cbc7d1ee5f06d937ddb103e4"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">const <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_tics.html#f719f2609bfa9a7e99f54ff1bb4a16f3">getDirection</a> (void) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">目盛の方向を取得する。  <a href="#f719f2609bfa9a7e99f54ff1bb4a16f3"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">std::size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_tics.html#79dd36b0c2cfdbba4ebfcb1aa853c0ff">getIntervalNumber</a> (void) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">区間数を取得する。  <a href="#79dd36b0c2cfdbba4ebfcb1aa853c0ff"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_tics.html#d223dde6f8d5766770b2a4dc34d61550">isSettablePosition</a> (int i) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">iが設定可能な場所かどうかを取得する。  <a href="#d223dde6f8d5766770b2a4dc34d61550"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Private メソッド</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_tics.html#3642e61503ea99eb59b7186cd5ff5796">drawMyself</a> (const <a class="el" href="namespace_ploter.html#cdf6ee9e2bdbc5c486d3d33c96a914b7">Matrix</a> &amp;affine) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">目盛線を行列affineで座標変換した後、描画する。  <a href="#3642e61503ea99eb59b7186cd5ff5796"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_tics.html#bbaa754b64e0c9fa69133eeeffe2aebd">setPosition</a> (void) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">目盛線の位置の設定。  <a href="#bbaa754b64e0c9fa69133eeeffe2aebd"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Private 変数</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">const <a class="el" href="class_ploter_1_1_option.html">Option</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_tics.html#d9fb348cf745ae7df0f3f0b3d7f74e1d">option</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">const <a class="el" href="class_ploter_1_1_subject.html">Subject</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_tics.html#83c1fbefd1358e31285965c0e9b7c9af">parent</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">const <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_tics.html#fa115a81ebeaf8b427a2a8fd12afc8a1">line</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="namespace_ploter.html#04069799b968fe89f21012b4436f04fe">VertexList</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_tics.html#c15831e18d4da5a44dcbb59992e2fab5">positions</a></td></tr>
+
+</table>
+<hr><a name="_details"></a><h2>説明</h2>
+目盛を表すクラス。 
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00472">472</a> 行で定義されています。</p>
+<hr><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" name="2ffb344c549bb352ed56a55b65b5c489"></a><!-- doxytag: member="Ploter::Tics::Tics" ref="2ffb344c549bb352ed56a55b65b5c489" args="(const Option &amp;option_, const Vector &amp;line_, const Subject *parent_)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Ploter::Tics::Tics           </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_ploter_1_1_option.html">Option</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>option_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>line_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_ploter_1_1_subject.html">Subject</a> *&nbsp;</td>
+          <td class="paramname"> <em>parent_</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+目盛線がline_、親要素がparent_、オプションがoption_の目盛を生成する。 
+<p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00479">479</a> 行で定義されています。</p>
+
+</div>
+</div><p>
+<hr><h2>関数</h2>
+<a class="anchor" name="8ec89026cbc7d1ee5f06d937ddb103e4"></a><!-- doxytag: member="Ploter::Tics::getPositions" ref="8ec89026cbc7d1ee5f06d937ddb103e4" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespace_ploter.html#04069799b968fe89f21012b4436f04fe">VertexList</a>&amp; Ploter::Tics::getPositions           </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+位置リストを取得する。 
+<p>
+
+<p><a class="el" href="class_ploter_1_1_subject.html#39d8b679062b41146d61b9cc0c47feb2">Ploter::Subject</a>を再定義しています。</p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00487">487</a> 行で定義されています。</p>
+
+<p>参照先 <a class="el" href="_ploter_8h-source.html#l00552">positions</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="f719f2609bfa9a7e99f54ff1bb4a16f3"></a><!-- doxytag: member="Ploter::Tics::getDirection" ref="f719f2609bfa9a7e99f54ff1bb4a16f3" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a>&amp; Ploter::Tics::getDirection           </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+目盛の方向を取得する。 
+<p>
+
+<p><a class="el" href="class_ploter_1_1_subject.html#02dd488b85e0beb7894e8859e3852bfa">Ploter::Subject</a>を再定義しています。</p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00495">495</a> 行で定義されています。</p>
+
+<p>参照先 <a class="el" href="_ploter_8h-source.html#l00032">Ploter::Subject::getDirection()</a>, と <a class="el" href="_ploter_8h-source.html#l00550">parent</a>.</p>
+
+<p>
+<div class="dynheader">
+関数の呼び出しグラフ:</div>
+<div class="dynsection">
+<p><center><img src="class_ploter_1_1_tics_f719f2609bfa9a7e99f54ff1bb4a16f3_cgraph.png" border="0" usemap="#class_ploter_1_1_tics_f719f2609bfa9a7e99f54ff1bb4a16f3_cgraph_map" alt=""></center>
+<map name="class_ploter_1_1_tics_f719f2609bfa9a7e99f54ff1bb4a16f3_cgraph_map">
+<area shape="rect" href="class_ploter_1_1_subject.html#02dd488b85e0beb7894e8859e3852bfa" title="Ploter::Subject::getDirection" alt="" coords="219,5,403,32"></map>
+</div>
+
+</div>
+</div><p>
+<a class="anchor" name="79dd36b0c2cfdbba4ebfcb1aa853c0ff"></a><!-- doxytag: member="Ploter::Tics::getIntervalNumber" ref="79dd36b0c2cfdbba4ebfcb1aa853c0ff" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t Ploter::Tics::getIntervalNumber           </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+区間数を取得する。 
+<p>
+
+<p><a class="el" href="class_ploter_1_1_subject.html#139f016f3de5d110eee73160ad232d27">Ploter::Subject</a>を再定義しています。</p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00503">503</a> 行で定義されています。</p>
+
+<p>参照先 <a class="el" href="_utility_8h-source.html#l00320">Ploter::Option::get()</a>, <a class="el" href="_ploter_8h-source.html#l00030">Ploter::Subject::getIntervalNumber()</a>, <a class="el" href="_ploter_8h-source.html#l00549">option</a>, と <a class="el" href="_ploter_8h-source.html#l00550">parent</a>.</p>
+
+<p>参照元 <a class="el" href="_ploter_8h-source.html#l00534">setPosition()</a>.</p>
+
+<p>
+<div class="dynheader">
+関数の呼び出しグラフ:</div>
+<div class="dynsection">
+<p><center><img src="class_ploter_1_1_tics_79dd36b0c2cfdbba4ebfcb1aa853c0ff_cgraph.png" border="0" usemap="#class_ploter_1_1_tics_79dd36b0c2cfdbba4ebfcb1aa853c0ff_cgraph_map" alt=""></center>
+<map name="class_ploter_1_1_tics_79dd36b0c2cfdbba4ebfcb1aa853c0ff_cgraph_map">
+<area shape="rect" href="class_ploter_1_1_option.html#7de8eb4cc2f4e819a92cc090c84b42e0" title="iniファイルからkeyが指す値を読み込む。" alt="" coords="299,5,427,32"><area shape="rect" href="class_ploter_1_1_subject.html#139f016f3de5d110eee73160ad232d27" title="Ploter::Subject::getIntervalNumber" alt="" coords="253,56,472,83"></map>
+</div>
+
+</div>
+</div><p>
+<a class="anchor" name="d223dde6f8d5766770b2a4dc34d61550"></a><!-- doxytag: member="Ploter::Tics::isSettablePosition" ref="d223dde6f8d5766770b2a4dc34d61550" args="(int i) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Ploter::Tics::isSettablePosition           </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>i</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+iが設定可能な場所かどうかを取得する。 
+<p>
+
+<p><a class="el" href="class_ploter_1_1_subject.html#e1c0194d90fecf13f3e1735180089ade">Ploter::Subject</a>を再定義しています。</p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00511">511</a> 行で定義されています。</p>
+
+<p>参照先 <a class="el" href="_ploter_8h-source.html#l00176">Ploter::Composite&lt; ChildType &gt;::child</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="3642e61503ea99eb59b7186cd5ff5796"></a><!-- doxytag: member="Ploter::Tics::drawMyself" ref="3642e61503ea99eb59b7186cd5ff5796" args="(const Matrix &amp;affine) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ploter::Tics::drawMyself           </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespace_ploter.html#cdf6ee9e2bdbc5c486d3d33c96a914b7">Matrix</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>affine</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline, private, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+目盛線を行列affineで座標変換した後、描画する。 
+<p>
+
+<p><a class="el" href="class_ploter_1_1_composite.html#ad974556f7b9d04498aa171faaa4a77f">Ploter::Composite&lt; ChildType &gt;</a>を実装しています。</p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00521">521</a> 行で定義されています。</p>
+
+<p>参照先 <a class="el" href="_utility_8h-source.html#l00174">Ploter::drawParallelLines()</a>, <a class="el" href="_utility_8h-source.html#l00320">Ploter::Option::get()</a>, <a class="el" href="_ploter_8h-source.html#l00551">line</a>, <a class="el" href="_ploter_8h-source.html#l00549">option</a>, <a class="el" href="_ploter_8h-source.html#l00552">positions</a>, と <a class="el" href="_ploter_8h-source.html#l00534">setPosition()</a>.</p>
+
+<p>
+<div class="dynheader">
+関数の呼び出しグラフ:</div>
+<div class="dynsection">
+<p><center><img src="class_ploter_1_1_tics_3642e61503ea99eb59b7186cd5ff5796_cgraph.png" border="0" usemap="#class_ploter_1_1_tics_3642e61503ea99eb59b7186cd5ff5796_cgraph_map" alt=""></center>
+<map name="class_ploter_1_1_tics_3642e61503ea99eb59b7186cd5ff5796_cgraph_map">
+<area shape="rect" href="namespace_ploter.html#b186e34c51a9a110546b59aed18338e7" title="方向がdirectionで始点の集合がpositionsな平行線の集合を行列affineで座標変換�..." alt="" coords="215,56,377,83"><area shape="rect" href="class_ploter_1_1_option.html#7de8eb4cc2f4e819a92cc090c84b42e0" title="iniファイルからkeyが指す値を読み込む。" alt="" coords="741,157,869,184"><area shape="rect" href="class_ploter_1_1_tics.html#bbaa754b64e0c9fa69133eeeffe2aebd" title="目盛線の位置の設定。" alt="" coords="216,183,376,209"><area shape="rect" href="namespace_ploter.html#cbfc181c2fc7dbdcdfa495e4ee81135d" title="始点をorigin、終点をorigin + toとする線分を行列affineで座標変換した後、描�..." alt="" coords="480,56,595,83"><area shape="rect" href="namespace_ploter.html#1b6271aff6de73d6ee097e78846f25fa" title="頂点vertexを描画する。" alt="" coords="741,5,869,32"><area shape="rect" href="namespace_ploter_1_1_v.html#6ecf66b2877ee3d105f77d58cff0aecb" title="Ploter::V::W_UNIT" alt="" coords="741,56,869,83"><area shape="rect" href="namespace_ploter_1_1_v.html#faec408b14e015d5a3ef4f3a66149635" title="Ploter::V::ZERO" alt="" coords="748,107,863,133"><area shape="rect" href="class_ploter_1_1_subject.html#02dd488b85e0beb7894e8859e3852bfa" title="Ploter::Subject::getDirection" alt="" coords="445,157,629,184"><area shape="rect" href="class_ploter_1_1_tics.html#79dd36b0c2cfdbba4ebfcb1aa853c0ff" title="区間数を取得する。" alt="" coords="439,208,636,235"><area shape="rect" href="class_ploter_1_1_subject.html#e1c0194d90fecf13f3e1735180089ade" title="Ploter::Subject::isSettablePosition" alt="" coords="428,259,647,285"><area shape="rect" href="class_ploter_1_1_subject.html#139f016f3de5d110eee73160ad232d27" title="Ploter::Subject::getIntervalNumber" alt="" coords="696,208,915,235"></map>
+</div>
+
+</div>
+</div><p>
+<a class="anchor" name="bbaa754b64e0c9fa69133eeeffe2aebd"></a><!-- doxytag: member="Ploter::Tics::setPosition" ref="bbaa754b64e0c9fa69133eeeffe2aebd" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ploter::Tics::setPosition           </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+目盛線の位置の設定。 
+<p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00534">534</a> 行で定義されています。</p>
+
+<p>参照先 <a class="el" href="_ploter_8h-source.html#l00032">Ploter::Subject::getDirection()</a>, <a class="el" href="_ploter_8h-source.html#l00503">getIntervalNumber()</a>, <a class="el" href="_ploter_8h-source.html#l00033">Ploter::Subject::isSettablePosition()</a>, <a class="el" href="_ploter_8h-source.html#l00550">parent</a>, と <a class="el" href="_ploter_8h-source.html#l00552">positions</a>.</p>
+
+<p>参照元 <a class="el" href="_ploter_8h-source.html#l00521">drawMyself()</a>.</p>
+
+<p>
+<div class="dynheader">
+関数の呼び出しグラフ:</div>
+<div class="dynsection">
+<p><center><img src="class_ploter_1_1_tics_bbaa754b64e0c9fa69133eeeffe2aebd_cgraph.png" border="0" usemap="#class_ploter_1_1_tics_bbaa754b64e0c9fa69133eeeffe2aebd_cgraph_map" alt=""></center>
+<map name="class_ploter_1_1_tics_bbaa754b64e0c9fa69133eeeffe2aebd_cgraph_map">
+<area shape="rect" href="class_ploter_1_1_subject.html#02dd488b85e0beb7894e8859e3852bfa" title="Ploter::Subject::getDirection" alt="" coords="232,5,416,32"><area shape="rect" href="class_ploter_1_1_tics.html#79dd36b0c2cfdbba4ebfcb1aa853c0ff" title="区間数を取得する。" alt="" coords="225,56,423,83"><area shape="rect" href="class_ploter_1_1_subject.html#e1c0194d90fecf13f3e1735180089ade" title="Ploter::Subject::isSettablePosition" alt="" coords="215,107,433,133"><area shape="rect" href="class_ploter_1_1_option.html#7de8eb4cc2f4e819a92cc090c84b42e0" title="iniファイルからkeyが指す値を読み込む。" alt="" coords="528,31,656,57"><area shape="rect" href="class_ploter_1_1_subject.html#139f016f3de5d110eee73160ad232d27" title="Ploter::Subject::getIntervalNumber" alt="" coords="483,81,701,108"></map>
+</div>
+
+</div>
+</div><p>
+<hr><h2>変数</h2>
+<a class="anchor" name="d9fb348cf745ae7df0f3f0b3d7f74e1d"></a><!-- doxytag: member="Ploter::Tics::option" ref="d9fb348cf745ae7df0f3f0b3d7f74e1d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_ploter_1_1_option.html">Option</a> <a class="el" href="class_ploter_1_1_tics.html#d9fb348cf745ae7df0f3f0b3d7f74e1d">Ploter::Tics::option</a><code> [private]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00549">549</a> 行で定義されています。</p>
+
+<p>参照元 <a class="el" href="_ploter_8h-source.html#l00521">drawMyself()</a>, と <a class="el" href="_ploter_8h-source.html#l00503">getIntervalNumber()</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="83c1fbefd1358e31285965c0e9b7c9af"></a><!-- doxytag: member="Ploter::Tics::parent" ref="83c1fbefd1358e31285965c0e9b7c9af" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_ploter_1_1_subject.html">Subject</a>* <a class="el" href="class_ploter_1_1_tics.html#83c1fbefd1358e31285965c0e9b7c9af">Ploter::Tics::parent</a><code> [private]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00550">550</a> 行で定義されています。</p>
+
+<p>参照元 <a class="el" href="_ploter_8h-source.html#l00495">getDirection()</a>, <a class="el" href="_ploter_8h-source.html#l00503">getIntervalNumber()</a>, と <a class="el" href="_ploter_8h-source.html#l00534">setPosition()</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="fa115a81ebeaf8b427a2a8fd12afc8a1"></a><!-- doxytag: member="Ploter::Tics::line" ref="fa115a81ebeaf8b427a2a8fd12afc8a1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> <a class="el" href="class_ploter_1_1_tics.html#fa115a81ebeaf8b427a2a8fd12afc8a1">Ploter::Tics::line</a><code> [private]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00551">551</a> 行で定義されています。</p>
+
+<p>参照元 <a class="el" href="_ploter_8h-source.html#l00521">drawMyself()</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="c15831e18d4da5a44dcbb59992e2fab5"></a><!-- doxytag: member="Ploter::Tics::positions" ref="c15831e18d4da5a44dcbb59992e2fab5" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_ploter.html#04069799b968fe89f21012b4436f04fe">VertexList</a> <a class="el" href="class_ploter_1_1_tics.html#c15831e18d4da5a44dcbb59992e2fab5">Ploter::Tics::positions</a><code> [mutable, private]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p> <a class="el" href="_ploter_8h-source.html">Ploter.h</a> の <a class="el" href="_ploter_8h-source.html#l00552">552</a> 行で定義されています。</p>
+
+<p>参照元 <a class="el" href="_ploter_8h-source.html#l00521">drawMyself()</a>, <a class="el" href="_ploter_8h-source.html#l00487">getPositions()</a>, と <a class="el" href="_ploter_8h-source.html#l00534">setPosition()</a>.</p>
+
+</div>
+</div><p>
+<hr>このクラスの説明は次のファイルから生成されました:<ul>
+<li>sources/Ploter/<a class="el" href="_ploter_8h-source.html">Ploter.h</a></ul>
+</div>
+<hr size="1"><address style="text-align: right;"><small>3dGraphに対してTue Jan 6 00:57:31 2009に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.6 </small></address>
+</body>
+</html>

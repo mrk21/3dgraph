@@ -1,0 +1,4 @@
+<area shape="rect" href="$class_ploter_1_1_affine_manager.html#f8c15b968a04be50a28353152d972a70" title="スケールを取得。" alt="" coords="265,5,505,32">
+<area shape="rect" href="$namespace_ploter.html#1c6996dd1bc6037aeb7c2c58561f0598" title="x軸,y軸,z軸をそれぞれ、a倍,b倍,c倍する行列を返す。" alt="" coords="339,56,432,83">
+<area shape="rect" href="$class_ploter_1_1_min_max.html#386bf8b6f8ac797974226952cf935fb8" title="最小値・最大値の範囲の取得。" alt="" coords="556,5,727,32">
+<area shape="rect" href="$namespace_ploter_1_1_m.html#74c7755e20b7d62a1a6e55b782acdd36" title="Ploter::M::IDENTITY" alt="" coords="572,56,711,83">

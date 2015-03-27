@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  
+  <meta http-equiv="content-type"        content="text/html; charset=utf-8" />
+  <meta http-equiv="content-style-type"  content="text/css"                 />
+  <meta http-equiv="content-script-type" content="text/javascript"          />
+  
+  <title>Readme</title>
+  
+  <style type="text/css">
+    
+    body {
+      text-align : center;
+    }
+    ul,ol,dl,p,span {
+      line-height : 1.6;
+    }
+    #page {
+      text-align : left;
+      width      : 50em;
+      margin     : 0 auto;
+    }
+    #header {
+      border        : 1px solid #000;
+      padding       : 2em 1.5em 1em;
+      margin-bottom : 1em;
+    }
+    #header h1 {
+      margin        : 0;
+      margin-bottom : 1em;
+      padding       : 0;
+    }
+    #content .chapter {
+      border        : 1px solid #000;
+      padding       : 1em 1.5em;
+      margin-bottom : 1em;
+    }
+    #content .chapter h2 {
+      border-bottom : 1px dotted #666;
+    }
+    #content .chapter dt {
+      display     : block;
+      font-weight : bold;
+    }
+    #content .chapter dd {
+      display : block;
+    }
+    th {
+      text-align : left;
+    }
+    
+  </style>
+  
+</head>
+<body>
+<div id=page>
+  
+  <div id="header">
+    <h1>Readme</h1>
+    
+    <table>
+      <tbody>
+        <tr><th>【ソフト名】</th><td>3dGraph</td></tr>
+        <tr><th>【バージョン】</th><td>0.3α</td></tr>
+        <tr><th>【著作権者】</th><td>村田 裕一</td></tr>
+        <tr><th>【制作日】</th><td>2006/02/20</td></tr>
+        <tr><th>【種別】</th><td>3次元グラフプロットソフト</td></tr>
+        <tr><th>【動作環境】</th><td>Windows XP/Vista (要<a href="http://e-words.jp/w/E38395E383ABE382ABE383A9E383BC.html">フルカラー</a>)</td></tr>
+        <tr><th>【開発環境】</th><td>Windows Vista + <a href="http://ja.wikipedia.org/wiki/GNU%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3">gcc</a> 3.4.5 +
+                                                  <a href="http://www.kmonos.net/alang/boost/">boost</a> 1.34.1</td></tr>
+      </tbody>
+    </table>
+    
+    <ol>
+      <li><a href="#1">はじめに</a></li>
+      <li><a href="#2">インストール／アンインストール</a></li>
+      <li><a href="#3">使用方法</a></li>
+      <li><a href="#4">option.iniについて</a></li>
+      <li><a href="#5">今後の予定</a></li>
+      <li><a href="#6">ドキュメントについて</a></li>
+      <li><a href="#7">最後に</a></li>
+      <li><a href="#8">更新履歴</a></li>
+    </ol>
+  </div>
+  
+  <div id="content">
+    <div class="chapter">
+      <h2><a name="1">はじめに</a></h2>
+      <p>
+        <a href="http://ja.wikipedia.org/wiki/OpenGL">OpenGL</a>を用いた３次元グラフプロットソフトです。
+      </p>
+      <p>
+        このソフトは、テキストデータを読み込み、それを３次元グラフで表示するものです。
+        この手のソフトは<a href="http://ja.wikipedia.org/wiki/Gnuplot">gnuplot</a>をはじめ, 多々存在しますが、
+        このソフトはグラフを<a href="http://ja.wikipedia.org/wiki/%E6%8A%95%E5%BD%B1%E5%9B%B3">斜投影</a>でき、
+        必要に応じて、x軸ポリライン, y軸ポリラインをそれぞれ非表示にすることができます。
+      </p>
+      <p>
+        現在のところ、<a href="http://e-words.jp/w/E38395E383ABE382ABE383A9E383BC.html">フルカラー</a>でしか動作確認をしてませんし、
+        また、<a href="http://www.myu.ac.jp/~makanae/CG/cg1_14.htm">隠線処理</a>が不完全ですが、今後対応する予定です。
+      </p>
+    </div>
+    
+    <div class="chapter">
+      <h2><a name="2">インストール／アンインストール</a></h2>
+      <p>
+        このソフトはレジストリを使用していないため、コピーするだけで使用することができます。
+        不要になった時も普通に消去するだけで大丈夫です。
+      </p>
+    </div>
+    
+    <div class="chapter">
+      <h2><a name="3">使用方法</a></h2>
+      <p>
+        3dGraph.exeを起動し、"ファイル->データを開く"でデータが記述されたテキストファイルを読み込むだけです。
+        ただし、テキストファイルは以下の条件を満たしていなければなりません。
+      </p>
+      <ol>
+        <li>各データが数値であること</li>
+        <li>各データが空白区切りであること</li>
+        <li>データ配置が行列形式であること(列方向x軸、行方向y軸)</li>
+      </ol>
+      <p>
+        また、不正なデータを読み込んだときの動作は不定です。
+      </p>
+    </div>
+    
+    <div class="chapter">
+      <h2><a name="4">option.iniについて</a></h2>
+      <p>
+        本ソフトは、描画オプションがありますが、
+        現在<a href="http://ja.wikipedia.org/wiki/%E3%82%B0%E3%83%A9%E3%83%95%E3%82%A3%E3%82%AB%E3%83%AB%E3%83%A6%E3%83%BC%E3%82%B6%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9">GUI</a>での設定項目はありません。
+        option.iniファイルを直接設定する必要があります（設定方法は、option.iniに記述してあります）。
+      </p>
+      <span>現在有効な項目</span>
+      <ul>
+        <li>各座標軸の主・副目盛、各平面の主・副グリッド、x軸、y軸ポリラインの可視、非可視の設定</li>
+        <li>各座標軸の主・副目盛の分割数（副目盛の分割数は主目盛に対してです）</li>
+        <li>対数目盛にするかどうか</li>
+        <li>x軸、y軸方向の<a href="http://ja.wikipedia.org/wiki/%E6%AD%A3%E8%A6%8F%E5%8C%96">正規化</a>(指定した座標軸方向の各ポリラインの面積を1にします)</li>
+        <li>座標軸の向き(x軸、y軸のどちらが手前か)</li>
+      </ul>
+    </div>
+    
+    <div class="chapter">
+      <h2><a name="5">今後の予定</a></h2>
+      <ol>
+        <li>目盛の値やタイトルの表示</li>
+        <li><a href="http://ja.wikipedia.org/wiki/%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9">ユーザーインターフェース</a>の充実</li>
+        <li><a href="http://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%AD%E3%82%B9%E3%83%97%E3%83%A9%E3%83%83%E3%83%88%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0">クロスプラットフォーム</a>化</li>
+      </ol>
+    </div>
+    
+    <div class="chapter">
+      <h2><a name="6">ドキュメントについて</a></h2>
+      <p>
+        <a href="documents/html/index.html">開発者向けドキュメント</a>
+      </p>
+    </div>
+    
+    <div class="chapter">
+      <h2><a name="7">最後に</a></h2>
+      <p>
+        このソフトはまだ開発中ですので、機能不足や、バグ等多々あると思いますが、
+        今後、よりよくしていきますので、どうか大目に見てやってください（笑）。
+      </p>
+    </div>
+    
+    <div class="chapter">
+      <h2><a name="8">更新履歴</a></h2>
+      <dl>
+        <dt>2006.02.20</dt><dd>作成開始</dd>
+        <dt>2006.03.15</dt><dd>とりあえず、グラフを表示出来るようなった</dd>
+        <dt>2006.04.12</dt><dd>目盛の分割数を変更できるようにした</dd>
+        <dt>2006.07.23</dt><dd>コード全体を見直し、パフォーマンスを向上させた</dd>
+        <dt>2006.11.03</dt><dd>アスペクト比を固定させた</dd>
+        <dt>2008.06.16</dt><dd>陰線処理を実装した</dd>
+      </dl>
+    </div>
+  </div>
+  
+</div>
+</body>
+</html>

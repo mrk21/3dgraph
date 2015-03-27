@@ -1,0 +1,977 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>3dGraph: ネームスペース Ploter</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.5.6 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li class="current"><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="namespaces.html"><span>ネームスペース一覧</span></a></li>
+      <li><a href="namespacemembers.html"><span>ネームスペースメンバ</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>ネームスペース Ploter</h1>
+<p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>構成</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_subject.html">Subject</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">観察対象を表すクラス。  <a href="class_ploter_1_1_subject.html#_details">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_scannee.html">Scannee</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">捜査対象を表すクラス。  <a href="class_ploter_1_1_scannee.html#_details">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_scan_line.html">ScanLine</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">。  <a href="class_ploter_1_1_scan_line.html#_details">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_hidden_line_manager.html">HiddenLineManager</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">陰線処理を管理するクラス。  <a href="class_ploter_1_1_hidden_line_manager.html#_details">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_composite.html">Composite</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">複合グラフ要素を表すクラス。  <a href="class_ploter_1_1_composite.html#_details">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_collection.html">Collection</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">グラフ要素の集合を表すクラス。  <a href="class_ploter_1_1_collection.html#_details">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_line.html">Line</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">線分を表すクラス。  <a href="class_ploter_1_1_line.html#_details">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_r_g_b_a.html">RGBA</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">色を表すクラス。  <a href="class_ploter_1_1_r_g_b_a.html#_details">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_poly_line.html">PolyLine</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ポリラインを表すクラス。  <a href="class_ploter_1_1_poly_line.html#_details">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_poly_line_list.html">PolyLineList</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ポリラインの集合を表すクラス。  <a href="class_ploter_1_1_poly_line_list.html#_details">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_tics.html">Tics</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">目盛を表すクラス。  <a href="class_ploter_1_1_tics.html#_details">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_axis.html">Axis</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">座標軸を表すクラス。  <a href="class_ploter_1_1_axis.html#_details">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_grid.html">Grid</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">グリッドを表すクラス。  <a href="class_ploter_1_1_grid.html#_details">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_graph.html">Graph</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">３次元グラフを表すクラス。  <a href="class_ploter_1_1_graph.html#_details">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_ploter.html">Ploter</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">グラフ要素を統括するクラス。  <a href="class_ploter_1_1_ploter.html#_details">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_option.html">Option</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">オプションを管理するクラス。  <a href="class_ploter_1_1_option.html#_details">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_min_max.html">MinMax</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">最大値と最小値の格納。  <a href="class_ploter_1_1_min_max.html#_details">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_min_max_manager.html">MinMaxManager</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">x,y,zそれぞれの最小値・最大値を管理するクラス。  <a href="class_ploter_1_1_min_max_manager.html#_details">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_affine_manager.html">AffineManager</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">アフィン行列を管理するクラス。  <a href="class_ploter_1_1_affine_manager.html#_details">[詳細]</a><br></td></tr>
+<tr><td colspan="2"><br><h2>ネームスペース</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">namespace &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter_1_1_m.html">M</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">namespace &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter_1_1_v.html">V</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ベクトル・行列に関する定数郡。 <br></td></tr>
+
+<p>
+<tr><td colspan="2"><br><h2>型定義</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Element</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef ublas::vector&lt; <a class="el" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Element</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef ublas::matrix&lt; <a class="el" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Element</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#cdf6ee9e2bdbc5c486d3d33c96a914b7">Matrix</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#a7414cfa758b7e7219e399ec564a5363">Index</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef std::vector&lt; <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#04069799b968fe89f21012b4436f04fe">VertexList</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef ublas::matrix&lt; <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#f4197af6b8d6544fcbc94e78080c1f3a">VertexMatrix</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef function&lt; <a class="el" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Element</a> <br>
+&amp;(<a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp;)&gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#3e7caf90b69598e3b8322ba3c585ee9a">ReferenceFunction</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef function&lt; const <br>
+<a class="el" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Element</a> &amp;(const <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp;)&gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#6d7484abd77bd67a04915fcfe0436f6d">ConstReferenceFunction</a></td></tr>
+
+<tr><td colspan="2"><br><h2>列挙型</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="namespace_ploter.html#35b0402ef09657b1efe8ba08340ef2886db182841ad2aa8e572a2918e89332cd">X</a>, 
+<a class="el" href="namespace_ploter.html#35b0402ef09657b1efe8ba08340ef28867feb73c81763146bfd3084fd4bce48e">Y</a>, 
+<a class="el" href="namespace_ploter.html#35b0402ef09657b1efe8ba08340ef28830b6c7677a77d0dd2330a0b9674d2dbf">Z</a>, 
+<a class="el" href="namespace_ploter.html#35b0402ef09657b1efe8ba08340ef288f8ded9ba77fc8447b07cda572049b720">W</a>
+ }</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ベクトルの要素の指標を表す値。  <a href="namespace_ploter.html#35b0402ef09657b1efe8ba08340ef288">[詳細]</a><br></td></tr>
+<tr><td colspan="2"><br><h2>関数</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#5817d6e4339bbf3460b0704ca6e976df">toRad</a> (double deg)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">度からラジアンへの変換。  <a href="#5817d6e4339bbf3460b0704ca6e976df"></a><br></td></tr>
+<tr><td class="memTemplParams" nowrap colspan="2">template&lt;class IteratorType, class UnaryFunctionType&gt; </td></tr>
+<tr><td class="memTemplItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#ddcd52e142e8ce241bf96a16c1b07c7d">dualForEach</a> (IteratorType begin, IteratorType end, UnaryFunctionType unaryFunction)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">二重のfor_each。  <a href="#ddcd52e142e8ce241bf96a16c1b07c7d"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#0f257fd7b0c5dd663d40ecf3d986d7f8">toLogScale</a> (<a class="el" href="namespace_ploter.html#f4197af6b8d6544fcbc94e78080c1f3a">VertexMatrix</a> &amp;object, <a class="el" href="namespace_ploter.html#3e7caf90b69598e3b8322ba3c585ee9a">ReferenceFunction</a> element)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">対数縮尺にする。ただし、0は無視する。  <a href="#0f257fd7b0c5dd663d40ecf3d986d7f8"></a><br></td></tr>
+<tr><td class="memTemplParams" nowrap colspan="2">template&lt;class IteratorType&gt; </td></tr>
+<tr><td class="memTemplItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#af055f8b1d0e83f4993874d84ecafdb4">regularize</a> (IteratorType begin, IteratorType end)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">正規化する。  <a href="#af055f8b1d0e83f4993874d84ecafdb4"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#1b6271aff6de73d6ee097e78846f25fa">drawVertex</a> (const <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp;vertex)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">頂点vertexを描画する。  <a href="#1b6271aff6de73d6ee097e78846f25fa"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#cbfc181c2fc7dbdcdfa495e4ee81135d">drawLine</a> (const <a class="el" href="namespace_ploter.html#cdf6ee9e2bdbc5c486d3d33c96a914b7">Matrix</a> &amp;affine, const <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp;origin, const <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp;to)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">始点をorigin、終点をorigin + toとする線分を行列affineで座標変換した後、描画する。  <a href="#cbfc181c2fc7dbdcdfa495e4ee81135d"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#b186e34c51a9a110546b59aed18338e7">drawParallelLines</a> (const <a class="el" href="namespace_ploter.html#cdf6ee9e2bdbc5c486d3d33c96a914b7">Matrix</a> &amp;affine, const <a class="el" href="namespace_ploter.html#04069799b968fe89f21012b4436f04fe">VertexList</a> &amp;positions, const <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp;direction)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">方向がdirectionで始点の集合がpositionsな平行線の集合を行列affineで座標変換した後、描画する。  <a href="#b186e34c51a9a110546b59aed18338e7"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#3286edb2e92e29f8f197ac3c226b6490">v</a> (<a class="el" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Element</a> x, <a class="el" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Element</a> y, <a class="el" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Element</a> z)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ベクトルv(x,y,z)の生成。  <a href="#3286edb2e92e29f8f197ac3c226b6490"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#e66b99fb365c9d4bde330af8cf8d497b">transform</a> (const <a class="el" href="namespace_ploter.html#cdf6ee9e2bdbc5c486d3d33c96a914b7">Matrix</a> &amp;affine, <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp;target)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ベクトルtargetを行列affineで座標変換する。  <a href="#e66b99fb365c9d4bde330af8cf8d497b"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="namespace_ploter.html#cdf6ee9e2bdbc5c486d3d33c96a914b7">Matrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#1c6996dd1bc6037aeb7c2c58561f0598">scale</a> (<a class="el" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Element</a> a, <a class="el" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Element</a> b, <a class="el" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Element</a> c)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">x軸,y軸,z軸をそれぞれ、a倍,b倍,c倍する行列を返す。  <a href="#1c6996dd1bc6037aeb7c2c58561f0598"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="namespace_ploter.html#cdf6ee9e2bdbc5c486d3d33c96a914b7">Matrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#6d6a17eb019c30845df901c389d6e866">translate</a> (const <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp;to)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">toだけ平行移動する行列を返す。  <a href="#6d6a17eb019c30845df901c389d6e866"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="namespace_ploter.html#cdf6ee9e2bdbc5c486d3d33c96a914b7">Matrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#f512b9e4bd9deb6394fcd49991ea8ed0">rotate</a> (<a class="el" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Element</a> deg, const <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp;axis)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">軸axis を deg°回転する行列を返す。  <a href="#f512b9e4bd9deb6394fcd49991ea8ed0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="namespace_ploter.html#cdf6ee9e2bdbc5c486d3d33c96a914b7">Matrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#ed5ec1088e7e1b0acb9a9f33f142be51">shear</a> (<a class="el" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Element</a> deg, const <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp;axis, const <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp;direction)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">軸axis を direction の方向に deg°せん断変形する行列を返す。  <a href="#ed5ec1088e7e1b0acb9a9f33f142be51"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#2e39c9d0f1c72cccd0682b03948765b4">solve</a> (<a class="el" href="namespace_ploter.html#cdf6ee9e2bdbc5c486d3d33c96a914b7">Matrix</a> &amp;A, <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> &amp;b)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">連立方程式 Ax=b を解く。  <a href="#2e39c9d0f1c72cccd0682b03948765b4"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>変数</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">const <a class="el" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Element</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ploter.html#31e827c89754ed9adaf2b7d81802ef18">ELEMENT_EXTREAM_VALUE</a> = 1.79769313486232e308</td></tr>
+
+</table>
+<hr><h2>型定義</h2>
+<a class="anchor" name="6d7484abd77bd67a04915fcfe0436f6d"></a><!-- doxytag: member="Ploter::ConstReferenceFunction" ref="6d7484abd77bd67a04915fcfe0436f6d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef function&lt;const <a class="el" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Element</a>&amp; (const <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a>&amp;)&gt; <a class="el" href="namespace_ploter.html#6d7484abd77bd67a04915fcfe0436f6d">Ploter::ConstReferenceFunction</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p> <a class="el" href="_utility_8h-source.html">Utility.h</a> の <a class="el" href="_utility_8h-source.html#l00048">48</a> 行で定義されています。</p>
+
+</div>
+</div><p>
+<a class="anchor" name="a980682f7f9cd09ef3bb184825ff4c10"></a><!-- doxytag: member="Ploter::Element" ref="a980682f7f9cd09ef3bb184825ff4c10" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef double <a class="el" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Ploter::Element</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p> <a class="el" href="_utility_8h-source.html">Utility.h</a> の <a class="el" href="_utility_8h-source.html#l00039">39</a> 行で定義されています。</p>
+
+</div>
+</div><p>
+<a class="anchor" name="a7414cfa758b7e7219e399ec564a5363"></a><!-- doxytag: member="Ploter::Index" ref="a7414cfa758b7e7219e399ec564a5363" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned int <a class="el" href="namespace_ploter.html#a7414cfa758b7e7219e399ec564a5363">Ploter::Index</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p> <a class="el" href="_utility_8h-source.html">Utility.h</a> の <a class="el" href="_utility_8h-source.html#l00043">43</a> 行で定義されています。</p>
+
+</div>
+</div><p>
+<a class="anchor" name="cdf6ee9e2bdbc5c486d3d33c96a914b7"></a><!-- doxytag: member="Ploter::Matrix" ref="cdf6ee9e2bdbc5c486d3d33c96a914b7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef ublas::matrix&lt;<a class="el" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Element</a>&gt; <a class="el" href="namespace_ploter.html#cdf6ee9e2bdbc5c486d3d33c96a914b7">Ploter::Matrix</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p> <a class="el" href="_utility_8h-source.html">Utility.h</a> の <a class="el" href="_utility_8h-source.html#l00041">41</a> 行で定義されています。</p>
+
+</div>
+</div><p>
+<a class="anchor" name="3e7caf90b69598e3b8322ba3c585ee9a"></a><!-- doxytag: member="Ploter::ReferenceFunction" ref="3e7caf90b69598e3b8322ba3c585ee9a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef function&lt; <a class="el" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Element</a>&amp; ( <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a>&amp;)&gt; <a class="el" href="namespace_ploter.html#3e7caf90b69598e3b8322ba3c585ee9a">Ploter::ReferenceFunction</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p> <a class="el" href="_utility_8h-source.html">Utility.h</a> の <a class="el" href="_utility_8h-source.html#l00047">47</a> 行で定義されています。</p>
+
+</div>
+</div><p>
+<a class="anchor" name="02a69e64a2d91211c79776e9baddce0d"></a><!-- doxytag: member="Ploter::Vector" ref="02a69e64a2d91211c79776e9baddce0d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef ublas::vector&lt;<a class="el" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Element</a>&gt; <a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Ploter::Vector</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p> <a class="el" href="_utility_8h-source.html">Utility.h</a> の <a class="el" href="_utility_8h-source.html#l00040">40</a> 行で定義されています。</p>
+
+</div>
+</div><p>
+<a class="anchor" name="04069799b968fe89f21012b4436f04fe"></a><!-- doxytag: member="Ploter::VertexList" ref="04069799b968fe89f21012b4436f04fe" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std ::vector&lt;<a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a>&gt; <a class="el" href="namespace_ploter.html#04069799b968fe89f21012b4436f04fe">Ploter::VertexList</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p> <a class="el" href="_utility_8h-source.html">Utility.h</a> の <a class="el" href="_utility_8h-source.html#l00044">44</a> 行で定義されています。</p>
+
+</div>
+</div><p>
+<a class="anchor" name="f4197af6b8d6544fcbc94e78080c1f3a"></a><!-- doxytag: member="Ploter::VertexMatrix" ref="f4197af6b8d6544fcbc94e78080c1f3a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef ublas::matrix&lt;<a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a>&gt; <a class="el" href="namespace_ploter.html#f4197af6b8d6544fcbc94e78080c1f3a">Ploter::VertexMatrix</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p> <a class="el" href="_utility_8h-source.html">Utility.h</a> の <a class="el" href="_utility_8h-source.html#l00045">45</a> 行で定義されています。</p>
+
+</div>
+</div><p>
+<hr><h2>列挙型</h2>
+<a class="anchor" name="35b0402ef09657b1efe8ba08340ef288"></a><!-- doxytag: member="Ploter::@0" ref="35b0402ef09657b1efe8ba08340ef288" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+ベクトルの要素の指標を表す値。 
+<p>
+<dl compact><dt><b>列挙型の値: </b></dt><dd>
+<table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" name="35b0402ef09657b1efe8ba08340ef2886db182841ad2aa8e572a2918e89332cd"></a><!-- doxytag: member="X" ref="35b0402ef09657b1efe8ba08340ef2886db182841ad2aa8e572a2918e89332cd" args="" -->X</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="35b0402ef09657b1efe8ba08340ef28867feb73c81763146bfd3084fd4bce48e"></a><!-- doxytag: member="Y" ref="35b0402ef09657b1efe8ba08340ef28867feb73c81763146bfd3084fd4bce48e" args="" -->Y</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="35b0402ef09657b1efe8ba08340ef28830b6c7677a77d0dd2330a0b9674d2dbf"></a><!-- doxytag: member="Z" ref="35b0402ef09657b1efe8ba08340ef28830b6c7677a77d0dd2330a0b9674d2dbf" args="" -->Z</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="35b0402ef09657b1efe8ba08340ef288f8ded9ba77fc8447b07cda572049b720"></a><!-- doxytag: member="W" ref="35b0402ef09657b1efe8ba08340ef288f8ded9ba77fc8447b07cda572049b720" args="" -->W</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dl>
+
+<p> <a class="el" href="_utility_8h-source.html">Utility.h</a> の <a class="el" href="_utility_8h-source.html#l00057">57</a> 行で定義されています。</p>
+
+</div>
+</div><p>
+<hr><h2>関数</h2>
+<a class="anchor" name="cbfc181c2fc7dbdcdfa495e4ee81135d"></a><!-- doxytag: member="Ploter::drawLine" ref="cbfc181c2fc7dbdcdfa495e4ee81135d" args="(const Matrix &amp;affine, const Vector &amp;origin, const Vector &amp;to)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ploter::drawLine           </td>
+          <td>(</td>
+          <td class="paramtype">const Matrix &amp;&nbsp;</td>
+          <td class="paramname"> <em>affine</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Vector &amp;&nbsp;</td>
+          <td class="paramname"> <em>origin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Vector &amp;&nbsp;</td>
+          <td class="paramname"> <em>to</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+始点をorigin、終点をorigin + toとする線分を行列affineで座標変換した後、描画する。 
+<p>
+
+<p> <a class="el" href="_utility_8h-source.html">Utility.h</a> の <a class="el" href="_utility_8h-source.html#l00158">158</a> 行で定義されています。</p>
+
+<p>参照先 <a class="el" href="_utility_8h-source.html#l00149">drawVertex()</a>, <a class="el" href="namespace_ploter_1_1_v.html#6ecf66b2877ee3d105f77d58cff0aecb">Ploter::V::W_UNIT()</a>, と <a class="el" href="namespace_ploter_1_1_v.html#faec408b14e015d5a3ef4f3a66149635">Ploter::V::ZERO()</a>.</p>
+
+<p>参照元 <a class="el" href="_ploter_8h-source.html#l00600">Ploter::Axis::drawMyself()</a>, と <a class="el" href="_utility_8h-source.html#l00174">drawParallelLines()</a>.</p>
+
+<p>
+<div class="dynheader">
+関数の呼び出しグラフ:</div>
+<div class="dynsection">
+<p><center><img src="namespace_ploter_cbfc181c2fc7dbdcdfa495e4ee81135d_cgraph.png" border="0" usemap="#namespace_ploter_cbfc181c2fc7dbdcdfa495e4ee81135d_cgraph_map" alt=""></center>
+<map name="namespace_ploter_cbfc181c2fc7dbdcdfa495e4ee81135d_cgraph_map">
+<area shape="rect" href="namespace_ploter.html#1b6271aff6de73d6ee097e78846f25fa" title="頂点vertexを描画する。" alt="" coords="168,5,296,32"><area shape="rect" href="namespace_ploter_1_1_v.html#6ecf66b2877ee3d105f77d58cff0aecb" title="Ploter::V::W_UNIT" alt="" coords="168,56,296,83"><area shape="rect" href="namespace_ploter_1_1_v.html#faec408b14e015d5a3ef4f3a66149635" title="Ploter::V::ZERO" alt="" coords="175,107,289,133"></map>
+</div>
+
+</div>
+</div><p>
+<a class="anchor" name="b186e34c51a9a110546b59aed18338e7"></a><!-- doxytag: member="Ploter::drawParallelLines" ref="b186e34c51a9a110546b59aed18338e7" args="(const Matrix &amp;affine, const VertexList &amp;positions, const Vector &amp;direction)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ploter::drawParallelLines           </td>
+          <td>(</td>
+          <td class="paramtype">const Matrix &amp;&nbsp;</td>
+          <td class="paramname"> <em>affine</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const VertexList &amp;&nbsp;</td>
+          <td class="paramname"> <em>positions</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Vector &amp;&nbsp;</td>
+          <td class="paramname"> <em>direction</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+方向がdirectionで始点の集合がpositionsな平行線の集合を行列affineで座標変換した後、描画する。 
+<p>
+
+<p> <a class="el" href="_utility_8h-source.html">Utility.h</a> の <a class="el" href="_utility_8h-source.html#l00174">174</a> 行で定義されています。</p>
+
+<p>参照先 <a class="el" href="_utility_8h-source.html#l00158">drawLine()</a>.</p>
+
+<p>参照元 <a class="el" href="_ploter_8h-source.html#l00637">Ploter::Grid::drawMyself()</a>, と <a class="el" href="_ploter_8h-source.html#l00521">Ploter::Tics::drawMyself()</a>.</p>
+
+<p>
+<div class="dynheader">
+関数の呼び出しグラフ:</div>
+<div class="dynsection">
+<p><center><img src="namespace_ploter_b186e34c51a9a110546b59aed18338e7_cgraph.png" border="0" usemap="#namespace_ploter_b186e34c51a9a110546b59aed18338e7_cgraph_map" alt=""></center>
+<map name="namespace_ploter_b186e34c51a9a110546b59aed18338e7_cgraph_map">
+<area shape="rect" href="namespace_ploter.html#cbfc181c2fc7dbdcdfa495e4ee81135d" title="始点をorigin、終点をorigin + toとする線分を行列affineで座標変換した後、描�..." alt="" coords="219,56,333,83"><area shape="rect" href="namespace_ploter.html#1b6271aff6de73d6ee097e78846f25fa" title="頂点vertexを描画する。" alt="" coords="381,5,509,32"><area shape="rect" href="namespace_ploter_1_1_v.html#6ecf66b2877ee3d105f77d58cff0aecb" title="Ploter::V::W_UNIT" alt="" coords="381,56,509,83"><area shape="rect" href="namespace_ploter_1_1_v.html#faec408b14e015d5a3ef4f3a66149635" title="Ploter::V::ZERO" alt="" coords="388,107,503,133"></map>
+</div>
+
+</div>
+</div><p>
+<a class="anchor" name="1b6271aff6de73d6ee097e78846f25fa"></a><!-- doxytag: member="Ploter::drawVertex" ref="1b6271aff6de73d6ee097e78846f25fa" args="(const Vector &amp;vertex)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ploter::drawVertex           </td>
+          <td>(</td>
+          <td class="paramtype">const Vector &amp;&nbsp;</td>
+          <td class="paramname"> <em>vertex</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+頂点vertexを描画する。 
+<p>
+
+<p> <a class="el" href="_utility_8h-source.html">Utility.h</a> の <a class="el" href="_utility_8h-source.html#l00149">149</a> 行で定義されています。</p>
+
+<p>参照先 <a class="el" href="_utility_8h-source.html#l00057">W</a>, <a class="el" href="_utility_8h-source.html#l00057">X</a>, <a class="el" href="_utility_8h-source.html#l00057">Y</a>, と <a class="el" href="_utility_8h-source.html#l00057">Z</a>.</p>
+
+<p>参照元 <a class="el" href="_ploter_8h-source.html#l00255">Ploter::Line::draw()</a>, と <a class="el" href="_utility_8h-source.html#l00158">drawLine()</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="ddcd52e142e8ce241bf96a16c1b07c7d"></a><!-- doxytag: member="Ploter::dualForEach" ref="ddcd52e142e8ce241bf96a16c1b07c7d" args="(IteratorType begin, IteratorType end, UnaryFunctionType unaryFunction)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class IteratorType, class UnaryFunctionType&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ploter::dualForEach           </td>
+          <td>(</td>
+          <td class="paramtype">IteratorType&nbsp;</td>
+          <td class="paramname"> <em>begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IteratorType&nbsp;</td>
+          <td class="paramname"> <em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UnaryFunctionType&nbsp;</td>
+          <td class="paramname"> <em>unaryFunction</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+二重のfor_each。 
+<p>
+
+<p> <a class="el" href="_utility_8h-source.html">Utility.h</a> の <a class="el" href="_utility_8h-source.html#l00098">98</a> 行で定義されています。</p>
+
+<p>参照元 <a class="el" href="_ploter_8h-source.html#l00782">Ploter::Graph::draw()</a>, <a class="el" href="_utility_8h-source.html#l00424">Ploter::MinMaxManager::set()</a>, と <a class="el" href="_utility_8h-source.html#l00109">toLogScale()</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="af055f8b1d0e83f4993874d84ecafdb4"></a><!-- doxytag: member="Ploter::regularize" ref="af055f8b1d0e83f4993874d84ecafdb4" args="(IteratorType begin, IteratorType end)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class IteratorType&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ploter::regularize           </td>
+          <td>(</td>
+          <td class="paramtype">IteratorType&nbsp;</td>
+          <td class="paramname"> <em>begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IteratorType&nbsp;</td>
+          <td class="paramname"> <em>end</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+正規化する。 
+<p>
+
+<p> <a class="el" href="_utility_8h-source.html">Utility.h</a> の <a class="el" href="_utility_8h-source.html#l00125">125</a> 行で定義されています。</p>
+
+<p>参照先 <a class="el" href="namespace_ploter_1_1_v.html#f6dfd6fe754723d22262b59c1ff43fba">Ploter::V::Z()</a>.</p>
+
+<p>参照元 <a class="el" href="_ploter_8h-source.html#l00770">Ploter::Graph::operateVertex()</a>.</p>
+
+<p>
+<div class="dynheader">
+関数の呼び出しグラフ:</div>
+<div class="dynsection">
+<p><center><img src="namespace_ploter_af055f8b1d0e83f4993874d84ecafdb4_cgraph.png" border="0" usemap="#namespace_ploter_af055f8b1d0e83f4993874d84ecafdb4_cgraph_map" alt=""></center>
+<map name="namespace_ploter_af055f8b1d0e83f4993874d84ecafdb4_cgraph_map">
+<area shape="rect" href="namespace_ploter_1_1_v.html#f6dfd6fe754723d22262b59c1ff43fba" title="Ploter::V::Z" alt="" coords="173,5,261,32"></map>
+</div>
+
+</div>
+</div><p>
+<a class="anchor" name="f512b9e4bd9deb6394fcd49991ea8ed0"></a><!-- doxytag: member="Ploter::rotate" ref="f512b9e4bd9deb6394fcd49991ea8ed0" args="(Element deg, const Vector &amp;axis)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_ploter.html#cdf6ee9e2bdbc5c486d3d33c96a914b7">Matrix</a> Ploter::rotate           </td>
+          <td>(</td>
+          <td class="paramtype">Element&nbsp;</td>
+          <td class="paramname"> <em>deg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Vector &amp;&nbsp;</td>
+          <td class="paramname"> <em>axis</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+軸axis を deg°回転する行列を返す。 
+<p>
+
+<p> <a class="el" href="_utility_8h-source.html">Utility.h</a> の <a class="el" href="_utility_8h-source.html#l00242">242</a> 行で定義されています。</p>
+
+<p>参照先 <a class="el" href="namespace_ploter_1_1_m.html#74c7755e20b7d62a1a6e55b782acdd36">Ploter::M::IDENTITY()</a>, <a class="el" href="_utility_8h-source.html#l00088">toRad()</a>, <a class="el" href="_utility_8h-source.html#l00057">X</a>, <a class="el" href="_utility_8h-source.html#l00057">Y</a>, と <a class="el" href="_utility_8h-source.html#l00057">Z</a>.</p>
+
+<p>参照元 <a class="el" href="_utility_8h-source.html#l00531">Ploter::AffineManager::forZAxis()</a>, と <a class="el" href="_utility_8h-source.html#l00586">Ploter::AffineManager::horizontal()</a>.</p>
+
+<p>
+<div class="dynheader">
+関数の呼び出しグラフ:</div>
+<div class="dynsection">
+<p><center><img src="namespace_ploter_f512b9e4bd9deb6394fcd49991ea8ed0_cgraph.png" border="0" usemap="#namespace_ploter_f512b9e4bd9deb6394fcd49991ea8ed0_cgraph_map" alt=""></center>
+<map name="namespace_ploter_f512b9e4bd9deb6394fcd49991ea8ed0_cgraph_map">
+<area shape="rect" href="namespace_ploter_1_1_m.html#74c7755e20b7d62a1a6e55b782acdd36" title="Ploter::M::IDENTITY" alt="" coords="149,5,288,32"><area shape="rect" href="namespace_ploter.html#5817d6e4339bbf3460b0704ca6e976df" title="度からラジアンへの変換。" alt="" coords="171,56,267,83"></map>
+</div>
+
+</div>
+</div><p>
+<a class="anchor" name="1c6996dd1bc6037aeb7c2c58561f0598"></a><!-- doxytag: member="Ploter::scale" ref="1c6996dd1bc6037aeb7c2c58561f0598" args="(Element a, Element b, Element c)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_ploter.html#cdf6ee9e2bdbc5c486d3d33c96a914b7">Matrix</a> Ploter::scale           </td>
+          <td>(</td>
+          <td class="paramtype">Element&nbsp;</td>
+          <td class="paramname"> <em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Element&nbsp;</td>
+          <td class="paramname"> <em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Element&nbsp;</td>
+          <td class="paramname"> <em>c</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+x軸,y軸,z軸をそれぞれ、a倍,b倍,c倍する行列を返す。 
+<p>
+
+<p> <a class="el" href="_utility_8h-source.html">Utility.h</a> の <a class="el" href="_utility_8h-source.html#l00212">212</a> 行で定義されています。</p>
+
+<p>参照先 <a class="el" href="namespace_ploter_1_1_m.html#74c7755e20b7d62a1a6e55b782acdd36">Ploter::M::IDENTITY()</a>.</p>
+
+<p>参照元 <a class="el" href="_utility_8h-source.html#l00506">Ploter::AffineManager::forXAxis()</a>, と <a class="el" href="_utility_8h-source.html#l00621">Ploter::AffineManager::regularize()</a>.</p>
+
+<p>
+<div class="dynheader">
+関数の呼び出しグラフ:</div>
+<div class="dynsection">
+<p><center><img src="namespace_ploter_1c6996dd1bc6037aeb7c2c58561f0598_cgraph.png" border="0" usemap="#namespace_ploter_1c6996dd1bc6037aeb7c2c58561f0598_cgraph_map" alt=""></center>
+<map name="namespace_ploter_1c6996dd1bc6037aeb7c2c58561f0598_cgraph_map">
+<area shape="rect" href="namespace_ploter_1_1_m.html#74c7755e20b7d62a1a6e55b782acdd36" title="Ploter::M::IDENTITY" alt="" coords="149,5,288,32"></map>
+</div>
+
+</div>
+</div><p>
+<a class="anchor" name="ed5ec1088e7e1b0acb9a9f33f142be51"></a><!-- doxytag: member="Ploter::shear" ref="ed5ec1088e7e1b0acb9a9f33f142be51" args="(Element deg, const Vector &amp;axis, const Vector &amp;direction)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_ploter.html#cdf6ee9e2bdbc5c486d3d33c96a914b7">Matrix</a> Ploter::shear           </td>
+          <td>(</td>
+          <td class="paramtype">Element&nbsp;</td>
+          <td class="paramname"> <em>deg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Vector &amp;&nbsp;</td>
+          <td class="paramname"> <em>axis</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Vector &amp;&nbsp;</td>
+          <td class="paramname"> <em>direction</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+軸axis を direction の方向に deg°せん断変形する行列を返す。 
+<p>
+
+<p> <a class="el" href="_utility_8h-source.html">Utility.h</a> の <a class="el" href="_utility_8h-source.html#l00270">270</a> 行で定義されています。</p>
+
+<p>参照先 <a class="el" href="namespace_ploter_1_1_m.html#74c7755e20b7d62a1a6e55b782acdd36">Ploter::M::IDENTITY()</a>, <a class="el" href="_utility_8h-source.html#l00088">toRad()</a>, <a class="el" href="_utility_8h-source.html#l00057">X</a>, と <a class="el" href="_utility_8h-source.html#l00057">Z</a>.</p>
+
+<p>
+<div class="dynheader">
+関数の呼び出しグラフ:</div>
+<div class="dynsection">
+<p><center><img src="namespace_ploter_ed5ec1088e7e1b0acb9a9f33f142be51_cgraph.png" border="0" usemap="#namespace_ploter_ed5ec1088e7e1b0acb9a9f33f142be51_cgraph_map" alt=""></center>
+<map name="namespace_ploter_ed5ec1088e7e1b0acb9a9f33f142be51_cgraph_map">
+<area shape="rect" href="namespace_ploter_1_1_m.html#74c7755e20b7d62a1a6e55b782acdd36" title="Ploter::M::IDENTITY" alt="" coords="149,5,288,32"><area shape="rect" href="namespace_ploter.html#5817d6e4339bbf3460b0704ca6e976df" title="度からラジアンへの変換。" alt="" coords="171,56,267,83"></map>
+</div>
+
+</div>
+</div><p>
+<a class="anchor" name="2e39c9d0f1c72cccd0682b03948765b4"></a><!-- doxytag: member="Ploter::solve" ref="2e39c9d0f1c72cccd0682b03948765b4" args="(Matrix &amp;A, Vector &amp;b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a>&amp; Ploter::solve           </td>
+          <td>(</td>
+          <td class="paramtype">Matrix &amp;&nbsp;</td>
+          <td class="paramname"> <em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector &amp;&nbsp;</td>
+          <td class="paramname"> <em>b</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+連立方程式 Ax=b を解く。 
+<p>
+
+<p> <a class="el" href="_utility_8h-source.html">Utility.h</a> の <a class="el" href="_utility_8h-source.html#l00294">294</a> 行で定義されています。</p>
+
+</div>
+</div><p>
+<a class="anchor" name="0f257fd7b0c5dd663d40ecf3d986d7f8"></a><!-- doxytag: member="Ploter::toLogScale" ref="0f257fd7b0c5dd663d40ecf3d986d7f8" args="(VertexMatrix &amp;object, ReferenceFunction element)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ploter::toLogScale           </td>
+          <td>(</td>
+          <td class="paramtype">VertexMatrix &amp;&nbsp;</td>
+          <td class="paramname"> <em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ReferenceFunction&nbsp;</td>
+          <td class="paramname"> <em>element</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+対数縮尺にする。ただし、0は無視する。 
+<p>
+
+<p> <a class="el" href="_utility_8h-source.html">Utility.h</a> の <a class="el" href="_utility_8h-source.html#l00109">109</a> 行で定義されています。</p>
+
+<p>参照先 <a class="el" href="_utility_8h-source.html#l00098">dualForEach()</a>, と <a class="el" href="namespace_ploter_1_1_v.html#f6dfd6fe754723d22262b59c1ff43fba">Ploter::V::Z()</a>.</p>
+
+<p>参照元 <a class="el" href="_ploter_8h-source.html#l00770">Ploter::Graph::operateVertex()</a>.</p>
+
+<p>
+<div class="dynheader">
+関数の呼び出しグラフ:</div>
+<div class="dynsection">
+<p><center><img src="namespace_ploter_0f257fd7b0c5dd663d40ecf3d986d7f8_cgraph.png" border="0" usemap="#namespace_ploter_0f257fd7b0c5dd663d40ecf3d986d7f8_cgraph_map" alt=""></center>
+<map name="namespace_ploter_0f257fd7b0c5dd663d40ecf3d986d7f8_cgraph_map">
+<area shape="rect" href="namespace_ploter.html#ddcd52e142e8ce241bf96a16c1b07c7d" title="二重のfor_each。" alt="" coords="181,5,317,32"><area shape="rect" href="namespace_ploter_1_1_v.html#f6dfd6fe754723d22262b59c1ff43fba" title="Ploter::V::Z" alt="" coords="205,56,293,83"></map>
+</div>
+
+</div>
+</div><p>
+<a class="anchor" name="5817d6e4339bbf3460b0704ca6e976df"></a><!-- doxytag: member="Ploter::toRad" ref="5817d6e4339bbf3460b0704ca6e976df" args="(double deg)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Ploter::toRad           </td>
+          <td>(</td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>deg</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+度からラジアンへの変換。 
+<p>
+
+<p> <a class="el" href="_utility_8h-source.html">Utility.h</a> の <a class="el" href="_utility_8h-source.html#l00088">88</a> 行で定義されています。</p>
+
+<p>参照元 <a class="el" href="_utility_8h-source.html#l00571">Ploter::AffineManager::projection()</a>, <a class="el" href="_utility_8h-source.html#l00242">rotate()</a>, と <a class="el" href="_utility_8h-source.html#l00270">shear()</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="e66b99fb365c9d4bde330af8cf8d497b"></a><!-- doxytag: member="Ploter::transform" ref="e66b99fb365c9d4bde330af8cf8d497b" args="(const Matrix &amp;affine, Vector &amp;target)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ploter::transform           </td>
+          <td>(</td>
+          <td class="paramtype">const Matrix &amp;&nbsp;</td>
+          <td class="paramname"> <em>affine</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector &amp;&nbsp;</td>
+          <td class="paramname"> <em>target</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+ベクトルtargetを行列affineで座標変換する。 
+<p>
+
+<p> <a class="el" href="_utility_8h-source.html">Utility.h</a> の <a class="el" href="_utility_8h-source.html#l00203">203</a> 行で定義されています。</p>
+
+<p>参照先 <a class="el" href="namespace_ploter_1_1_v.html#6ecf66b2877ee3d105f77d58cff0aecb">Ploter::V::W_UNIT()</a>.</p>
+
+<p>参照元 <a class="el" href="_ploter_8h-source.html#l00782">Ploter::Graph::draw()</a>.</p>
+
+<p>
+<div class="dynheader">
+関数の呼び出しグラフ:</div>
+<div class="dynsection">
+<p><center><img src="namespace_ploter_e66b99fb365c9d4bde330af8cf8d497b_cgraph.png" border="0" usemap="#namespace_ploter_e66b99fb365c9d4bde330af8cf8d497b_cgraph_map" alt=""></center>
+<map name="namespace_ploter_e66b99fb365c9d4bde330af8cf8d497b_cgraph_map">
+<area shape="rect" href="namespace_ploter_1_1_v.html#6ecf66b2877ee3d105f77d58cff0aecb" title="Ploter::V::W_UNIT" alt="" coords="171,5,299,32"></map>
+</div>
+
+</div>
+</div><p>
+<a class="anchor" name="6d6a17eb019c30845df901c389d6e866"></a><!-- doxytag: member="Ploter::translate" ref="6d6a17eb019c30845df901c389d6e866" args="(const Vector &amp;to)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_ploter.html#cdf6ee9e2bdbc5c486d3d33c96a914b7">Matrix</a> Ploter::translate           </td>
+          <td>(</td>
+          <td class="paramtype">const Vector &amp;&nbsp;</td>
+          <td class="paramname"> <em>to</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+toだけ平行移動する行列を返す。 
+<p>
+
+<p> <a class="el" href="_utility_8h-source.html">Utility.h</a> の <a class="el" href="_utility_8h-source.html#l00227">227</a> 行で定義されています。</p>
+
+<p>参照先 <a class="el" href="namespace_ploter_1_1_m.html#74c7755e20b7d62a1a6e55b782acdd36">Ploter::M::IDENTITY()</a>, <a class="el" href="_utility_8h-source.html#l00057">X</a>, <a class="el" href="_utility_8h-source.html#l00057">Y</a>, と <a class="el" href="_utility_8h-source.html#l00057">Z</a>.</p>
+
+<p>参照元 <a class="el" href="_utility_8h-source.html#l00506">Ploter::AffineManager::forXAxis()</a>, <a class="el" href="_utility_8h-source.html#l00547">Ploter::AffineManager::forXzGrid()</a>, <a class="el" href="_utility_8h-source.html#l00522">Ploter::AffineManager::forYAxis()</a>, <a class="el" href="_utility_8h-source.html#l00531">Ploter::AffineManager::forZAxis()</a>, <a class="el" href="_utility_8h-source.html#l00598">Ploter::AffineManager::shift()</a>, と <a class="el" href="_utility_8h-source.html#l00607">Ploter::AffineManager::toOrigin()</a>.</p>
+
+<p>
+<div class="dynheader">
+関数の呼び出しグラフ:</div>
+<div class="dynsection">
+<p><center><img src="namespace_ploter_6d6a17eb019c30845df901c389d6e866_cgraph.png" border="0" usemap="#namespace_ploter_6d6a17eb019c30845df901c389d6e866_cgraph_map" alt=""></center>
+<map name="namespace_ploter_6d6a17eb019c30845df901c389d6e866_cgraph_map">
+<area shape="rect" href="namespace_ploter_1_1_m.html#74c7755e20b7d62a1a6e55b782acdd36" title="Ploter::M::IDENTITY" alt="" coords="168,5,307,32"></map>
+</div>
+
+</div>
+</div><p>
+<a class="anchor" name="3286edb2e92e29f8f197ac3c226b6490"></a><!-- doxytag: member="Ploter::v" ref="3286edb2e92e29f8f197ac3c226b6490" args="(Element x, Element y, Element z)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_ploter.html#02a69e64a2d91211c79776e9baddce0d">Vector</a> Ploter::v           </td>
+          <td>(</td>
+          <td class="paramtype">Element&nbsp;</td>
+          <td class="paramname"> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Element&nbsp;</td>
+          <td class="paramname"> <em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Element&nbsp;</td>
+          <td class="paramname"> <em>z</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+ベクトルv(x,y,z)の生成。 
+<p>
+
+<p> <a class="el" href="_utility_8h-source.html">Utility.h</a> の <a class="el" href="_utility_8h-source.html#l00188">188</a> 行で定義されています。</p>
+
+<p>参照先 <a class="el" href="_utility_8h-source.html#l00057">X</a>, <a class="el" href="_utility_8h-source.html#l00057">Y</a>, <a class="el" href="_utility_8h-source.html#l00057">Z</a>, と <a class="el" href="namespace_ploter_1_1_v.html#faec408b14e015d5a3ef4f3a66149635">Ploter::V::ZERO()</a>.</p>
+
+<p>参照元 <a class="el" href="_ploter_8h-source.html#l00744">Ploter::Graph::setVertex()</a>, と <a class="el" href="_utility_8h-source.html#l00607">Ploter::AffineManager::toOrigin()</a>.</p>
+
+<p>
+<div class="dynheader">
+関数の呼び出しグラフ:</div>
+<div class="dynsection">
+<p><center><img src="namespace_ploter_3286edb2e92e29f8f197ac3c226b6490_cgraph.png" border="0" usemap="#namespace_ploter_3286edb2e92e29f8f197ac3c226b6490_cgraph_map" alt=""></center>
+<map name="namespace_ploter_3286edb2e92e29f8f197ac3c226b6490_cgraph_map">
+<area shape="rect" href="namespace_ploter_1_1_v.html#faec408b14e015d5a3ef4f3a66149635" title="Ploter::V::ZERO" alt="" coords="124,5,239,32"></map>
+</div>
+
+</div>
+</div><p>
+<hr><h2>変数</h2>
+<a class="anchor" name="31e827c89754ed9adaf2b7d81802ef18"></a><!-- doxytag: member="Ploter::ELEMENT_EXTREAM_VALUE" ref="31e827c89754ed9adaf2b7d81802ef18" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespace_ploter.html#a980682f7f9cd09ef3bb184825ff4c10">Element</a> <a class="el" href="namespace_ploter.html#31e827c89754ed9adaf2b7d81802ef18">Ploter::ELEMENT_EXTREAM_VALUE</a> = 1.79769313486232e308          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p> <a class="el" href="_utility_8h-source.html">Utility.h</a> の <a class="el" href="_utility_8h-source.html#l00051">51</a> 行で定義されています。</p>
+
+<p>参照元 <a class="el" href="_utility_8h-source.html#l00360">Ploter::MinMax::initialize()</a>.</p>
+
+</div>
+</div><p>
+</div>
+<hr size="1"><address style="text-align: right;"><small>3dGraphに対してTue Jan 6 00:57:27 2009に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.6 </small></address>
+</body>
+</html>

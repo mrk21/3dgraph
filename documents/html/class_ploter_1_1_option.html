@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>3dGraph: クラス Ploter::Option</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.5.6 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="namespace_ploter.html">Ploter</a>::<a class="el" href="class_ploter_1_1_option.html">Option</a>
+  </div>
+</div>
+<div class="contents">
+<h1>クラス Ploter::Option</h1><!-- doxytag: class="Ploter::Option" -->オプションを管理するクラス。  
+<a href="#_details">[詳細]</a>
+<p>
+<code>#include &lt;<a class="el" href="_utility_8h-source.html">Utility.h</a>&gt;</code>
+<p>
+
+<p>
+<a href="class_ploter_1_1_option-members.html">すべてのメンバ一覧</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_option.html#dcf6f2337b1dc84bc927387336715444">Option</a> (const std::string &amp;section_)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_option.html#7de8eb4cc2f4e819a92cc090c84b42e0">get</a> (const std::string &amp;key) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">iniファイルからkeyが指す値を読み込む。  <a href="#7de8eb4cc2f4e819a92cc090c84b42e0"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Static Private メソッド</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_option.html#0844a3bb2126c88afa11509be591f088">initialize</a> (void)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">iniファイルのパスを設定する。  <a href="#0844a3bb2126c88afa11509be591f088"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Private 変数</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_option.html#4eaa789fd0b80134c43a53c4d0d0ec9e">section</a></td></tr>
+
+<tr><td colspan="2"><br><h2>Static Private 変数</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static const std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ploter_1_1_option.html#a51e956b7d502ba0d0043b7cc8b5cf5d">PATH</a></td></tr>
+
+</table>
+<hr><a name="_details"></a><h2>説明</h2>
+オプションを管理するクラス。 
+<p> <a class="el" href="_utility_8h-source.html">Utility.h</a> の <a class="el" href="_utility_8h-source.html#l00310">310</a> 行で定義されています。</p>
+<hr><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" name="dcf6f2337b1dc84bc927387336715444"></a><!-- doxytag: member="Ploter::Option::Option" ref="dcf6f2337b1dc84bc927387336715444" args="(const std::string &amp;section_)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Ploter::Option::Option           </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>section_</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p> <a class="el" href="_utility_8h-source.html">Utility.h</a> の <a class="el" href="_utility_8h-source.html#l00314">314</a> 行で定義されています。</p>
+
+</div>
+</div><p>
+<hr><h2>関数</h2>
+<a class="anchor" name="7de8eb4cc2f4e819a92cc090c84b42e0"></a><!-- doxytag: member="Ploter::Option::get" ref="7de8eb4cc2f4e819a92cc090c84b42e0" args="(const std::string &amp;key) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Ploter::Option::get           </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>key</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+iniファイルからkeyが指す値を読み込む。 
+<p>
+
+<p> <a class="el" href="_utility_8h-source.html">Utility.h</a> の <a class="el" href="_utility_8h-source.html#l00320">320</a> 行で定義されています。</p>
+
+<p>参照先 <a class="el" href="_utility_8h-source.html#l00339">PATH</a>, と <a class="el" href="_utility_8h-source.html#l00340">section</a>.</p>
+
+<p>参照元 <a class="el" href="_ploter_8h-source.html#l00782">Ploter::Graph::draw()</a>, <a class="el" href="_ploter_8h-source.html#l00637">Ploter::Grid::drawMyself()</a>, <a class="el" href="_ploter_8h-source.html#l00600">Ploter::Axis::drawMyself()</a>, <a class="el" href="_ploter_8h-source.html#l00521">Ploter::Tics::drawMyself()</a>, <a class="el" href="_ploter_8h-source.html#l00503">Ploter::Tics::getIntervalNumber()</a>, <a class="el" href="_ploter_8h-source.html#l00770">Ploter::Graph::operateVertex()</a>, と <a class="el" href="_utility_8h-source.html#l00648">Ploter::AffineManager::selectMatrix()</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="0844a3bb2126c88afa11509be591f088"></a><!-- doxytag: member="Ploter::Option::initialize" ref="0844a3bb2126c88afa11509be591f088" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string Ploter::Option::initialize           </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, static, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+iniファイルのパスを設定する。 
+<p>
+
+<p> <a class="el" href="_utility_8h-source.html">Utility.h</a> の <a class="el" href="_utility_8h-source.html#l00330">330</a> 行で定義されています。</p>
+
+</div>
+</div><p>
+<hr><h2>変数</h2>
+<a class="anchor" name="a51e956b7d502ba0d0043b7cc8b5cf5d"></a><!-- doxytag: member="Ploter::Option::PATH" ref="a51e956b7d502ba0d0043b7cc8b5cf5d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string <a class="el" href="class_ploter_1_1_option.html#a51e956b7d502ba0d0043b7cc8b5cf5d">Ploter::Option::PATH</a><code> [static, private]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p> <a class="el" href="_utility_8h-source.html">Utility.h</a> の <a class="el" href="_utility_8h-source.html#l00339">339</a> 行で定義されています。</p>
+
+<p>参照元 <a class="el" href="_utility_8h-source.html#l00320">get()</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="4eaa789fd0b80134c43a53c4d0d0ec9e"></a><!-- doxytag: member="Ploter::Option::section" ref="4eaa789fd0b80134c43a53c4d0d0ec9e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="class_ploter_1_1_option.html#4eaa789fd0b80134c43a53c4d0d0ec9e">Ploter::Option::section</a><code> [private]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p> <a class="el" href="_utility_8h-source.html">Utility.h</a> の <a class="el" href="_utility_8h-source.html#l00340">340</a> 行で定義されています。</p>
+
+<p>参照元 <a class="el" href="_utility_8h-source.html#l00320">get()</a>.</p>
+
+</div>
+</div><p>
+<hr>このクラスの説明は次のファイルから生成されました:<ul>
+<li>sources/Ploter/<a class="el" href="_utility_8h-source.html">Utility.h</a></ul>
+</div>
+<hr size="1"><address style="text-align: right;"><small>3dGraphに対してTue Jan 6 00:57:39 2009に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.6 </small></address>
+</body>
+</html>

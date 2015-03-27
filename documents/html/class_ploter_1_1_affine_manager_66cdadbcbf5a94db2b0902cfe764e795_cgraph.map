@@ -1,0 +1,20 @@
+<area shape="rect" href="$class_ploter_1_1_affine_manager.html#feb9e5b6059fab0ddb3f10ac78aed8fd" title="共通のアフィン行列。" alt="" coords="260,221,463,248">
+<area shape="rect" href="$class_ploter_1_1_affine_manager.html#f598580c63776558a607d0c9d2af1809" title="スケールを正規化。" alt="" coords="257,461,465,488">
+<area shape="rect" href="$class_ploter_1_1_affine_manager.html#843029b8c9f1bda911c96ee6279089c0" title="原点に移動。" alt="" coords="263,360,460,387">
+<area shape="rect" href="$class_ploter_1_1_affine_manager.html#408bc47498da6f5bafa5e6e88cde4194" title="軸を水平にする。" alt="" coords="532,120,740,147">
+<area shape="rect" href="$class_ploter_1_1_affine_manager.html#a5238bb29cf17d368d0b49ba4d3d31ba" title="投影行列を返す。" alt="" coords="813,157,1021,184">
+<area shape="rect" href="$class_ploter_1_1_affine_manager.html#c647693b4b2ecfeffab7b5101ac83b61" title="x軸の移動。" alt="" coords="548,259,724,285">
+<area shape="rect" href="$namespace_ploter_1_1_m.html#74c7755e20b7d62a1a6e55b782acdd36" title="Ploter::M::IDENTITY" alt="" coords="1077,259,1216,285">
+<area shape="rect" href="$namespace_ploter.html#f512b9e4bd9deb6394fcd49991ea8ed0" title="軸axis を deg°回転する行列を返す。" alt="" coords="869,107,965,133">
+<area shape="rect" href="$class_ploter_1_1_affine_manager.html#0b9eee86956a6259a1378b6cb511d1ef" title="水平軸の違いによるアフィン行列の選択。" alt="" coords="805,56,1029,83">
+<area shape="rect" href="$namespace_ploter_1_1_v.html#787d7fba188e77bc49cfe19fa55617f3" title="Ploter::V::X_UNIT" alt="" coords="856,259,979,285">
+<area shape="rect" href="$namespace_ploter_1_1_v.html#fb1a94c20b24b573fd5a68dcde79255a" title="Ploter::V::Z_UNIT" alt="" coords="856,5,979,32">
+<area shape="rect" href="$namespace_ploter.html#5817d6e4339bbf3460b0704ca6e976df" title="度からラジアンへの変換。" alt="" coords="1099,132,1195,159">
+<area shape="rect" href="$class_ploter_1_1_option.html#7de8eb4cc2f4e819a92cc090c84b42e0" title="iniファイルからkeyが指す値を読み込む。" alt="" coords="1083,56,1211,83">
+<area shape="rect" href="$namespace_ploter.html#6d6a17eb019c30845df901c389d6e866" title="toだけ平行移動する行列を返す。" alt="" coords="861,360,973,387">
+<area shape="rect" href="$class_ploter_1_1_affine_manager.html#f8c15b968a04be50a28353152d972a70" title="スケールを取得。" alt="" coords="516,512,756,539">
+<area shape="rect" href="$namespace_ploter.html#1c6996dd1bc6037aeb7c2c58561f0598" title="x軸,y軸,z軸をそれぞれ、a倍,b倍,c倍する行列を返す。" alt="" coords="589,461,683,488">
+<area shape="rect" href="$class_ploter_1_1_min_max.html#386bf8b6f8ac797974226952cf935fb8" title="最小値・最大値の範囲の取得。" alt="" coords="832,512,1003,539">
+<area shape="rect" href="$class_ploter_1_1_min_max.html#6fb091ebf5c0b1c7f5c223aa17e78217" title="アクセッサ。" alt="" coords="559,360,713,387">
+<area shape="rect" href="$namespace_ploter.html#3286edb2e92e29f8f197ac3c226b6490" title="ベクトルv(x,y,z)の生成。" alt="" coords="603,411,669,437">
+<area shape="rect" href="$namespace_ploter_1_1_v.html#faec408b14e015d5a3ef4f3a66149635" title="Ploter::V::ZERO" alt="" coords="860,411,975,437">
