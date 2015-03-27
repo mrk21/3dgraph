@@ -26,3 +26,5 @@
 *.exe
 *.out
 *.app
+
+!/sources/3dGraph.exe
